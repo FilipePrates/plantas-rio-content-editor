@@ -30,6 +30,7 @@ export const matchesPlant = (plant, query) =>
           plant.family,
           ...plant.alternateNames,
           ...plant.regionalSpecies.map((s) => s.scientificName),
+          ...conservationUnitNames(plant),
         ].join(" "),
       ).includes(term),
     );
@@ -413,9 +414,23 @@ export function checklistRows(catalog) {
   ).sort((a, b) => a.family.localeCompare(b.family) || a.scientificName.localeCompare(b.scientificName));
 }
 
+// A group member only inherits records explicitly attributed to that species.
+export function conservationUnitNames(plant, scientificName) {
+  return [...new Set((plant.regionalEvidence || [])
+    .filter((record) => !scientificName || record.scientificName === scientificName)
+    .flatMap((record) => record.conservationUnits.map((unit) => unit.name)))];
+}
+
+export function conservationCodesForSpecies(plant, scientificName) {
+  return [...new Set((plant.regionalEvidence || [])
+    .filter((record) => record.scientificName === scientificName)
+    .flatMap((record) => record.conservationAssessments.map((assessment) => assessment.category)))];
+}
+
 export function matchesChecklistRow(row, query) {
   const haystack = normalize([row.scientificName, row.commonName, row.family,
-    ...(row.plant.rank === "species" ? row.plant.alternateNames : [])].join(" "));
+    ...(row.plant.rank === "species" ? row.plant.alternateNames : []),
+    ...conservationUnitNames(row.plant, row.scientificName)].join(" "));
   return normalize(query).split(/\s+/).every((term) => haystack.includes(term));
 }
 

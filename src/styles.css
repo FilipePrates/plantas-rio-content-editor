@@ -631,3 +631,16 @@ fieldset.photoFields {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
+
+.vocabulary {
+  min-width: 0;
+  border: 1px solid #d3d5c6;
+  border-radius: 9px;
+  padding: 12px;
+}
+.vocabulary legend { font-size: 13px; font-weight: 600; }
+.vocabularyInput { display: flex; gap: 6px; margin: 7px 0; }
+.vocabularyInput input { min-width: 0; }
+.vocabularyChoices { max-height: 220px; overflow-y: auto; margin-top: 8px; }
+.vocabularyChoices label { flex-direction: row; align-items: center; padding: 6px 0; font-weight: 400; }
+.vocabularyChoices input { width: auto; flex-shrink: 0; }

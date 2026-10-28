@@ -138,3 +138,6 @@ export function checklistRows(catalog: Catalog): ChecklistRow[];
 export function matchesChecklistRow(row: ChecklistRow, query: string): boolean;
 export function hasMunicipalEvidence(plant: Plant): boolean;
 export function resolveSavedIds(ids: string[], plants: Plant[]): string[];
+
+export function conservationUnitNames(plant: Plant, scientificName?: string): string[];
+export function conservationCodesForSpecies(plant: Plant, scientificName: string): ConservationCategory[];
