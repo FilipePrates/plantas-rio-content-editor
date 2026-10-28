@@ -4,6 +4,8 @@ import { mkdir, readFile, rename, writeFile } from "node:fs/promises";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
+import { inaturalistPhotoRights } from "../src/catalog.mjs";
+
 const API = "https://api.inaturalist.org/v1/observations/";
 const hosts = new Set([
   "inaturalist-open-data.s3.amazonaws.com",
@@ -55,14 +57,15 @@ export function photoUrl(photo, size = "large") {
 function assertPhoto(photo) {
   if (
     !photo ||
-    photo.license_code !== "cc0" ||
+    !["cc0", "cc-by"].includes(photo.license_code) ||
     photo.hidden ||
     photo.flags?.length ||
     photo.moderator_actions?.length ||
     !Number.isSafeInteger(photo.id) ||
     photo.id < 1
   )
-    throw new Error("Esta foto não está disponível sob licença CC0.");
+    throw new Error("Esta foto não está disponível sob licença CC0 ou CC BY.");
+  inaturalistPhotoRights(photo);
   return photoUrl(photo);
 }
 async function boundedFetch(url, limit, fetcher) {
@@ -70,7 +73,7 @@ async function boundedFetch(url, limit, fetcher) {
     redirect: "error",
     signal: AbortSignal.timeout(45000),
     headers: {
-      "User-Agent": "PlantasDoRioEditor/0.2 (CC0-only local curation)",
+      "User-Agent": "PlantasDoRioEditor/0.2 (CC0 / CC BY local curation)",
     },
   });
   if (!response.ok)
@@ -139,7 +142,8 @@ export function createInaturalistService({
               id: photo.id,
               url,
               previewUrl: photoUrl(photo, "medium"),
-              licenseCode: "cc0",
+              licenseCode: photo.license_code,
+              attribution: photo.attribution,
             },
           ];
         } catch {
@@ -162,8 +166,9 @@ export function createInaturalistService({
     const evidencePath = resolve(appRoot, "sources/inaturalist/photos");
     const evidenceFile = resolve(evidencePath, `${photo.id}.json`);
     const fileName = `inat-${photo.id}.${new URL(url).pathname.split(".").pop()}`;
+    const rights = inaturalistPhotoRights(photo);
     const creator =
-      photo.attribution_name ||
+      rights.creator || photo.attribution_name ||
       observation.user?.name ||
       observation.user?.login ||
       "Colaborador iNaturalist";
@@ -178,7 +183,7 @@ export function createInaturalistService({
       evidence = JSON.parse(await readFile(evidenceFile, "utf8"));
       payload = await readFile(resolve(sourcePath, fileName));
       if (
-        evidence.photo.license_code !== "cc0" ||
+        evidence.photo.license_code !== photo.license_code ||
         evidence.photo.id !== photo.id ||
         evidence.observation.id !== observation.id ||
         evidence.observation.taxon.name !== observation.taxon.name ||
@@ -236,8 +241,7 @@ export function createInaturalistService({
       taxonId: observation.taxon.id,
       taxonName: observation.taxon.name,
       creator: evidence.creator,
-      license: "CC0-1.0",
-      licenseCode: "cc0",
+      ...inaturalistPhotoRights(evidence.photo),
       sourceUrl: evidence.download.url,
       observationUrl: `https://www.inaturalist.org/observations/${observation.id}`,
       downloadedAt: evidence.download.retrievedAt,

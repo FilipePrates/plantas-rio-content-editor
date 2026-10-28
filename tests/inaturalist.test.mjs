@@ -118,7 +118,7 @@ test("selected CC0 photos are cached with rights evidence while canonical catalo
   assert.equal(again.downloadedAt, photo.downloadedAt);
   assert.equal(await readFile(evidencePath, "utf8"), evidenceText);
 });
-test("mixed-license selections fail before any file download", async (t) => {
+test("CC BY without attribution fails before any file download", async (t) => {
   const { service, requests } = await setup(t);
   await assert.rejects(
     service.importPhotos({ plant, observationId: 456, photoIds: [123, 124] }),
@@ -147,5 +147,39 @@ test("species and genus mismatches import while preserving the observation ident
     assert.equal(photo.taxonId, 789);
     assert.equal(photo.licenseCode, "cc0");
     assert.equal(photo.reviewStatus, "draft");
+  }
+});
+
+// Photo copyright belongs to the named photographer, not necessarily the observer.
+test("CC BY imports preserve full attribution and immutable evidence", async (t) => {
+  const value = observation();
+  value.photos[1].attribution = "(c) Another Photographer, some rights reserved (CC BY)";
+  const { root, service } = await setup(t, value);
+  const preview = await service.inspect(456);
+  assert.deepEqual(preview.photos.map(p => p.id), [123, 124]);
+  const [photo] = await service.importPhotos({ plant, observationId: 456, photoIds: [124] });
+  assert.equal(photo.license, "CC-BY-4.0");
+  assert.equal(photo.licenseCode, "cc-by");
+  assert.equal(photo.creator, "Another Photographer");
+  assert.equal(photo.attribution, value.photos[1].attribution);
+  assert.equal(photo.licenseUrl, "https://creativecommons.org/licenses/by/4.0/");
+  assert.equal(photo.photoPageUrl, "https://www.inaturalist.org/photos/124");
+  assert.equal(photo.reviewStatus, "draft");
+  assert.deepEqual(photo.markers, ["unknown"]);
+  const path = join(root, "app/sources/inaturalist/photos/124.json");
+  const evidence = await readFile(path, "utf8");
+  value.photos[1].attribution = "(c) Changed account name, some rights reserved (CC BY)";
+  const [again] = await service.importPhotos({ plant, observationId: 456, photoIds: [124] });
+  assert.deepEqual(again, photo);
+  assert.equal(await readFile(path, "utf8"), evidence);
+});
+test("NC, SA and ND licenses cannot be downloaded", async (t) => {
+  for (const code of ["cc-by-nc", "cc-by-sa", "cc-by-nd", "cc-by-nc-sa"]) {
+    const value = observation();
+    value.photos[1].license_code = code;
+    value.photos[1].attribution = "Photographer";
+    const { service, requests } = await setup(t, value);
+    await assert.rejects(service.importPhotos({ plant, observationId: 456, photoIds: [124] }), /CC0/);
+    assert.equal(requests.length, 1);
   }
 });

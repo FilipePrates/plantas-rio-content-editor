@@ -8,6 +8,11 @@ export const markerLabels = Object.freeze({
   root: "Raiz",
   unknown: "Sem marcador",
 });
+export const conservationLabels = Object.freeze({
+  EX: "Extinta", EW: "Extinta na natureza", CR: "Criticamente em perigo",
+  EN: "Em perigo", VU: "Vulnerável", NT: "Quase ameaçada",
+  LC: "Menos preocupante", DD: "Dados insuficientes", NE: "Não avaliada",
+});
 export const normalize = (value) =>
   value
     .normalize("NFD")
@@ -24,6 +29,7 @@ export const matchesPlant = (plant, query) =>
           plant.scientificName,
           plant.family,
           ...plant.alternateNames,
+          ...plant.regionalSpecies.map((s) => s.scientificName),
         ].join(" "),
       ).includes(term),
     );
@@ -54,6 +60,26 @@ function https(value, hosts) {
   } catch {
     return false;
   }
+}
+export const photoLicenseLabel = (photo) => photo.licenseCode === "cc-by" ? "CC BY 4.0" : "CC0 1.0";
+export const photoLicenseUrl = (photo) => photo.licenseCode === "cc-by"
+  ? "https://creativecommons.org/licenses/by/4.0/"
+  : "https://creativecommons.org/publicdomain/zero/1.0/";
+
+// iNaturalist's Shared::LicenseModule maps cc-by to version 4.0.
+// The provider mapping and its hash are archived under sources/inaturalist.
+export function inaturalistPhotoRights(photo) {
+  if (photo?.license_code === "cc0") return { license: "CC0-1.0", licenseCode: "cc0" };
+  requireValue(photo?.license_code === "cc-by" && text(photo.attribution) &&
+    Number.isSafeInteger(photo.id) && photo.id > 0,
+    "Somente fotos CC0 ou CC BY com atribuição são aceitas.");
+  return {
+    license: "CC-BY-4.0", licenseCode: "cc-by",
+    creator: photo.attribution.match(/^(?:\(c\)|©)\s*(.+),\s*some rights reserved\s*\(CC BY\)$/i)?.[1] || photo.attribution,
+    attribution: photo.attribution,
+    licenseUrl: "https://creativecommons.org/licenses/by/4.0/",
+    photoPageUrl: `https://www.inaturalist.org/photos/${photo.id}`,
+  };
 }
 export function parseCatalog(value) {
   requireValue(
@@ -146,6 +172,14 @@ export function parseCatalog(value) {
       `${label}: revisão ou abrangência inválida.`,
     );
     requireValue(
+      p.presentation === undefined || ["profile", "checklist"].includes(p.presentation),
+      `${label}: apresentação inválida.`,
+    );
+    requireValue(
+      p.previousIds === undefined || stringArray(p.previousIds),
+      `${label}: IDs anteriores inválidos.`,
+    );
+    requireValue(
       p.floraId === null || (Number.isSafeInteger(p.floraId) && p.floraId > 0),
       `${label}: ID Flora inválido.`,
     );
@@ -189,6 +223,54 @@ export function parseCatalog(value) {
       );
       represented.add(name);
     }
+    if (p.municipalEvidence !== undefined) {
+      requireValue(Array.isArray(p.municipalEvidence) && p.municipalEvidence.every((e) =>
+        e && names.includes(e.scientificName) && text(e.source?.title) &&
+        https(e.source?.url) && text(e.source?.retrievedAt) &&
+        Number.isSafeInteger(e.publicationYear) && e.publicationYear >= 1900 &&
+        e.publicationYear <= 2100 && text(e.sourceLocator) && text(e.locality)
+      ), `${label}: evidência municipal inválida.`);
+    }
+    if (p.regionalEvidence !== undefined) {
+      requireValue(Array.isArray(p.regionalEvidence), `${label}: evidências regionais inválidas.`);
+      const evidenceKeys = new Set();
+      const page = (n) => Number.isSafeInteger(n) && n > 0;
+      const year = (n) => Number.isSafeInteger(n) && n >= 1900 && n <= 2100;
+      for (const evidence of p.regionalEvidence) {
+        requireValue(
+          evidence && names.includes(evidence.scientificName) &&
+            year(evidence.publicationYear) &&
+            text(evidence.source?.title) && https(evidence.source?.url) &&
+            text(evidence.source?.retrievedAt),
+          `${label}: espécie ou fonte da evidência regional inválida.`,
+        );
+        const key = `${evidence.scientificName}:${evidence.source.url}`;
+        requireValue(!evidenceKeys.has(key), `${label}: evidência regional duplicada.`);
+        evidenceKeys.add(key);
+        requireValue(
+          evidence.endemicToRioState === undefined || evidence.endemicToRioState === true,
+          `${label}: ausência de dado não comprova ausência de endemismo.`,
+        );
+        requireValue(
+          Array.isArray(evidence.conservationUnits) &&
+            evidence.conservationUnits.every((unit) => unit && text(unit.name) &&
+              text(unit.voucher) && page(unit.sourcePage) &&
+              (unit.municipality === undefined
+                ? unit.municipalitySourcePage === undefined
+                : text(unit.municipality) && page(unit.municipalitySourcePage))),
+          `${label}: unidade de conservação ou evidência municipal inválida.`,
+        );
+        requireValue(
+          Array.isArray(evidence.conservationAssessments) &&
+            evidence.conservationAssessments.every((assessment) => assessment &&
+              Object.hasOwn(conservationLabels, assessment.category) &&
+              ["brazil", "rio-state", "global", "unspecified"].includes(assessment.scope) &&
+              year(assessment.referenceYear) && assessment.referenceYear <= evidence.publicationYear &&
+              text(assessment.referenceTitle) && page(assessment.sourcePage)),
+          `${label}: categoria, abrangência ou data de conservação inválida.`,
+        );
+      }
+    }
     requireValue(Array.isArray(p.photos), `${label}: fotos inválidas.`);
     for (const photo of p.photos) {
       requireValue(
@@ -197,8 +279,21 @@ export function parseCatalog(value) {
       );
       photoIds.add(photo.id);
       requireValue(
-        photo.license === "CC0-1.0" && photo.licenseCode === "cc0",
-        `${label}: somente fotos CC0 são aceitas.`,
+        (photo.license === "CC0-1.0" && photo.licenseCode === "cc0") ||
+          (photo.license === "CC-BY-4.0" && photo.licenseCode === "cc-by"),
+        `${label}: somente fotos CC0 ou CC BY 4.0 são aceitas.`,
+      );
+      if (photo.licenseCode === "cc-by") requireValue(
+        text(photo.attribution) &&
+          photo.licenseUrl === "https://creativecommons.org/licenses/by/4.0/" &&
+          photo.photoPageUrl === `https://www.inaturalist.org/photos/${photo.photoId}`,
+        `${label}: CC BY exige atribuição e links da foto e da licença.`,
+      );
+      requireValue(
+        (photo.licenseUrl === undefined || photo.licenseUrl === photoLicenseUrl(photo)) &&
+          (photo.photoPageUrl === undefined || photo.photoPageUrl === `https://www.inaturalist.org/photos/${photo.photoId}`) &&
+          (photo.attribution === undefined || text(photo.attribution)),
+        `${label}: links ou atribuição da licença inválidos.`,
       );
       requireValue(
         /^inat-[0-9]+\.(jpg|jpeg|png|webp)$/.test(photo.fileName) &&
@@ -260,6 +355,16 @@ export function parseCatalog(value) {
     represented.size <= 1500,
     "Os grupos também contam para o limite de 1.500 espécies.",
   );
+  const previousIds = new Set();
+  for (const plant of value.plants) {
+    requireValue(plant.presentation !== "checklist" || plant.rank === "species",
+      "Uma entrada de referência deve representar uma espécie.");
+    for (const id of plant.previousIds || []) {
+      requireValue(/^[a-z][a-z0-9-]*$/.test(id) && !ids.has(id) && !previousIds.has(id),
+        `${id}: ID anterior duplicado ou ainda em uso.`);
+      previousIds.add(id);
+    }
+  }
   return value;
 }
 
@@ -288,4 +393,33 @@ export function photoMatchesPlant(plant, taxonName) {
     : plant.regionalSpecies.some(
         (member) => member.scientificName === taxonName,
       );
+}
+
+export const isProfile = (plant) => plant.presentation !== "checklist";
+export const hasMunicipalEvidence = (plant) =>
+  plant.geography === "rio-city" || Boolean(plant.municipalEvidence?.length);
+
+export function checklistRows(catalog) {
+  return catalog.plants.flatMap((plant) =>
+    (plant.rank === "genus" ? plant.regionalSpecies : [plant]).map((member) => ({
+      scientificName: member.scientificName,
+      commonName: plant.rank === "species" ? plant.commonName : "",
+      family: plant.family,
+      plant,
+      geography: plant.rank === "species" ? plant.geography :
+        plant.municipalEvidence?.some((e) => e.scientificName === member.scientificName)
+          ? "rio-city" : "rio-state",
+    })),
+  ).sort((a, b) => a.family.localeCompare(b.family) || a.scientificName.localeCompare(b.scientificName));
+}
+
+export function matchesChecklistRow(row, query) {
+  const haystack = normalize([row.scientificName, row.commonName, row.family,
+    ...(row.plant.rank === "species" ? row.plant.alternateNames : [])].join(" "));
+  return normalize(query).split(/\s+/).every((term) => haystack.includes(term));
+}
+
+export function resolveSavedIds(ids, plants) {
+  const targets = new Map(plants.flatMap((p) => [p.id, ...(p.previousIds || [])].map((id) => [id, p.id])));
+  return [...new Set(ids.map((id) => targets.get(id)).filter(Boolean))];
 }

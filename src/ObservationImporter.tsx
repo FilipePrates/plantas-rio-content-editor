@@ -11,7 +11,7 @@ type Observation = {
   observer: string;
   qualityGrade: string;
   excludedPhotos: number;
-  photos: { id: number; url: string; previewUrl: string; licenseCode: "cc0" }[];
+  photos: { id: number; url: string; previewUrl: string; licenseCode: "cc0" | "cc-by" }[];
 };
 async function api<T>(path: string, body?: unknown): Promise<T> {
   const response = await fetch(
@@ -140,7 +140,7 @@ export function ObservationImporter({
         </button>
       </div>
       <p className="subtle">
-        Cole uma observação, escolha as fotos CC0 e importe. Você pode adicionar
+        Cole uma observação, escolha as fotos CC0 ou CC BY e importe. Você pode adicionar
         quantas fotos e observações precisar.
       </p>
       <form className="observationSearch" onSubmit={load}>
@@ -181,12 +181,12 @@ export function ObservationImporter({
           )}
           {observation.excludedPhotos > 0 && (
             <p className="subtle">
-              {observation.excludedPhotos} foto(s) sem licença CC0 ou
+              {observation.excludedPhotos} foto(s) sem licença CC0/CC BY ou
               indisponível(is) foram excluídas.
             </p>
           )}
           {!observation.photos.length && (
-            <p role="status">Esta observação não tem fotos CC0 disponíveis.</p>
+            <p role="status">Esta observação não tem fotos CC0/CC BY disponíveis.</p>
           )}
           <div className="observationCandidates">
             {observation.photos.map((photo) => (
@@ -215,7 +215,7 @@ export function ObservationImporter({
                   />
                   {alreadyAdded.has(photo.id)
                     ? "Já adicionada"
-                    : "CC0 · Foto " + photo.id}
+                    : (photo.licenseCode === "cc-by" ? "CC BY 4.0" : "CC0") + " · Foto " + photo.id}
                 </span>
               </label>
             ))}

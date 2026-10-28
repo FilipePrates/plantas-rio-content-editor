@@ -8,7 +8,7 @@
   `plantas-do-rio-de-janeiro/src/data/plants.json`. Refresh this editor's seed,
   schema and local photos with `npm run editor:sync` from the app repository.
 - Preserve explicit Save, unsaved-change prompts, validated JSON import/export,
-  CC0-only photos, source provenance, flora IDs and grouped-member records.
+  photo-level CC0 or CC BY 4.0 photos (authorized 2026-10-28), attribution and license links, source provenance, flora IDs and grouped-member records.
 - New photos enter through the local editor's verified observation importer or
   the app's iNaturalist downloader; license
   declarations entered in a browser are not sufficient evidence for release.

@@ -10,6 +10,8 @@ import {
   X,
 } from "lucide-react";
 import {
+  photoLicenseLabel,
+  photoLicenseUrl,
   markerLabels,
   markerPaths,
   originLabels,
@@ -20,6 +22,7 @@ import {
 } from "./catalog.mjs";
 import type { Catalog, Plant, PlantPhoto, PhotoMarker } from "./catalog.mjs";
 import { loadCatalog, storeCatalog } from "./storage";
+import { VocabularySelect } from "./VocabularySelect";
 import { ObservationImporter } from "./ObservationImporter";
 
 const clone = <T,>(value: T): T => structuredClone(value);
@@ -27,6 +30,7 @@ export default function App() {
   const [catalog, setCatalog] = useState<Catalog | null>(null);
   const [draft, setDraft] = useState<Plant | null>(null);
   const [query, setQuery] = useState("");
+  const [photoSearchLicense, setPhotoSearchLicense] = useState("cc0,cc-by");
   const [family, setFamily] = useState("");
   const [origin, setOrigin] = useState("");
   const [status, setStatus] = useState("");
@@ -93,6 +97,7 @@ export default function App() {
         {
           sources: value.sources,
           regionalSpecies: value.regionalSpecies,
+          regionalEvidence: value.regionalEvidence ?? [],
           floraId: value.floraId,
           curationNotes: value.curationNotes,
         },
@@ -130,6 +135,7 @@ export default function App() {
         : {
             sources: draft.sources,
             regionalSpecies: draft.regionalSpecies,
+            regionalEvidence: draft.regionalEvidence ?? [],
             floraId: draft.floraId,
             curationNotes: draft.curationNotes,
           };
@@ -137,6 +143,7 @@ export default function App() {
         ...draft,
         sources: extra.sources,
         regionalSpecies: extra.regionalSpecies,
+        regionalEvidence: extra.regionalEvidence ?? draft.regionalEvidence,
         floraId: extra.floraId,
         curationNotes: extra.curationNotes,
       };
@@ -566,9 +573,20 @@ export default function App() {
             {field("identification", "Como reconhecer", true)}
             {field("ecology", "Ambiente e ecologia", true)}
             <div className="formGrid">
-              {listField("lifeForms", "Formas de vida")}
-              {listField("substrates", "Substratos")}
-              {listField("habitats", "Vegetação / ambientes")}
+              {([
+                ["lifeForms", "Formas de vida"],
+                ["substrates", "Substratos"],
+                ["habitats", "Fitofisionomias / vegetação e ambientes"],
+              ] as const).map(([key, label]) => (
+                <VocabularySelect
+                  key={`${draft.id}-${key}`}
+                  label={label}
+                  values={draft[key]}
+                  options={catalog.plants.flatMap(plant => plant[key])}
+                  disabled={busy || mediaBusy}
+                  onChange={values => edit(key, values)}
+                />
+              ))}
             </div>
           </section>
           <section>
@@ -576,7 +594,7 @@ export default function App() {
               <Flower2 size={21} /> Fotos e estruturas
             </h2>
             <p className="subtle">
-              Somente fotos CC0 do iNaturalist. Flor e fruto devem ser marcados
+              Fotos CC0 ou CC BY 4.0 do iNaturalist, com créditos preservados. Flor e fruto devem ser marcados
               após conferir a própria imagem. A licença e a proveniência são
               preservadas.
             </p>
@@ -689,7 +707,7 @@ export default function App() {
             {!draft.photos.length && (
               <div className="empty">
                 <Leaf size={40} />
-                <p>Adicione fotos CC0 usando o botão acima.</p>
+                <p>Adicione fotos CC0 ou CC BY usando o botão acima.</p>
               </div>
             )}
             <div className="photoGrid">
@@ -732,7 +750,11 @@ export default function App() {
                     </div>
                   </div>
                   <fieldset disabled={mediaBusy} className="photoFields">
-                    <strong>CC0 · {photo.creator}</strong>
+                    <strong>{photoLicenseLabel(photo)} · {photo.creator}</strong>
+                    {photo.attribution && <small>{photo.attribution}</small>}
+                    <a href={photoLicenseUrl(photo)} target="_blank" rel="noreferrer">Licença ↗</a>
+                    {photo.photoPageUrl && <a href={photo.photoPageUrl} target="_blank" rel="noreferrer">Página da foto ↗</a>}
+                    {photo.licenseCode === "cc-by" && <small>Miniaturas redimensionadas e recortadas; créditos e licença acompanham o export.</small>}
                     <small>{photo.taxonName}</small>
                     {!photoMatchesPlant(draft, photo.taxonName) && (
                       <div className="warning" role="status">
@@ -912,20 +934,30 @@ export default function App() {
                 </article>
               ))}
             </div>
+            <label>
+              Licença das fotos na busca
+              <select value={photoSearchLicense} onChange={event => setPhotoSearchLicense(event.target.value)}>
+                <option value="cc0,cc-by">CC0 e CC BY 4.0</option>
+                <option value="cc0">Somente CC0</option>
+                <option value="cc-by">Somente CC BY 4.0</option>
+              </select>
+            </label>
+            <p className="subtle">A licença de cada foto é verificada ao importar. CC BY-NC, CC BY-SA, CC BY-ND e outras licenças não são aceitas.</p>
             <a
-              href={`https://www.inaturalist.org/observations?taxon_name=${encodeURIComponent(draft.rank === "genus" ? draft.genus : draft.scientificName)}&photo_license=cc0&quality_grade=research`}
+              href={`https://www.inaturalist.org/observations?taxon_name=${encodeURIComponent(draft.rank === "genus" ? draft.genus : draft.scientificName)}&photo_license=${encodeURIComponent(photoSearchLicense)}&quality_grade=research`}
               target="_blank"
               rel="noreferrer"
             >
-              Pesquisar outras fotos CC0 no iNaturalist ↗
+              Pesquisar fotos no iNaturalist ↗
             </a>
           </section>
           <section>
-            <h2>Fontes e composição do grupo</h2>
+            <h2>Fontes, conservação e composição do grupo</h2>
             <p className="subtle">
               Membros de grupos contam individualmente para o limite de 1.500.
               Não inclua uma espécie também em outra ficha. As contagens são do
-              estado, sem implicar ocorrência no município.
+              estado, sem implicar ocorrência no município. Registros de conservação
+              mantêm espécie, fonte, abrangência e ano da referência.
             </p>
             <textarea
               className="json"
