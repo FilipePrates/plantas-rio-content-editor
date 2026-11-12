@@ -19,21 +19,18 @@ export const normalize = (value) =>
     .replace(/[\u0300-\u036f]/g, "")
     .toLocaleLowerCase("pt-BR")
     .trim();
-export const matchesPlant = (plant, query) =>
-  normalize(query)
-    .split(/\s+/)
-    .every((term) =>
-      normalize(
-        [
+export const plantSearchText = (plant) => normalize([
           plant.commonName,
           plant.scientificName,
           plant.family,
           ...plant.alternateNames,
           ...plant.regionalSpecies.map((s) => s.scientificName),
           ...conservationUnitNames(plant),
-        ].join(" "),
-      ).includes(term),
-    );
+        ].join(" "));
+export const matchesPlant = (plant, query) => {
+  const haystack = plantSearchText(plant);
+  return normalize(query).split(/\s+/).every((term) => haystack.includes(term));
+};
 export function representedSpeciesCount(catalog) {
   return new Set(
     catalog.plants.flatMap((p) =>

@@ -11,6 +11,18 @@ npm ci
 npm run dev
 ```
 
+On this Windows workspace, dependencies and Node are already installed. In
+PowerShell, run the local launcher from any folder and keep its terminal open:
+
+```powershell
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File "C:\Users\Samsung\aves-do-brasil\plantas-rio-content-editor\start-editor.ps1"
+```
+
+Press Ctrl+C to stop. The launcher uses this workspace's Node installation and
+starts only the plant editor. If it is already running, the launcher prints its
+address and exits successfully without starting a second server. Open the address below in the same browser/profile
+each time to keep your saved drafts.
+
 Open http://127.0.0.1:5174. The different port prevents colliding with the bird
 editor on its default development port. Node 20.19.4+ in the package range.
 

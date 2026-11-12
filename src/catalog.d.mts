@@ -121,6 +121,7 @@ export function inaturalistPhotoRights(photo: { license_code?: string; attributi
 export function representedSpeciesCount(catalog: Catalog): number;
 export function normalize(value: string): string;
 export function matchesPlant(plant: Plant, query: string): boolean;
+export function plantSearchText(plant: Plant): string;
 
 export const originLabels: Record<Plant["origin"], string>;
 export const markerPaths: Record<Exclude<PhotoMarker, "unknown">, string>;
