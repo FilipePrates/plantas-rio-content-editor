@@ -2,6 +2,35 @@
 
 Address: https://admin.plantas.avesdobrasil.app
 
+## Habitat image drafts
+
+The habitat screen also lets an administrator edit **Fontes e direitos das
+fotos** as Markdown. The initial text is a snapshot of the guide's
+`docs/habitat-photo-sources.md`; the first explicit save creates the Supabase
+document. Subsequent saves retain history and reject stale revisions. Export
+the Markdown and review it before updating the guide's file; editor saves do
+not update that file automatically.
+
+Migration `005_habitat_sources.sql` and editor version
+`cda2a30c-453e-4a53-9ce2-c5f3f1d9945f` add this feature. TypeScript and all
+16 tests passed, including database authorization and revision checks. Live
+HTML referenced the isolated build, and unauthenticated notes and catalog
+requests returned 401. No authenticated live editing was tested.
+
+Administrators can open **Fotos dos ambientes**, select a vegetation type,
+upload an image, record its author, source and license, and save a draft. The
+exported JSON includes the image and provenance for review. Saving does not
+change the guide; image rights, habitat identification and the exported image
+must be reviewed before a separate guide source update and deployment. Existing
+guide images are shown as a reference. Drafts are private R2 objects and
+conflicting saves are rejected. A browser-entered license is a claim, not
+independent rights evidence.
+
+Deployed version `b05b63f3-6103-4d47-b516-2c16fc59faa3`. TypeScript and all
+15 tests passed. The cloud build excluded the public seed; the live HTML
+referenced the built bundle and unauthenticated habitat and catalog API calls
+returned 401. An authenticated live editing session was not tested.
+
 ## Shared guide branding
 
 The editor uses the guide's Mandevilla mark in its toolbar, loading state,
@@ -94,6 +123,14 @@ scripts/cloud-smoke.mjs`. They create and remove temporary users and a temporary
 plant fixture, exercising the hosted access controls and invitation flow.
 
 ## November 12, 2026 common-name update
+
+The subsequent current-editor deployment is version
+`cef7b0ff-0144-45e9-b8d1-2668d21a2ea9`, including the administrator habitat
+draft interface. TypeScript and all 15 tests passed. The live login loaded,
+the unauthenticated catalog request returned 401, and the live JavaScript
+matched the tested build (SHA-256
+`087b8af4512aa9cdee3fb98cc216436efbdc6777d2645b982c5d696680e62fff`).
+No database seed or authenticated editing was performed for verification.
 
 Published editor version `d4696c0c-ff17-4c82-9827-2ac422893fdb`. The identity
 field is now “Nome comum principal (opcional)”. Empty common names are accepted,

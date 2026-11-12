@@ -2,6 +2,7 @@ import { parseCatalog } from '../src/catalog.mjs';
 import { prepareSave, validPhotoName } from './core.mjs';
 import {createClient} from '@supabase/supabase-js';
 import {inspectObservation,importObservationPhotos} from './inaturalist.mjs';
+import {habitatRequest} from './habitats.mjs';
 
 const json = (value, status=200) => new Response(JSON.stringify(value), { status, headers: { 'content-type':'application/json; charset=utf-8', 'cache-control':'no-store', 'x-content-type-options':'nosniff' } });
 async function db(env, path, options={}) {
@@ -52,6 +53,19 @@ export default {
       if(!env.SUPABASE_SERVICE_ROLE_KEY) return json({error:'O editor está aguardando a configuração do banco de dados.'},503);
       const actor=await member(request,env);
       if(request.method==='GET'&&path==='/api/session') return json(actor);
+      if(path==='/api/habitat-sources' && ['GET','POST'].includes(request.method)) {
+        if(actor.role!=='admin') return json({error:'Apenas administradores podem editar as fontes.'},403);
+        if(request.method==='GET') return json((await db(env,'habitat_source_notes?select=content,revision,updated_at&limit=1'))[0] || null);
+        const input=await body(request,250_000);
+        if(typeof input.content!=='string'||!Number.isSafeInteger(input.revision)||input.revision<0) return json({error:'Documento ou revisão inválidos.'},400);
+        return json(await db(env,'rpc/save_habitat_source_notes',{method:'POST',body:JSON.stringify({p_actor:actor.user_id,p_content:input.content,p_expected_revision:input.revision})}));
+      }
+      const habitat = path.match(/^\/api\/habitats\/(.+)$/);
+      if (habitat && ['GET','POST'].includes(request.method)) {
+        if (actor.role !== 'admin') return json({error:'Apenas administradores podem editar ambientes.'},403);
+        if (Number(request.headers.get('content-length')) > 3_000_000) return json({error:'Arquivo muito grande.'},413);
+        return await habitatRequest(request, env.MEDIA_BUCKET, decodeURIComponent(habitat[1]), request.method === 'POST' ? await body(request, 3_000_000) : null);
+      }
       if(request.method==='GET'&&path==='/api/usage'&&actor.role==='admin')return json(await db(env,'rpc/plant_editor_usage',{method:'POST',body:'{}'}));
       if(request.method==='GET'&&path==='/api/catalog') {
         const response=await fetch(`${env.SUPABASE_URL}/rest/v1/rpc/plant_catalog_snapshot`,{method:'POST',headers:{apikey:env.SUPABASE_SERVICE_ROLE_KEY,authorization:`Bearer ${env.SUPABASE_SERVICE_ROLE_KEY}`,'content-type':'application/json'},body:'{}'});

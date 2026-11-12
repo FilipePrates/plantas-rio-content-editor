@@ -37,10 +37,13 @@ import {cloudMode,loadSharedCatalog,saveSharedPlant,membership} from './cloud';
 import {CloudPhoto} from './CloudPhoto';
 import {EditorialPanel,MembersPanel} from './EditorialPanel';
 import { Brand, BrandMark } from './Brand';
+import { HabitatPanel } from './HabitatPanel';
 
 const clone = <T,>(value: T): T => structuredClone(value);
 export default function App({onSignOut}:{onSignOut?:()=>void}={}) {
   const [membersScreen,setMembersScreen]=useState(false);
+  const [habitatScreen,setHabitatScreen]=useState(false);
+  const [habitatDirty,setHabitatDirty]=useState(false);
   const [catalog, setCatalog] = useState<Catalog | null>(null);
   const [draft, setDraft] = useState<Plant | null>(null);
   const [query, setQuery] = useState("");
@@ -340,8 +343,9 @@ export default function App({onSignOut}:{onSignOut?:()=>void}={}) {
         <Brand subtitle={`Editor de conteúdo · ${cloudMode ? 'catálogo compartilhado' : 'rascunho local'}`} />
         <div className="actions">
           {cloudMode&&<button disabled={busy||mediaBusy} onClick={async()=>{if(!canLeave())return;setBusy(true);try{const fresh=await loadSharedCatalog();setCatalog(fresh);select(fresh.plants.find(p=>p.id===draft.id)||fresh.plants[0]);setNotice('Catálogo atualizado.')}catch(e){setError(String(e))}finally{setBusy(false)}}}><RefreshCw size={17}/>Atualizar catálogo</button>}
-          {cloudMode&&membership?.role==='admin'&&<button disabled={busy||mediaBusy} onClick={()=>setMembersScreen(!membersScreen)}>{membersScreen?<ArrowLeft size={17}/>:<UsersRound size={17}/>} {membersScreen?'Voltar ao editor':'Colaboradores'}</button>}
-          {!membersScreen&&<>
+          {cloudMode&&membership?.role==='admin'&&<button disabled={busy||mediaBusy} onClick={()=>{if(habitatDirty&&!window.confirm('Descartar alterações não salvas?'))return;setHabitatDirty(false);setHabitatScreen(false);setMembersScreen(!membersScreen)}}>{membersScreen?<ArrowLeft size={17}/>:<UsersRound size={17}/>} {membersScreen?'Voltar ao editor':'Colaboradores'}</button>}
+          {cloudMode&&membership?.role==='admin'&&<button disabled={busy||mediaBusy} onClick={()=>{if(habitatDirty&&!window.confirm('Descartar alterações não salvas?'))return;if(habitatScreen||canLeave()){setHabitatDirty(false);setHabitatScreen(!habitatScreen);setMembersScreen(false)}}}>{habitatScreen?'Voltar ao editor':'Fotos dos ambientes'}</button>}
+          {!membersScreen&&!habitatScreen&&<>
           <button
             disabled={busy || mediaBusy}
             onClick={() => {if(!cloudMode)importInput.current?.click();else setError('A importação completa exige a rotina de administração.');}}
@@ -373,11 +377,12 @@ export default function App({onSignOut}:{onSignOut?:()=>void}={}) {
             }}
           />
           </>}
-          {onSignOut&&<button disabled={busy||mediaBusy} onClick={()=>{if(!dirty||window.confirm('Sair e descartar as alterações ainda não salvas?'))onSignOut()}}><LogOut size={17}/>Sair</button>}
+          {onSignOut&&<button disabled={busy||mediaBusy} onClick={()=>{if((!dirty&&!habitatDirty)||window.confirm('Sair e descartar as alterações ainda não salvas?'))onSignOut()}}><LogOut size={17}/>Sair</button>}
         </div>
       </header>
       {membersScreen&&cloudMode&&membership?.role==='admin'&&<MembersPanel/>}
-      <div className="workspace" hidden={membersScreen}>
+      {habitatScreen&&cloudMode&&membership?.role==='admin'&&<HabitatPanel onDirtyChange={setHabitatDirty}/>}
+      <div className="workspace" hidden={membersScreen||habitatScreen}>
         <aside>
           <div className="sidebarIntro">
             <h2>Catálogo</h2>

@@ -9253,9 +9253,9 @@
       "origin": "native",
       "geography": "rio-city",
       "reviewStatus": "draft",
-      "description": "Palmeira nativa da Mata Atlântica.",
-      "identification": "",
-      "ecology": "Florestas úmidas; Afloramentos rochosos.",
+      "description": "Palmeira de tronco solitário, reto e acinzentado, com copa de folhas longas e pinadas. Os folíolos ficam em grupos e se distribuem em planos ligeiramente diferentes. Os cachos ramificados surgem entre as folhas; os frutos são ovoides, com uma estrutura persistente na base.",
+      "identification": "Fotografe a palmeira inteira, a inserção dos folíolos e os cachos de perto. Na revisão de Noblick, o tronco colunar e a ausência ou escassez de escamas na face inferior dos folíolos ajudam na comparação com espécies próximas. Porte e ambiente isoladamente não confirmam a identificação; a avaliação pode exigir frutos e caracteres microscópicos.",
+      "ecology": "Ocorre em Mata Atlântica úmida, associada a solos rochosos e encostas próximas a afloramentos graníticos. Noblick ilustra uma população no Parque Natural Municipal da Prainha, na cidade do Rio; registros históricos não garantem presença atual em toda a área.",
       "lifeForms": [
         "Palmeira"
       ],
@@ -9320,9 +9320,14 @@
           "title": "SMAC (2022). Lista de espécies da flora nativa com ocorrência no município. Anexo I, Resolução 074 de 19/08/2022.",
           "url": "https://doweb.rio.rj.gov.br/portal/edicoes/download/5436",
           "retrievedAt": "2026-10-24"
+        },
+        {
+          "title": "Noblick (2017). A revision of the genus Syagrus (Arecaceae).",
+          "url": "https://doi.org/10.11646/phytotaxa.294.1.1",
+          "retrievedAt": "2026-11-12"
         }
       ],
-      "curationNotes": "Rascunho gerado de atributos estruturados do JBRJ. Nome popular, texto de campo e recorte municipal precisam de revisão. O registro estadual não comprova ocorrência no município. Texto simplificado em 17/10/2026; atributos de ambiente mantêm abrangência brasileira. Revisão humana pendente; fotos e marcações anteriores preservadas.",
+      "curationNotes": "Rascunho gerado de atributos estruturados do JBRJ. Nome popular, texto de campo e recorte municipal precisam de revisão. O registro estadual não comprova ocorrência no município. Texto simplificado em 17/10/2026; atributos de ambiente mantêm abrangência brasileira. Revisão humana pendente; fotos e marcações anteriores preservadas. Texto em rascunho baseado em Noblick (2017), revisao e identificacao das fotos pendentes.",
       "regionalEvidence": [
         {
           "scientificName": "Syagrus picrophylla",
@@ -9363,7 +9368,7 @@
           "locality": "Município do Rio de Janeiro"
         }
       ],
-      "presentation": "checklist"
+      "presentation": "profile"
     },
     {
       "id": "syagrus-romanzoffiana",
@@ -9577,10 +9582,10 @@
       "rank": "species",
       "origin": "native",
       "geography": "rio-state",
-      "reviewStatus": "reviewed",
-      "description": "Palmeira nativa de florestas úmidas da Mata Atlântica.",
-      "identification": "",
-      "ecology": "Florestas úmidas.",
+      "reviewStatus": "draft",
+      "description": "Palmeira de sub-bosque, de porte pequeno e estipe delgado, muitas vezes coberto por bases de folhas antigas. As folhas pinadas têm folíolos estreitos, verdes na face superior e prateados na inferior; fibras castanhas podem revestir o pecíolo e o eixo da folha.",
+      "identification": "Observe a palmeira inteira, a face inferior dos folíolos e as fibras do pecíolo. A combinação de porte, folíolos estreitos e fibras castanhas orienta a comparação com S. insignis, mas não dispensa exame dos demais caracteres da chave. Plantas cultivadas podem aparecer fora da área de ocorrência natural.",
+      "ecology": "Palmeira de florestas úmidas e sombreadas, registrada em encostas da Serra dos Órgãos. O CNCFlora também cita um exemplar da cidade do Rio de Janeiro; verificar o registro e a localização antes de alterar o campo geográfico da ficha. A avaliação CNCFlora de 2017 classificou a espécie como Em Perigo; Noblick (2017) apresentou avaliação distinta. Ambas são avaliações datadas e não devem ser tratadas como categoria oficial atual sem conferência.",
       "lifeForms": [
         "Palmeira"
       ],
@@ -9645,9 +9650,19 @@
           "title": "Flora e Funga do Brasil · Syagrus weddelliana (FB44834)",
           "url": "https://servicos.jbrj.gov.br/v2/flora/taxon/Syagrus_weddelliana",
           "retrievedAt": "2026-10-16T22:03:11Z"
+        },
+        {
+          "title": "Noblick (2017). A revision of the genus Syagrus (Arecaceae).",
+          "url": "https://doi.org/10.11646/phytotaxa.294.1.1",
+          "retrievedAt": "2026-11-12"
+        },
+        {
+          "title": "CNCFlora (2017). Syagrus weddelliana: avaliação e registros.",
+          "url": "https://proflora.jbrj.gov.br/html/Syagrus%20weddelliana_2017.html",
+          "retrievedAt": "2026-11-12"
         }
       ],
-      "curationNotes": "Rascunho gerado de atributos estruturados do JBRJ. Nome popular, texto de campo e recorte municipal precisam de revisão. O registro estadual não comprova ocorrência no município. Texto simplificado em 17/10/2026; atributos de ambiente mantêm abrangência brasileira. Revisão humana pendente; fotos e marcações anteriores preservadas.",
+      "curationNotes": "Rascunho gerado de atributos estruturados do JBRJ. Nome popular, texto de campo e recorte municipal precisam de revisão. O registro estadual não comprova ocorrência no município. Texto simplificado em 17/10/2026; atributos de ambiente mantêm abrangência brasileira. Revisão humana pendente; fotos e marcações anteriores preservadas. Texto em rascunho baseado em Noblick (2017), revisao e identificacao das fotos pendentes.",
       "regionalEvidence": [
         {
           "scientificName": "Syagrus weddelliana",
@@ -9685,7 +9700,7 @@
           "endemicToRioState": true
         }
       ],
-      "presentation": "checklist"
+      "presentation": "profile"
     },
     {
       "id": "austrocritonia-taunayana",
@@ -50089,6 +50104,132 @@
         }
       ],
       "curationNotes": "Seleção de 11/11/2026: ficha específica e fotografias anotadas após inspeção individual. Direitos de cada foto CC0 ou CC BY 4.0 arquivados. Textos e novas legendas/marcações permanecem em rascunho. Abrangência estadual; fotos externas ao Rio ilustram caracteres, sem servir de prova municipal. Nomes e classificação seguem o registro da Flora e Funga consultado; datas e divergências são explicitadas."
+    },
+    {
+      "id": "syagrus-pseudococos",
+      "scientificName": "Syagrus pseudococos",
+      "authorship": "(Raddi) Glassman",
+      "commonName": "",
+      "alternateNames": [],
+      "family": "Arecaceae",
+      "genus": "Syagrus",
+      "rank": "species",
+      "origin": "native",
+      "geography": "rio-state",
+      "reviewStatus": "draft",
+      "description": "Palmeira de estipe solitário e folhas pinadas. Os folíolos se agrupam em planos diferentes, dando aspecto plumoso à copa. A bráctea lenhosa que envolve a inflorescência apresenta sulcos; os frutos são alongados.",
+      "identification": "Observe a palmeira inteira, a posição dos folíolos e a bráctea. Na revisão de Noblick, o indumento lanoso na inserção dos folíolos e na face inferior da nervura central ajuda na comparação com espécies próximas. Examine mais de um caráter para confirmar a identificação.",
+      "ecology": "Ocorre na Mata Atlântica, também em áreas rochosas. Henderson registrou a espécie no Parque Natural Municipal da Prainha, no município do Rio de Janeiro.",
+      "lifeForms": [
+        "Palmeira"
+      ],
+      "substrates": [
+        "Terrícola"
+      ],
+      "habitats": [
+        "Floresta Ombrófila (= Floresta Pluvial)"
+      ],
+      "floraId": null,
+      "regionalSpecies": [],
+      "photos": [],
+      "sources": [
+        {
+          "title": "Noblick (2017). A revision of the genus Syagrus (Arecaceae), pp. 178–180.",
+          "url": "https://doi.org/10.11646/phytotaxa.294.1.1",
+          "retrievedAt": "2026-11-12"
+        },
+        {
+          "title": "Henderson (2009). Palms of southeastern Brazil, pp. 190–191.",
+          "url": "https://palms.org/wp-content/uploads/2016/05/v53n4p180-191.pdf",
+          "retrievedAt": "2026-11-12"
+        }
+      ],
+      "curationNotes": "Rascunho baseado em fontes botânicas; revisão humana de texto, ocorrência e eventuais fotos pendente.",
+      "presentation": "profile"
+    },
+    {
+      "id": "syagrus-insignis",
+      "scientificName": "Syagrus insignis",
+      "authorship": "(Devansaye) Becc.",
+      "commonName": "",
+      "alternateNames": [],
+      "family": "Arecaceae",
+      "genus": "Syagrus",
+      "rank": "species",
+      "origin": "native",
+      "geography": "rio-state",
+      "reviewStatus": "draft",
+      "description": "Palmeira de estipe solitário e delgado, com folhas pinadas. Os folíolos estreitos dispõem-se regularmente em um plano, verdes na face superior e prateados na inferior.",
+      "identification": "Registre a planta inteira, as duas faces dos folíolos e a inflorescência. A face inferior prateada também ocorre em Syagrus weddelliana; compare o porte e os demais caracteres da chave antes de identificar a planta.",
+      "ecology": "Palmeira de florestas montanas do Sudeste. Há exemplares documentados em Nova Friburgo e Santa Maria Madalena, no estado do Rio de Janeiro.",
+      "lifeForms": [
+        "Palmeira"
+      ],
+      "substrates": [
+        "Terrícola"
+      ],
+      "habitats": [
+        "Floresta Ombrófila (= Floresta Pluvial)"
+      ],
+      "floraId": null,
+      "regionalSpecies": [],
+      "photos": [],
+      "sources": [
+        {
+          "title": "Noblick (2017). A revision of the genus Syagrus (Arecaceae), pp. 116–120.",
+          "url": "https://doi.org/10.11646/phytotaxa.294.1.1",
+          "retrievedAt": "2026-11-12"
+        },
+        {
+          "title": "Noblick e Lorenzi (2010). Revisão de Lytocaryum, pp. 8–11.",
+          "url": "https://palms.org/wp-content/uploads/2016/05/v54n1p5_17.pdf",
+          "retrievedAt": "2026-11-12"
+        }
+      ],
+      "curationNotes": "Rascunho baseado em fontes botânicas; revisão humana de texto, ocorrência e eventuais fotos pendente.",
+      "presentation": "profile"
+    },
+    {
+      "id": "syagrus-macrocarpa",
+      "scientificName": "Syagrus macrocarpa",
+      "authorship": "Barb.Rodr.",
+      "commonName": "",
+      "alternateNames": [],
+      "family": "Arecaceae",
+      "genus": "Syagrus",
+      "rank": "species",
+      "origin": "native",
+      "geography": "rio-state",
+      "reviewStatus": "draft",
+      "description": "Palmeira de estipe solitário, ereto e liso, com folhas pinadas de aspecto plumoso. Os folíolos se reúnem em grupos e se orientam em planos diferentes. A inflorescência é protegida por uma bráctea lenhosa e sulcada.",
+      "identification": "Fotografe o estipe, a copa, a inserção dos folíolos e a bráctea. Compare o conjunto de caracteres com a chave de Noblick: a copa plumosa isoladamente não separa esta palmeira de outras Syagrus.",
+      "ecology": "Ocorre no Sudeste do Brasil; Henderson menciona registros raros no oeste do estado do Rio de Janeiro.",
+      "lifeForms": [
+        "Palmeira"
+      ],
+      "substrates": [
+        "Terrícola"
+      ],
+      "habitats": [
+        "Floresta Ombrófila (= Floresta Pluvial)"
+      ],
+      "floraId": null,
+      "regionalSpecies": [],
+      "photos": [],
+      "sources": [
+        {
+          "title": "Noblick (2017). A revision of the genus Syagrus (Arecaceae), pp. 139–142.",
+          "url": "https://doi.org/10.11646/phytotaxa.294.1.1",
+          "retrievedAt": "2026-11-12"
+        },
+        {
+          "title": "Henderson (2009). Palms of southeastern Brazil, pp. 190–191.",
+          "url": "https://palms.org/wp-content/uploads/2016/05/v53n4p180-191.pdf",
+          "retrievedAt": "2026-11-12"
+        }
+      ],
+      "curationNotes": "Rascunho baseado em fontes botânicas; revisão humana de texto, ocorrência e eventuais fotos pendente.",
+      "presentation": "profile"
     }
   ]
 }

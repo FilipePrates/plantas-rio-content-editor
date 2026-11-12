@@ -20,6 +20,42 @@
 - Run `npx tsc --noEmit` and `npm test` for meaningful changes. Do not run build
   or deployment commands unless the user explicitly requests them.
 
+## Building new plant fichas
+
+- Work in batches of any appropriate size. Start with the existing catalog,
+  grouped genus members and the tree/shrub workbook in the guide's `docs/`.
+  The workbook is a candidate index, not proof of municipal occurrence, and
+  does not cover all life forms. Use the Noblick (2017) Syagrus revision in
+  the same directory for palm morphology and specimen citations. Check current
+  names and distribution against Flora e Funga do Brasil; record source dates,
+  pages, uncertainty and conflicting taxonomic or conservation assessments.
+- Prioritize candidates with useful, verifiably licensed photographs and good
+  primary botanical descriptions. Confirm accepted name, native status, Rio
+  state and Atlantic Forest scope; keep `rio-state` without specific municipal
+  evidence. A cultivated or iNaturalist observation alone does not establish
+  native occurrence, locality, edibility or conservation status.
+- Write original, readable Portuguese descriptions, practical identification
+  comparisons and ecology grounded in cited sources. Explain variation and
+  identification limits; don't replace approved professional text with generic
+  drafts. Attribute conservation categories to the assessment and year.
+- Prefer multiple complementary iNaturalist images whose individual photo
+  licenses are CC0 or CC BY 4.0. Use the verified importer/downloader, retain
+  response evidence, creator, photo and observation URLs, license, hashes and
+  required CC BY attribution and modification disclosure. Inspect each image
+  for identification, quality, caption and photo-specific markers. Imported
+  images and generated text remain drafts until human review; a license claim
+  alone is not a release check.
+- When splitting a genus, transfer the exact member's photographs and evidence,
+  preserve IDs and redirects, remove duplicate membership, and recalculate the
+  group's dated state-level member and substrate counts and gallery text.
+  Preserve other members, existing photos and evidence. Defer disputed taxa.
+- Stage and record candidates, sources, photo choices, unresolved questions and
+  before/after counts. Apply reviewed data through the guide's canonical catalog
+  and `npm run editor:sync`; do not overwrite cloud drafts or re-seed an active
+  catalog. Follow the guide's catalog and photo generation/check commands and
+  its explicit web publication workflow. Review and publication are separate;
+  an editor save or deployment does not itself publish guide content.
+
 ## Branding and UI
 
 - Share the guide's Mandevilla identity and pine/cream palette. Editor branding
