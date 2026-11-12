@@ -29,8 +29,10 @@
   the same directory for palm morphology and specimen citations. Check current
   names and distribution against Flora e Funga do Brasil; record source dates,
   pages, uncertainty and conflicting taxonomic or conservation assessments.
-- Prioritize candidates with useful, verifiably licensed photographs and good
-  primary botanical descriptions. Confirm accepted name, native status, Rio
+- Prioritize useful botanical evidence and relevant species. Useful, verifiably
+  licensed photographs are valuable but optional; include important or
+  well-documented species even when no eligible photo is available. Confirm
+  accepted name, native status, Rio
   state and Atlantic Forest scope; keep `rio-state` without specific municipal
   evidence. A cultivated or iNaturalist observation alone does not establish
   native occurrence, locality, edibility or conservation status.

@@ -50230,6 +50230,416 @@
       ],
       "curationNotes": "Rascunho baseado em fontes botânicas; revisão humana de texto, ocorrência e eventuais fotos pendente.",
       "presentation": "profile"
+    },
+    {
+      "id": "baccharis-dracunculifolia",
+      "scientificName": "Baccharis dracunculifolia",
+      "authorship": "DC.",
+      "commonName": "",
+      "alternateNames": [],
+      "family": "Asteraceae",
+      "genus": "Baccharis",
+      "rank": "species",
+      "origin": "native",
+      "geography": "rio-state",
+      "reviewStatus": "draft",
+      "description": "Arbusto ramificado com folhas pequenas, estreitas e alternas. As flores ficam reunidas em capítulos pequenos nos ramos.",
+      "identification": "Observe as folhas e os capítulos de perto. A forma e a margem das folhas variam; compare também os caracteres das flores com uma chave de Baccharis.",
+      "ecology": "Registrada em formações abertas e florestais, incluindo restinga e áreas alteradas, conforme a Flora e Funga do Brasil.",
+      "lifeForms": [
+        "Arbusto"
+      ],
+      "substrates": [
+        "Rupícola",
+        "Terrícola"
+      ],
+      "habitats": [
+        "Área Antrópica",
+        "Campo de Altitude",
+        "Campo Limpo",
+        "Campo rupestre",
+        "Cerrado (lato sensu)",
+        "Floresta Estacional Decidual",
+        "Floresta Estacional Semidecidual",
+        "Floresta Ombrófila (= Floresta Pluvial)",
+        "Floresta Ombrófila Mista",
+        "Restinga",
+        "Vegetação Sobre Afloramentos Rochosos"
+      ],
+      "floraId": 5177,
+      "regionalSpecies": [],
+      "photos": [
+        {
+          "id": "inat-276576649",
+          "fileName": "inat-276576649.jpeg",
+          "photoId": 276576649,
+          "observationId": 160062577,
+          "taxonId": 563934,
+          "taxonName": "Baccharis dracunculifolia",
+          "creator": "Luis Capeletti",
+          "license": "CC0-1.0",
+          "licenseCode": "cc0",
+          "sourceUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/276576649/large.jpeg",
+          "observationUrl": "https://www.inaturalist.org/observations/160062577",
+          "downloadedAt": "2026-11-12T09:46:20Z",
+          "sha256": "2bfbd98b6a8e4049d0c65775dd8dc928d87b9322a98e8fd0c3fcf18c036f9fd7",
+          "markers": [
+            "wholePlant"
+          ],
+          "caption": "Arbusto em ambiente aberto, visto ? dist?ncia.",
+          "reviewStatus": "draft"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Flora e Funga do Brasil · Baccharis dracunculifolia (FB5177)",
+          "url": "https://servicos.jbrj.gov.br/v2/flora/taxon/Baccharis_dracunculifolia",
+          "retrievedAt": "2026-11-12"
+        },
+        {
+          "title": "Tratamento botânico específico · Baccharis dracunculifolia",
+          "url": "https://www.worldfloraonline.org/taxon/wfo-0000127667",
+          "retrievedAt": "2026-11-12"
+        }
+      ],
+      "curationNotes": "Rascunho gerado de atributos estruturados do JBRJ. Nome popular, texto de campo e recorte municipal precisam de revisão. O registro estadual não comprova ocorrência no município. Texto e fotografias em rascunho, pendentes de revisão humana; ambientes informados têm abrangência brasileira.",
+      "presentation": "profile"
+    },
+    {
+      "id": "piper-amalago",
+      "scientificName": "Piper amalago",
+      "authorship": "L.",
+      "commonName": "",
+      "alternateNames": [],
+      "family": "Piperaceae",
+      "genus": "Piper",
+      "rank": "species",
+      "origin": "native",
+      "geography": "rio-state",
+      "reviewStatus": "draft",
+      "description": "Arbusto com folhas simples de nervuras que partem próximas à base e seguem em direção ao ápice. As inflorescências formam espigas alongadas.",
+      "identification": "Registre a folha inteira, sua base e nervuras, além das espigas. Compare esses caracteres com outros Piper: a forma da folha sozinha não confirma a espécie.",
+      "ecology": "A Flora e Funga do Brasil registra a espécie como nativa no Rio de Janeiro e em diferentes formações da Mata Atlântica.",
+      "lifeForms": [
+        "Arbusto"
+      ],
+      "substrates": [
+        "Terrícola"
+      ],
+      "habitats": [
+        "Cerrado (lato sensu)",
+        "Floresta Ciliar ou Galeria",
+        "Floresta Estacional Decidual",
+        "Floresta Estacional Semidecidual",
+        "Floresta Ombrófila (= Floresta Pluvial)",
+        "Floresta Ombrófila Mista",
+        "Restinga",
+        "Vegetação Sobre Afloramentos Rochosos"
+      ],
+      "floraId": 12743,
+      "regionalSpecies": [],
+      "photos": [
+        {
+          "id": "inat-166789119",
+          "fileName": "inat-166789119.jpg",
+          "photoId": 166789119,
+          "observationId": 99976373,
+          "taxonId": 278326,
+          "taxonName": "Piper amalago",
+          "creator": "Hugo Hulsberg",
+          "license": "CC0-1.0",
+          "licenseCode": "cc0",
+          "sourceUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/166789119/large.jpg",
+          "observationUrl": "https://www.inaturalist.org/observations/99976373",
+          "downloadedAt": "2026-11-12T09:46:22Z",
+          "sha256": "9af5655040111c1c347d2e7a882df8f49b77e64cce2178cb250cbb4b09c12c60",
+          "markers": [
+            "leaf"
+          ],
+          "caption": "Folha com nervuras vis?veis e espigas alongadas.",
+          "reviewStatus": "draft"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Flora e Funga do Brasil · Piper amalago (FB12743)",
+          "url": "https://servicos.jbrj.gov.br/v2/flora/taxon/Piper_amalago",
+          "retrievedAt": "2026-11-12"
+        },
+        {
+          "title": "Tratamento botânico específico · Piper amalago",
+          "url": "https://www.scielo.br/j/rod/a/psM63bXrvvJGhckvjKJYBYd/?format=html&lang=pt",
+          "retrievedAt": "2026-11-12"
+        }
+      ],
+      "curationNotes": "Rascunho gerado de atributos estruturados do JBRJ. Nome popular, texto de campo e recorte municipal precisam de revisão. O registro estadual não comprova ocorrência no município. Texto e fotografias em rascunho, pendentes de revisão humana; ambientes informados têm abrangência brasileira.",
+      "presentation": "profile"
+    },
+    {
+      "id": "erythroxylum-pulchrum",
+      "scientificName": "Erythroxylum pulchrum",
+      "authorship": "A.St.-Hil.",
+      "commonName": "arco-de-pipa",
+      "alternateNames": [
+        "pau-chorão"
+      ],
+      "family": "Erythroxylaceae",
+      "genus": "Erythroxylum",
+      "rank": "species",
+      "origin": "native",
+      "geography": "rio-state",
+      "reviewStatus": "draft",
+      "description": "Arbusto ou árvore com folhas de formato elíptico a oboval. As flores pequenas aparecem junto às folhas.",
+      "identification": "Observe as folhas e fotografe os ramos com flores. A separação de espécies próximas exige exame das estípulas e de detalhes das flores, geralmente com ampliação.",
+      "ecology": "Registrada como nativa no Rio de Janeiro; a Flora e Funga do Brasil cita florestas, restinga e vegetação sobre afloramentos entre seus ambientes.",
+      "lifeForms": [
+        "Arbusto",
+        "Árvore"
+      ],
+      "substrates": [
+        "Rupícola",
+        "Terrícola"
+      ],
+      "habitats": [
+        "Floresta Estacional Semidecidual",
+        "Floresta Ombrófila (= Floresta Pluvial)",
+        "Restinga",
+        "Vegetação Sobre Afloramentos Rochosos"
+      ],
+      "floraId": 7728,
+      "regionalSpecies": [],
+      "photos": [
+        {
+          "id": "inat-463840860",
+          "fileName": "inat-463840860.jpg",
+          "photoId": 463840860,
+          "observationId": 258517057,
+          "taxonId": 1228025,
+          "taxonName": "Erythroxylum pulchrum",
+          "creator": "filipeprates",
+          "license": "CC0-1.0",
+          "licenseCode": "cc0",
+          "sourceUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/463840860/large.jpg",
+          "observationUrl": "https://www.inaturalist.org/observations/258517057",
+          "downloadedAt": "2026-11-12T09:46:25Z",
+          "sha256": "bb9e4bc9d54bc8e2df21d8620e1a9af51a38edee0be537b84035edddd0e58e07",
+          "markers": [
+            "leaf"
+          ],
+          "caption": "Ramos com folhas e pequenas estruturas agrupadas.",
+          "reviewStatus": "draft"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Flora e Funga do Brasil · Erythroxylum pulchrum (FB7728)",
+          "url": "https://servicos.jbrj.gov.br/v2/flora/taxon/Erythroxylum_pulchrum",
+          "retrievedAt": "2026-11-12"
+        },
+        {
+          "title": "Tratamento botânico específico · Erythroxylum pulchrum",
+          "url": "https://www.scielo.br/j/rod/a/Pkrc9tGfk7LKdJV8KyZkqns/?lang=pt",
+          "retrievedAt": "2026-11-12"
+        }
+      ],
+      "curationNotes": "Rascunho gerado de atributos estruturados do JBRJ. Nome popular, texto de campo e recorte municipal precisam de revisão. O registro estadual não comprova ocorrência no município. Texto e fotografias em rascunho, pendentes de revisão humana; ambientes informados têm abrangência brasileira.",
+      "presentation": "profile"
+    },
+    {
+      "id": "ouratea-cuspidata",
+      "scientificName": "Ouratea cuspidata",
+      "authorship": "(A.St.-Hil.) Engl.",
+      "commonName": "",
+      "alternateNames": [],
+      "family": "Ochnaceae",
+      "genus": "Ouratea",
+      "rank": "species",
+      "origin": "native",
+      "geography": "rio-state",
+      "reviewStatus": "draft",
+      "description": "Planta lenhosa com folhas simples e alternas, de margens serrilhadas e nervura visível no verso. As flores amarelas se reúnem nas pontas dos ramos.",
+      "identification": "Registre a folha completa e sua margem, além de flores e frutos quando presentes. Compare com outras espécies de Ouratea e use uma chave para confirmar a identificação.",
+      "ecology": "Espécie nativa registrada no Rio de Janeiro; ocorre em restinga e floresta ombrófila segundo a Flora e Funga do Brasil.",
+      "lifeForms": [
+        "Árvore"
+      ],
+      "substrates": [
+        "Terrícola"
+      ],
+      "habitats": [
+        "Floresta Ombrófila (= Floresta Pluvial)",
+        "Restinga"
+      ],
+      "floraId": 19923,
+      "regionalSpecies": [],
+      "photos": [
+        {
+          "id": "inat-463145515",
+          "fileName": "inat-463145515.jpg",
+          "photoId": 463145515,
+          "observationId": 258165510,
+          "taxonId": 980923,
+          "taxonName": "Ouratea cuspidata",
+          "creator": "filipeprates",
+          "license": "CC0-1.0",
+          "licenseCode": "cc0",
+          "sourceUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/463145515/large.jpg",
+          "observationUrl": "https://www.inaturalist.org/observations/258165510",
+          "downloadedAt": "2026-11-12T09:46:28Z",
+          "sha256": "02a970806e6a002842e5f55a93e6c238a676e812d36c9603abc642e80b1b2d0e",
+          "markers": [
+            "leaf"
+          ],
+          "caption": "Ramo com folhas e estruturas verdes e avermelhadas.",
+          "reviewStatus": "draft"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Flora e Funga do Brasil · Ouratea cuspidata (FB19923)",
+          "url": "https://servicos.jbrj.gov.br/v2/flora/taxon/Ouratea_cuspidata",
+          "retrievedAt": "2026-11-12"
+        },
+        {
+          "title": "Tratamento botânico específico · Ouratea cuspidata",
+          "url": "https://www.museunacional.ufrj.br/hortobotanico/restinga/Ourateacuspidata.html",
+          "retrievedAt": "2026-11-12"
+        }
+      ],
+      "curationNotes": "Rascunho gerado de atributos estruturados do JBRJ. Nome popular, texto de campo e recorte municipal precisam de revisão. O registro estadual não comprova ocorrência no município. Texto e fotografias em rascunho, pendentes de revisão humana; ambientes informados têm abrangência brasileira.",
+      "presentation": "profile"
+    },
+    {
+      "id": "solanum-paniculatum",
+      "scientificName": "Solanum paniculatum",
+      "authorship": "L.",
+      "commonName": "",
+      "alternateNames": [],
+      "family": "Solanaceae",
+      "genus": "Solanum",
+      "rank": "species",
+      "origin": "native",
+      "geography": "rio-state",
+      "reviewStatus": "draft",
+      "description": "Arbusto de folhas variáveis, por vezes lobadas, com a face inferior esbranquiçada pela pilosidade. As flores podem ser lilases ou claras, com anteras amarelas.",
+      "identification": "Observe as duas faces da folha, eventuais acúleos e as flores. Há várias jurubebas semelhantes: o nome popular e uma única folha não bastam para confirmar a espécie.",
+      "ecology": "Registrada como nativa no estado, em floresta ombrófila e áreas alteradas na Flora e Funga do Brasil.",
+      "lifeForms": [
+        "Arbusto"
+      ],
+      "substrates": [
+        "Terrícola"
+      ],
+      "habitats": [
+        "Área Antrópica",
+        "Floresta Ombrófila (= Floresta Pluvial)"
+      ],
+      "floraId": 14821,
+      "regionalSpecies": [],
+      "photos": [
+        {
+          "id": "inat-472115434",
+          "fileName": "inat-472115434.jpeg",
+          "photoId": 472115434,
+          "observationId": 262861297,
+          "taxonId": 707418,
+          "taxonName": "Solanum paniculatum",
+          "creator": "Taize Santos",
+          "license": "CC0-1.0",
+          "licenseCode": "cc0",
+          "sourceUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/472115434/large.jpeg",
+          "observationUrl": "https://www.inaturalist.org/observations/262861297",
+          "downloadedAt": "2026-11-12T09:46:32Z",
+          "sha256": "c29209c96e2861c12e494fff8266c61a7ce24dba84994d760e9bcca03cb0a446",
+          "markers": [
+            "flower"
+          ],
+          "caption": "Flores claras com centro amarelo e folhas ao fundo.",
+          "reviewStatus": "draft"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Flora e Funga do Brasil · Solanum paniculatum (FB14821)",
+          "url": "https://servicos.jbrj.gov.br/v2/flora/taxon/Solanum_paniculatum",
+          "retrievedAt": "2026-11-12"
+        },
+        {
+          "title": "Tratamento botânico específico · Solanum paniculatum",
+          "url": "https://new.scielo.br/j/rod/a/YZRtyFnrjzxdDqnbtjMhL8w/?ilang=pt_BR&lang=pt",
+          "retrievedAt": "2026-11-12"
+        }
+      ],
+      "curationNotes": "Rascunho gerado de atributos estruturados do JBRJ. Nome popular, texto de campo e recorte municipal precisam de revisão. O registro estadual não comprova ocorrência no município. Texto e fotografias em rascunho, pendentes de revisão humana; ambientes informados têm abrangência brasileira.",
+      "presentation": "profile"
+    },
+    {
+      "id": "solanum-mauritianum",
+      "scientificName": "Solanum mauritianum",
+      "authorship": "Scop.",
+      "commonName": "",
+      "alternateNames": [],
+      "family": "Solanaceae",
+      "genus": "Solanum",
+      "rank": "species",
+      "origin": "native",
+      "geography": "rio-state",
+      "reviewStatus": "draft",
+      "description": "Arbusto ou árvore com folhas simples, alternas e pilosas, de faces com aparência diferente. Suas flores têm formato estrelado.",
+      "identification": "Fotografe o conjunto da planta, as duas faces das folhas e flores ou frutos. Compare o indumento e a forma das folhas com outras espécies de Solanum.",
+      "ecology": "A Flora e Funga do Brasil registra a espécie como nativa no Rio de Janeiro e em ambientes florestais e alterados.",
+      "lifeForms": [
+        "Arbusto",
+        "Árvore"
+      ],
+      "substrates": [
+        "Terrícola"
+      ],
+      "habitats": [
+        "Área Antrópica",
+        "Cerrado (lato sensu)",
+        "Floresta Estacional Decidual",
+        "Floresta Ombrófila (= Floresta Pluvial)",
+        "Floresta Ombrófila Mista"
+      ],
+      "floraId": 14809,
+      "regionalSpecies": [],
+      "photos": [
+        {
+          "id": "inat-464976654",
+          "fileName": "inat-464976654.jpeg",
+          "photoId": 464976654,
+          "observationId": 259073043,
+          "taxonId": 133287,
+          "taxonName": "Solanum mauritianum",
+          "creator": "Sushant More",
+          "license": "CC0-1.0",
+          "licenseCode": "cc0",
+          "sourceUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/464976654/large.jpeg",
+          "observationUrl": "https://www.inaturalist.org/observations/259073043",
+          "downloadedAt": "2026-11-12T09:46:35Z",
+          "sha256": "95729a24ff23e132ac822e78256c491910cfdb81208e1a72e4b40e5462e19ebf",
+          "markers": [
+            "flower"
+          ],
+          "caption": "Flores violetas em infloresc?ncia; ao fundo, partes pilosas da planta.",
+          "reviewStatus": "draft"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Flora e Funga do Brasil · Solanum mauritianum (FB14809)",
+          "url": "https://servicos.jbrj.gov.br/v2/flora/taxon/Solanum_mauritianum",
+          "retrievedAt": "2026-11-12"
+        },
+        {
+          "title": "Tratamento botânico específico · Solanum mauritianum",
+          "url": "https://fitoterapiabrasil.com.br/sites/default/files/documentos-oficiais/especies-arboreas-brasileiras-vol-5red.pdf",
+          "retrievedAt": "2026-11-12"
+        }
+      ],
+      "curationNotes": "Rascunho gerado de atributos estruturados do JBRJ. Nome popular, texto de campo e recorte municipal precisam de revisão. O registro estadual não comprova ocorrência no município. Texto e fotografias em rascunho, pendentes de revisão humana; ambientes informados têm abrangência brasileira.",
+      "presentation": "profile"
     }
   ]
 }
