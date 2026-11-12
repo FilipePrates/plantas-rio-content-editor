@@ -36,6 +36,7 @@ import { ObservationImporter } from "./ObservationImporter";
 import {cloudMode,loadSharedCatalog,saveSharedPlant,membership} from './cloud';
 import {CloudPhoto} from './CloudPhoto';
 import {EditorialPanel,MembersPanel} from './EditorialPanel';
+import { Brand, BrandMark } from './Brand';
 
 const clone = <T,>(value: T): T => structuredClone(value);
 export default function App({onSignOut}:{onSignOut?:()=>void}={}) {
@@ -62,6 +63,10 @@ export default function App({onSignOut}:{onSignOut?:()=>void}={}) {
   const [advancedChanged, setAdvancedChanged] = useState(false);
   const [initialDraft, setInitialDraft] = useState("");
   const importInput = useRef<HTMLInputElement>(null);
+  const photoImportPanel = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    if (photoImport) photoImportPanel.current?.scrollIntoView({ block: "start", behavior: "smooth" });
+  }, [photoImport]);
   const dirty = Boolean(
     draft && (JSON.stringify(draft) !== initialDraft || advancedChanged),
   );
@@ -261,7 +266,7 @@ export default function App({onSignOut}:{onSignOut?:()=>void}={}) {
   if (!catalog || !draft)
     return (
       <main className="loading">
-        <Leaf size={44} />
+        <BrandMark />
         <h1>Plantas do Rio · Editor</h1>
         <p role="alert">{error || "Carregando catálogo…"}</p>
         {loadFailed && (
@@ -331,13 +336,7 @@ export default function App({onSignOut}:{onSignOut?:()=>void}={}) {
   return (
     <div className="shell">
       <header className="topbar">
-        <div className="brand">
-          <Leaf size={32} />
-          <div>
-            <strong>Plantas do Rio de Janeiro</strong>
-            <span>Editor de conteúdo · {cloudMode?'catálogo compartilhado':'rascunho local'}</span>
-          </div>
-        </div>
+        <Brand subtitle={`Editor de conteúdo · ${cloudMode ? 'catálogo compartilhado' : 'rascunho local'}`} />
         <div className="actions">
           {cloudMode&&<button disabled={busy||mediaBusy} onClick={async()=>{if(!canLeave())return;setBusy(true);try{const fresh=await loadSharedCatalog();setCatalog(fresh);select(fresh.plants.find(p=>p.id===draft.id)||fresh.plants[0]);setNotice('Catálogo atualizado.')}catch(e){setError(String(e))}finally{setBusy(false)}}}><RefreshCw size={17}/>Atualizar catálogo</button>}
           {cloudMode&&membership?.role==='admin'&&<button disabled={busy||mediaBusy} onClick={()=>setMembersScreen(!membersScreen)}>{membersScreen?<ArrowLeft size={17}/>:<UsersRound size={17}/>} {membersScreen?'Voltar ao editor':'Colaboradores'}</button>}
@@ -643,6 +642,7 @@ export default function App({onSignOut}:{onSignOut?:()=>void}={}) {
               </span>
             </div>
             {photoImport && (
+              <div ref={photoImportPanel} className="photoImportPanel">
               <ObservationImporter
                 key={photoImport.key}
                 plant={draft}
@@ -674,63 +674,6 @@ export default function App({onSignOut}:{onSignOut?:()=>void}={}) {
                   );
                 }}
               />
-            )}
-            {draft.photos.length > 0 && (
-              <div className="observationInventory">
-                <h3>Observações deste perfil</h3>
-                {[
-                  ...new Set(draft.photos.map((photo) => photo.observationId)),
-                ].map((id) => (
-                  <div className="observationInventoryRow" key={id}>
-                    <a
-                      href={`https://www.inaturalist.org/observations/${id}`}
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      #{id}
-                    </a>
-                    <span className="subtle">
-                      {
-                        draft.photos.filter(
-                          (photo) => photo.observationId === id,
-                        ).length
-                      }{" "}
-                      foto(s)
-                    </span>
-                    <button
-                      type="button"
-                      disabled={busy || mediaBusy}
-                      onClick={() =>
-                        setPhotoImport({
-                          replaceId: null,
-                          observationId: id,
-                          key: Date.now(),
-                        })
-                      }
-                    >
-                      Ver outras fotos
-                    </button>
-                    <button
-                      type="button"
-                      disabled={busy || mediaBusy}
-                      onClick={() => {
-                        if (
-                          window.confirm(
-                            "Remover desta ficha todas as fotos desta observação?",
-                          )
-                        )
-                          edit(
-                            "photos",
-                            draft.photos.filter(
-                              (photo) => photo.observationId !== id,
-                            ),
-                          );
-                      }}
-                    >
-                      Remover da ficha
-                    </button>
-                  </div>
-                ))}
               </div>
             )}
             {!draft.photos.length && (
@@ -957,8 +900,30 @@ export default function App({onSignOut}:{onSignOut?:()=>void}={}) {
                           )
                         }
                       >
-                        <Trash2 size={15} /> Remover
+                        <Trash2 size={15} /> Remover foto
                       </button>
+                    </div>
+                    <div className="photoObservationActions">
+                      <button
+                        type="button"
+                        disabled={busy || mediaBusy}
+                        onClick={() => setPhotoImport({ replaceId: null, observationId: photo.observationId, key: Date.now() })}
+                      >
+                        <Search size={15} /> Buscar mais fotos desta observação
+                      </button>
+                      {draft.photos.filter(p => p.observationId === photo.observationId).length > 1 && (
+                        <button
+                          type="button"
+                          className="removeObservation"
+                          disabled={busy || mediaBusy}
+                          onClick={() => {
+                            if (window.confirm("Remover desta ficha todas as fotos desta observação?"))
+                              edit("photos", draft.photos.filter(p => p.observationId !== photo.observationId));
+                          }}
+                        >
+                          <Trash2 size={15} /> Remover todas desta observação
+                        </button>
+                      )}
                     </div>
                   </fieldset>
                 </article>

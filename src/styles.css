@@ -1,4 +1,7 @@
 :root {
+  --plant-pine: #70815f;
+  --plant-paper: #fffdf7;
+  --plant-ink: #243127;
   font-family:
     Inter,
     system-ui,
@@ -536,8 +539,7 @@ section > label {
   justify-content: space-between;
   gap: 12px;
 }
-.importerHeading h3,
-.observationInventory h3 {
+.importerHeading h3 {
   font-size: 15px;
   margin: 0 0 12px;
 }
@@ -589,23 +591,6 @@ section > label {
 .observationCandidate input {
   width: auto;
   accent-color: #70815f;
-}
-.observationInventory {
-  padding: 14px;
-  border-bottom: 1px solid #d3d5c6;
-  margin-bottom: 20px;
-}
-.observationInventoryRow {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  flex-wrap: wrap;
-  padding: 5px 0;
-}
-.observationInventoryRow button {
-  font-size: 11px;
-  min-height: 30px;
-  padding: 5px 9px;
 }
 .editorPhotoImage {
   position: relative;
@@ -724,8 +709,11 @@ fieldset.photoFields { grid-area: fields; padding: 16px 18px; gap: 12px; }
 .photoActions button:disabled { background: #f5f5f0; opacity: 0.5; }
 .photoActions .removePhoto { margin-left: auto; color: #a04a3c; border-color: #e6d8d2; background: #fff; }
 .photoActions .removePhoto:hover { background: #fbefeb; }
-.observationInventory { padding: 14px 0; }
-.observationInventoryRow { padding: 8px 0; gap: 10px; border-top: 1px solid #edf0e7; }
+.photoImportPanel { scroll-margin-top: 100px; }
+.photoObservationActions { display: flex; flex-wrap: wrap; gap: 8px 18px; border-top: 1px solid #edf0e7; padding-top: 10px; }
+.photoObservationActions button { min-height: 36px; padding: 5px 0; border: 0; background: transparent; border-radius: 0; font-size: 11px; color: #536548; }
+.photoObservationActions button:hover { text-decoration: underline; text-underline-offset: 3px; background: transparent; }
+.photoObservationActions .removeObservation { color: #a04a3c; }
 @media (max-width: 1200px) {
   .vocabularyGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .vocabularyGrid > :last-child { grid-column: 1 / -1; }
@@ -747,4 +735,37 @@ fieldset.photoFields { grid-area: fields; padding: 16px 18px; gap: 12px; }
   fieldset.photoFields { padding: 14px 12px; }
   .photoActions .removePhoto { margin-left: 0; }
   .photoFields .photoActions button { min-height: 40px; }
+}
+
+/* Shared Mandevilla identity. */
+.brandLogo { display: block; object-fit: contain; flex-shrink: 0; }
+.topbar { background: var(--plant-pine); border-bottom-color: rgba(255,253,247,.2); padding: 12px 24px; }
+.topbar .brand { flex-shrink: 0; }
+.topbar .brand strong { color: var(--plant-paper); font-size: 20px; letter-spacing: -.3px; }
+.topbar .brand span { color: rgba(255,253,247,.82); }
+.topbar .actions { justify-content: flex-end; gap: 6px; }
+.topbar .actions button { background: transparent; border-color: rgba(255,253,247,.55); color: var(--plant-paper); padding: 8px 10px; font-size: 12px; }
+.topbar .actions button:hover { background: rgba(255,253,247,.1); border-color: var(--plant-paper); }
+.topbar .actions button.primary { background: var(--plant-paper); border-color: var(--plant-paper); color: #435738; font-weight: 650; }
+.topbar .actions button:focus-visible { outline-color: var(--plant-paper); }
+.loginPanel { width: calc(100% - 48px); max-width: 460px; padding: 32px; margin: 9vh auto; border-radius: 16px; box-shadow: 0 16px 56px rgba(36,49,39,.08); overflow: hidden; }
+.loginBrand { margin: -32px -32px 28px; padding: 24px 30px; background: var(--plant-pine); }
+.loginBrand .brand strong { color: var(--plant-paper); font-size: 23px; }
+.loginBrand .brand span { color: rgba(255,253,247,.85); }
+.loginPanel h1 { font-size: 24px; letter-spacing: -.4px; margin-bottom: 10px; }
+.loginDescription { color: #6d7569; font-size: 14px; line-height: 1.7; margin-bottom: 24px; }
+.loginPanel form { gap: 18px; }
+.loginPanel input, .loginPanel button { min-height: 44px; }
+@media (min-width: 1024px) {
+  .workspace { grid-template-columns: 308px minmax(0,1fr); }
+  .workspace aside { background: #f0f1e7; padding: 20px 18px; }
+  .plantList button { border-radius: 9px; padding: 12px 10px; }
+  .plantList button.active { background: var(--plant-paper); border-color: var(--plant-pine); box-shadow: 0 2px 6px rgba(36,49,39,.04); }
+  .workspace > main { max-width: 1440px; padding: 24px clamp(24px,3vw,48px) 60px; }
+  .workspace > main > section { border-radius: 12px; }
+  .pageHeading { padding-top: 16px; padding-bottom: 28px; }
+}
+@media (max-width: 600px) {
+  .loginPanel { width: calc(100% - 24px); margin: 24px 12px; padding: 24px; }
+  .loginBrand { margin: -24px -24px 24px; padding: 22px 24px; }
 }

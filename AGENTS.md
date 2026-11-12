@@ -19,3 +19,32 @@
   State evidence must not silently become city evidence.
 - Run `npx tsc --noEmit` and `npm test` for meaningful changes. Do not run build
   or deployment commands unless the user explicitly requests them.
+
+## Branding and UI
+
+- Share the guide's Mandevilla identity and pine/cream palette. Editor branding
+  assets are imported from `src/assets`; keep the guide's generated masters and
+  provenance in its own branding documentation.
+- Preserve both the local editor and cloud login/editor experiences. Check
+  narrow screens and desktop toolbars, including unsaved-change cancellation
+  and saved-draft persistence in an isolated browser context.
+- UI work must not change authentication, membership roles, approval semantics
+  or publication behavior without a separate task requiring those changes.
+
+## Cloud build and release checks
+
+- Public login: https://admin.plantas.avesdobrasil.app. Follow
+  `docs/cloud-editor.md` for the dedicated plant deployment.
+- The cloud build excludes `public/`. Branding belongs in imported assets;
+  seed catalogs, private photos, setup files and credentials must not become
+  public build assets. Preserve authentication on catalog and media endpoints.
+- Never rerun initial cloud seeding against an active catalog. Do not create
+  accounts, invitations or shared test records for routine visual checks.
+- Local browser checks can exercise saves against isolated IndexedDB. Live
+  unauthenticated checks can verify login, branding and API rejection; report
+  that scope honestly instead of claiming an authenticated end-to-end test.
+- Preserve existing drafts and unrelated work. Do not commit `.env*`, `.local/`,
+  invitation/reset links, private exports, service credentials or build logs.
+- After an authorized deployment, verify the live login and affected UI and
+  document the deployed version. Saving or approving editor content still
+  requires the separate reviewed guide publication workflow.

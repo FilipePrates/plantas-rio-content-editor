@@ -2,6 +2,27 @@
 
 Address: https://admin.plantas.avesdobrasil.app
 
+## Shared guide branding
+
+The editor uses the guide's Mandevilla mark in its toolbar, loading state,
+login and browser favicon, with the same pine and cream palette. The two
+small PNG assets are copied into `src/assets` and imported by Vite, so the
+cloud build includes the branding while continuing to exclude `public/`.
+Local IndexedDB drafts, explicit Save, unsaved-change prompts and the cloud
+review/publication boundaries are preserved. No authentication, API, database
+or bucket settings are changed by the branding update.
+
+Deployed branding/UI version: `bea12368-ac3f-465b-acec-73182dc3db2c`.
+TypeScript and all 12 editor tests passed. Isolated local browser checks covered
+unsaved-change cancellation and saved-draft persistence after reload. The cloud
+build was checked to exclude the seed catalog and private photos. Live checks
+verified the Mandevilla login/favicon at desktop and mobile widths and confirmed
+`GET /api/catalog` still returns 401 without authentication. No shared records,
+members, approvals or credentials were changed during verification.
+Artifacts: `.local/local-branding-result.json`, `.local/live-branding-result.json`
+and branding screenshots. The matching public-guide desktop catalog deployment
+is `e7320b61-4761-4479-82fc-300a0c45e319`.
+
 The cloud build uses its own Supabase project, private R2 bucket and Cloudflare
 Worker. It never uses the bird editor's credentials or data. `npm run dev`
 continues to run the browser-local editor; existing IndexedDB drafts are intact.
