@@ -1,5 +1,9 @@
 # Plantas do Rio de Janeiro — Content Editor
 
+The shared invitation-only editor is hosted at **https://admin.plantas.avesdobrasil.app**.
+See [cloud access, invitations, publishing and usage](docs/cloud-editor.md).
+`npm run dev` still opens the independent local draft editor described below.
+
 Independent React + TypeScript + Vite editor for the plant guide. The workflow
 is adapted from Aves do Brasil's content editor: searchable species, identity
 and profile text, photo order, captions, structure markers, source metadata,

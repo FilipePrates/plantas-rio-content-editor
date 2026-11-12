@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Download, ExternalLink, Search, X } from "lucide-react";
 import { photoMatchesPlant } from "./catalog.mjs";
 import type { Plant, PlantPhoto } from "./catalog.mjs";
+import {cloudMode,cloudRequest} from './cloud';
 
 type Observation = {
   id: number;
@@ -14,6 +15,7 @@ type Observation = {
   photos: { id: number; url: string; previewUrl: string; licenseCode: "cc0" | "cc-by" }[];
 };
 async function api<T>(path: string, body?: unknown): Promise<T> {
+  if(cloudMode)return cloudRequest<T>('/api/inaturalist'+path,body);
   const response = await fetch(
     "/api/inaturalist" + path,
     body === undefined

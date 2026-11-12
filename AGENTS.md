@@ -2,8 +2,10 @@
 
 - Independent local React + Vite + TypeScript editor. Do not edit the bird
   editor or reuse its credentials, Supabase project, Worker, bucket or remotes.
-- This initial editor uses IndexedDB, not a shared cloud database. Do not imply
-  multi-user sync, server authentication, revisions or hosted deployment exist.
+- Local development uses IndexedDB. The separate `cloud` build uses the dedicated
+  plant Supabase project, authenticated Worker APIs and private R2 media described
+  in `docs/cloud-editor.md`. Preserve both modes and keep cloud credentials out
+  of browser bundles. Saving and approval must not directly publish the guide.
 - Canonical reviewed app data lives in the sibling
   `plantas-do-rio-de-janeiro/src/data/plants.json`. Refresh this editor's seed,
   schema and local photos with `npm run editor:sync` from the app repository.

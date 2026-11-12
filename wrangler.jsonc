@@ -1,0 +1,9 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "plantas-content-editor",
+  "main": "worker/index.mjs",
+  "compatibility_date": "2026-11-11",
+  "assets": { "directory": "./dist", "binding": "ASSETS", "not_found_handling": "single-page-application", "run_worker_first": ["/api/*", "/photos/*"] },
+  "r2_buckets": [{ "binding": "MEDIA_BUCKET", "bucket_name": "plantas-content-editor-media" }],
+  "routes": [{ "pattern": "admin.plantas.avesdobrasil.app", "custom_domain": true }]
+}

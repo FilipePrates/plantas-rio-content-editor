@@ -1,4 +1,8 @@
 node_modules/
 dist/
 .env*
+.wrangler/
+supabase/.temp/
+supabase/.branches/
+.local/
 *.log

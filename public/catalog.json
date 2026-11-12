@@ -38111,9 +38111,9 @@
       "origin": "native",
       "geography": "rio-city",
       "reviewStatus": "draft",
-      "description": "Orquídea nativa de florestas úmidas e restingas. Pode crescer sobre troncos e galhos, como epífita e no solo.",
-      "identification": "",
-      "ecology": "Florestas úmidas; Restinga.",
+      "description": "Orquídea de pseudobulbos alongados, geralmente com duas folhas no ápice. Produz inflorescências terminais com flores de sépalas e pétalas esverdeadas a acastanhadas, frequentemente pontuadas. O labelo é mais claro a rosado, dividido em lobos e com uma região estreita ligando suas partes.",
+      "identification": "Compare o formato do labelo, especialmente a região estreita entre os lobos, e as proporções da flor. Cattleya tigrina é uma espécie parecida, historicamente confundida com C. guttata. O número de manchas ou a época de floração, isoladamente, não resolve todas as identificações; examine também a planta e a procedência.",
+      "ecology": "Está documentada em florestas e restingas fluminenses, podendo crescer sobre árvores. A fotografia existente mostra a planta e a inflorescência à distância; não oferece todos os detalhes usados na comparação floral. A documentação municipal e os registros históricos anexados conservam suas datas e abrangência.",
       "lifeForms": [
         "Erva"
       ],
@@ -38163,9 +38163,14 @@
           "title": "SMAC (2022). Lista de espécies da flora nativa com ocorrência no município. Anexo I, Resolução 074 de 19/08/2022.",
           "url": "https://doweb.rio.rj.gov.br/portal/edicoes/download/5436",
           "retrievedAt": "2026-10-24"
+        },
+        {
+          "title": "Tratamento botânico específico — Cattleya guttata",
+          "url": "https://monografiasfloradobrasil.jbrj.gov.br/cattleya.pdf",
+          "retrievedAt": "2026-11-11"
         }
       ],
-      "curationNotes": "Rascunho gerado de atributos estruturados do JBRJ. Nome popular, texto de campo e recorte municipal precisam de revisão. O registro estadual não comprova ocorrência no município. Texto simplificado em 17/10/2026; atributos de ambiente mantêm abrangência brasileira. Revisão humana pendente; fotos e marcações anteriores preservadas.",
+      "curationNotes": "Rascunho gerado de atributos estruturados do JBRJ. Nome popular, texto de campo e recorte municipal precisam de revisão. O registro estadual não comprova ocorrência no município. Texto simplificado em 17/10/2026; atributos de ambiente mantêm abrangência brasileira. Revisão humana pendente; fotos e marcações anteriores preservadas. Revisão de 11/11/2026: texto específico ampliado; ficha em rascunho para revisão humana. Todas as fotografias, legendas, marcadores, estados de revisão, direitos e ordem da galeria anteriores foram preservados.",
       "regionalEvidence": [
         {
           "scientificName": "Cattleya guttata",
@@ -38241,7 +38246,7 @@
           "locality": "Município do Rio de Janeiro"
         }
       ],
-      "presentation": "checklist"
+      "presentation": "profile"
     },
     {
       "id": "cattleya-intermedia",
@@ -48476,6 +48481,1610 @@
         {
           "title": "Tratamento botânico específico — Begonia angulata",
           "url": "https://monografiasfloradobrasil.jbrj.gov.br/begoniaceae.pdf",
+          "retrievedAt": "2026-11-11"
+        }
+      ],
+      "curationNotes": "Seleção de 11/11/2026: ficha específica e fotografias anotadas após inspeção individual. Direitos de cada foto CC0 ou CC BY 4.0 arquivados. Textos e novas legendas/marcações permanecem em rascunho. Abrangência estadual; fotos externas ao Rio ilustram caracteres, sem servir de prova municipal. Nomes e classificação seguem o registro da Flora e Funga consultado; datas e divergências são explicitadas."
+    },
+    {
+      "id": "guapira-opposita",
+      "scientificName": "Guapira opposita",
+      "authorship": "(Vell.) Reitz",
+      "commonName": "Maria-mole",
+      "alternateNames": [
+        "Guapira",
+        "Cebola-do-mato"
+      ],
+      "family": "Nyctaginaceae",
+      "genus": "Guapira",
+      "rank": "species",
+      "origin": "native",
+      "geography": "rio-state",
+      "presentation": "profile",
+      "reviewStatus": "draft",
+      "description": "Arbusto ou árvore de folhas simples, opostas e de margem inteira. Nas pontas dos ramos aparecem conjuntos de pequenas flores e, depois, estruturas carnosas que escurecem durante a maturação. Essas estruturas são antocarpos: o fruto verdadeiro fica envolvido pelo perianto persistente, que participa do conjunto disperso.",
+      "identification": "Observe as folhas em pares, a base geralmente estreitada e o pecíolo visível. Compare os eixos das infrutescências, que podem ficar avermelhados, e os antocarpos escuros. Guapira pernambucensis tende a apresentar folhas mais arredondadas e quase sem pecíolo. A forma foliar varia, por isso use também flores, frutos e ramificação.",
+      "ecology": "É nativa de diferentes formações florestais e restingas. O porte muda entre vegetação arbustiva costeira e trechos mais arborizados. Uma mesma planta pode mostrar antocarpos de várias cores conforme o estágio de maturação; essa variação não significa automaticamente que haja mais de uma espécie na fotografia.",
+      "lifeForms": [
+        "Arbusto",
+        "Árvore"
+      ],
+      "substrates": [
+        "Terrícola"
+      ],
+      "habitats": [
+        "Área Antrópica",
+        "Floresta Ciliar ou Galeria",
+        "Floresta Estacional Semidecidual",
+        "Floresta Ombrófila (= Floresta Pluvial)",
+        "Floresta Ombrófila Mista",
+        "Restinga",
+        "Vegetação Sobre Afloramentos Rochosos"
+      ],
+      "floraId": 10913,
+      "regionalSpecies": [],
+      "photos": [
+        {
+          "id": "inat-270893026",
+          "fileName": "inat-270893026.jpg",
+          "photoId": 270893026,
+          "observationId": 156650449,
+          "taxonId": 824614,
+          "taxonName": "Guapira opposita",
+          "creator": "Fernando Sessegolo",
+          "license": "CC0-1.0",
+          "licenseCode": "cc0",
+          "sourceUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/270893026/large.jpg",
+          "observationUrl": "https://www.inaturalist.org/observations/156650449",
+          "downloadedAt": "2026-11-12T00:16:37Z",
+          "sha256": "33545e8c2e6fa91d4fd216ad2b04b647de1091e76a5f7c91123aa80f24e17d15",
+          "markers": [
+            "fruit",
+            "leaf"
+          ],
+          "caption": "Antocarpos de Guapira opposita em diferentes estágios, verdes a avermelhados, reunidos na ponta do ramo entre folhas simples.",
+          "reviewStatus": "draft"
+        },
+        {
+          "id": "inat-257052247",
+          "fileName": "inat-257052247.jpeg",
+          "photoId": 257052247,
+          "observationId": 149196459,
+          "taxonId": 824614,
+          "taxonName": "Guapira opposita",
+          "creator": "William G. Borges",
+          "license": "CC-BY-4.0",
+          "licenseCode": "cc-by",
+          "attribution": "(c) William G. Borges, some rights reserved (CC BY)",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+          "photoPageUrl": "https://www.inaturalist.org/photos/257052247",
+          "sourceUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/257052247/large.jpeg",
+          "observationUrl": "https://www.inaturalist.org/observations/149196459",
+          "downloadedAt": "2026-11-12T00:16:37Z",
+          "sha256": "4a5033cb582e73b1e1a4e690b23af3927dd5fefe3c3d34e752e1c47f59c362ff",
+          "markers": [
+            "fruit",
+            "leaf"
+          ],
+          "caption": "Ramos de Guapira opposita com folhas opostas e conjuntos de antocarpos escuros sustentados por eixos avermelhados.",
+          "reviewStatus": "draft"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Flora e Funga do Brasil — Guapira opposita",
+          "url": "https://servicos.jbrj.gov.br/v2/flora/taxon/Guapira_opposita",
+          "retrievedAt": "2026-11-11"
+        },
+        {
+          "title": "Tratamento botânico específico — Guapira opposita",
+          "url": "https://www.worldfloraonline.org/taxon/wfo-0000710756",
+          "retrievedAt": "2026-11-11"
+        }
+      ],
+      "curationNotes": "Seleção de 11/11/2026: ficha específica e fotografias anotadas após inspeção individual. Direitos de cada foto CC0 ou CC BY 4.0 arquivados. Textos e novas legendas/marcações permanecem em rascunho. Abrangência estadual; fotos externas ao Rio ilustram caracteres, sem servir de prova municipal. Nomes e classificação seguem o registro da Flora e Funga consultado; datas e divergências são explicitadas."
+    },
+    {
+      "id": "guapira-pernambucensis",
+      "scientificName": "Guapira pernambucensis",
+      "authorship": "(Casar.) Lundell",
+      "commonName": "Farinha-seca-do-litoral",
+      "alternateNames": [
+        "Farinha-seca"
+      ],
+      "family": "Nyctaginaceae",
+      "genus": "Guapira",
+      "rank": "species",
+      "origin": "native",
+      "geography": "rio-state",
+      "presentation": "profile",
+      "reviewStatus": "draft",
+      "description": "Arbusto costeiro de folhas largas, arredondadas a ovadas e quase sem pecíolo. As inflorescências são ramificadas e pouco compactas. Na frutificação, os antocarpos carnosos podem ficar escuros, sustentados por eixos rosados a avermelhados que se destacam entre as folhas.",
+      "identification": "Confira a inserção séssil ou quase séssil da folha e sua base por vezes levemente cordada. Esses caracteres ajudam na comparação com Guapira opposita, mas devem ser avaliados em vários nós. No antocarpo, observe a pequena coroa aberta na extremidade. Eixos rosados sem frutos podem conservar marcas dos pontos onde as estruturas estavam presas.",
+      "ecology": "Está registrada em restingas e ambientes florestais litorâneos no Brasil, incluindo o Rio de Janeiro. Pode crescer em vegetação costeira baixa e sobre superfícies rochosas com acúmulo de substrato. O nome farinha-seca é compartilhado com árvores de outras famílias; não substitui a comparação das folhas e estruturas reprodutivas.",
+      "lifeForms": [
+        "Arbusto"
+      ],
+      "substrates": [
+        "Terrícola"
+      ],
+      "habitats": [
+        "Restinga"
+      ],
+      "floraId": 10914,
+      "regionalSpecies": [],
+      "photos": [
+        {
+          "id": "inat-467347469",
+          "fileName": "inat-467347469.jpeg",
+          "photoId": 467347469,
+          "observationId": 260257104,
+          "taxonId": 83910,
+          "taxonName": "Guapira pernambucensis",
+          "creator": "Lucas Rodrigues",
+          "license": "CC0-1.0",
+          "licenseCode": "cc0",
+          "sourceUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/467347469/large.jpeg",
+          "observationUrl": "https://www.inaturalist.org/observations/260257104",
+          "downloadedAt": "2026-11-12T00:16:37Z",
+          "sha256": "94a38dcf49949b7ba1ddd1e79b9b5ffe277f45c6f6bcc1a099fb51816f231ff3",
+          "markers": [
+            "leaf"
+          ],
+          "caption": "Folhas largas de Guapira pernambucensis quase sem pecíolo, mostrando o contorno arredondado e a inserção no ramo.",
+          "reviewStatus": "draft"
+        },
+        {
+          "id": "inat-215594394",
+          "fileName": "inat-215594394.jpeg",
+          "photoId": 215594394,
+          "observationId": 127022524,
+          "taxonId": 83910,
+          "taxonName": "Guapira pernambucensis",
+          "creator": "Lucas Kaminski",
+          "license": "CC-BY-4.0",
+          "licenseCode": "cc-by",
+          "attribution": "(c) Lucas Kaminski, some rights reserved (CC BY)",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+          "photoPageUrl": "https://www.inaturalist.org/photos/215594394",
+          "sourceUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/215594394/large.jpeg",
+          "observationUrl": "https://www.inaturalist.org/observations/127022524",
+          "downloadedAt": "2026-11-12T00:16:37Z",
+          "sha256": "9dff1721652ec1fd2b77f9bce4d3dbdc4a43d0d3814407f3a38074de29644ee1",
+          "markers": [
+            "fruit",
+            "leaf"
+          ],
+          "caption": "Antocarpos escuros de Guapira pernambucensis sobre eixos rosados; as marcas circulares mostram pontos onde outras estruturas já caíram.",
+          "reviewStatus": "draft"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Flora e Funga do Brasil — Guapira pernambucensis",
+          "url": "https://servicos.jbrj.gov.br/v2/flora/taxon/Guapira_pernambucensis",
+          "retrievedAt": "2026-11-11"
+        },
+        {
+          "title": "Tratamento botânico específico — Guapira pernambucensis",
+          "url": "https://www.worldfloraonline.org/taxon/wfo-0000710763",
+          "retrievedAt": "2026-11-11"
+        }
+      ],
+      "curationNotes": "Seleção de 11/11/2026: ficha específica e fotografias anotadas após inspeção individual. Direitos de cada foto CC0 ou CC BY 4.0 arquivados. Textos e novas legendas/marcações permanecem em rascunho. Abrangência estadual; fotos externas ao Rio ilustram caracteres, sem servir de prova municipal. Nomes e classificação seguem o registro da Flora e Funga consultado; datas e divergências são explicitadas."
+    },
+    {
+      "id": "alchornea-triplinervia",
+      "scientificName": "Alchornea triplinervia",
+      "authorship": "(Spreng.) Müll.Arg.",
+      "commonName": "Tapiá",
+      "alternateNames": [
+        "Tanheiro",
+        "Tapiá-guaçu"
+      ],
+      "family": "Euphorbiaceae",
+      "genus": "Alchornea",
+      "rank": "species",
+      "origin": "native",
+      "geography": "rio-state",
+      "presentation": "profile",
+      "reviewStatus": "draft",
+      "description": "Árvore de folhas simples e alternas, de formato variável, com três nervuras principais que se destacam a partir da base. A margem costuma apresentar pequenos dentes. Na face inferior, perto da base da lâmina, podem ser vistas glândulas. As flores são pequenas e ficam agrupadas em inflorescências alongadas.",
+      "identification": "Examine as três nervuras basais, as glândulas e o pecíolo com sulco longitudinal. Compare com Alchornea glandulosa, cujo pecíolo tende a ser cilíndrico e cujas folhas apresentam mais pares de nervuras secundárias no tratamento consultado. Uma fotografia apenas da face superior da folha pode esconder caracteres importantes.",
+      "ecology": "Ocorre em florestas da Mata Atlântica, incluindo ambientes ciliares e trechos em regeneração. O tamanho e a forma das folhas variam com o desenvolvimento e o ambiente. A galeria mostra folhas e uma inflorescência em botão; não pressupõe que a planta esteja sempre florida ao longo do ano.",
+      "lifeForms": [
+        "Arbusto",
+        "Árvore",
+        "Liana/volúvel/trepadeira"
+      ],
+      "substrates": [
+        "Terrícola"
+      ],
+      "habitats": [
+        "Caatinga (stricto sensu)",
+        "Campo Limpo",
+        "Campo rupestre",
+        "Cerrado (lato sensu)",
+        "Floresta Ciliar ou Galeria",
+        "Floresta de Terra Firme",
+        "Floresta de Várzea",
+        "Floresta Ombrófila (= Floresta Pluvial)",
+        "Restinga",
+        "Savana Amazônica"
+      ],
+      "floraId": 17458,
+      "regionalSpecies": [],
+      "photos": [
+        {
+          "id": "inat-759672563",
+          "fileName": "inat-759672563.jpg",
+          "photoId": 759672563,
+          "observationId": 412816888,
+          "taxonId": 706954,
+          "taxonName": "Alchornea triplinervia",
+          "creator": "prodewald",
+          "license": "CC0-1.0",
+          "licenseCode": "cc0",
+          "sourceUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/759672563/large.jpg",
+          "observationUrl": "https://www.inaturalist.org/observations/412816888",
+          "downloadedAt": "2026-11-12T00:16:37Z",
+          "sha256": "d573380f3c354e41adb0eb7b2379b4866aa115abdc7485a552d358ec8cf672c4",
+          "markers": [
+            "leaf"
+          ],
+          "caption": "Folhas de Alchornea triplinervia com três nervuras principais evidentes e margens finamente denteadas.",
+          "reviewStatus": "draft"
+        },
+        {
+          "id": "inat-408364169",
+          "fileName": "inat-408364169.jpeg",
+          "photoId": 408364169,
+          "observationId": 230015191,
+          "taxonId": 706954,
+          "taxonName": "Alchornea triplinervia",
+          "creator": "Thomaz Ricardo Favreto Sinani",
+          "license": "CC-BY-4.0",
+          "licenseCode": "cc-by",
+          "attribution": "(c) Thomaz Ricardo Favreto Sinani, some rights reserved (CC BY)",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+          "photoPageUrl": "https://www.inaturalist.org/photos/408364169",
+          "sourceUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/408364169/large.jpeg",
+          "observationUrl": "https://www.inaturalist.org/observations/230015191",
+          "downloadedAt": "2026-11-12T00:16:37Z",
+          "sha256": "6c4b6b0142fd4968e107effe7031b32983d880efcabe28b5dc8a7323e2cd32cf",
+          "markers": [
+            "flower",
+            "leaf"
+          ],
+          "caption": "Inflorescência de Alchornea triplinervia ainda em botão, junto a folhas jovens na extremidade do ramo.",
+          "reviewStatus": "draft"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Flora e Funga do Brasil — Alchornea triplinervia",
+          "url": "https://servicos.jbrj.gov.br/v2/flora/taxon/Alchornea_triplinervia",
+          "retrievedAt": "2026-11-11"
+        },
+        {
+          "title": "Tratamento botânico específico — Alchornea triplinervia",
+          "url": "https://www.alice.cnptia.embrapa.br/alice/bitstream/doc/1140120/1/Especies-Arboreas-Brasileiras-vol-1-Tapia.pdf",
+          "retrievedAt": "2026-11-11"
+        },
+        {
+          "title": "Documentação complementar — Alchornea triplinervia",
+          "url": "https://www.scielo.br/j/hoehnea/a/qW5rdQG7FWp8Hf6ZYRZLjcC/?lang=pt",
+          "retrievedAt": "2026-11-11"
+        }
+      ],
+      "curationNotes": "Seleção de 11/11/2026: ficha específica e fotografias anotadas após inspeção individual. Direitos de cada foto CC0 ou CC BY 4.0 arquivados. Textos e novas legendas/marcações permanecem em rascunho. Abrangência estadual; fotos externas ao Rio ilustram caracteres, sem servir de prova municipal. Nomes e classificação seguem o registro da Flora e Funga consultado; datas e divergências são explicitadas."
+    },
+    {
+      "id": "alchornea-glandulosa",
+      "scientificName": "Alchornea glandulosa",
+      "authorship": "Poepp. & Endl.",
+      "commonName": "Tapiá",
+      "alternateNames": [
+        "Iricurana"
+      ],
+      "family": "Euphorbiaceae",
+      "genus": "Alchornea",
+      "rank": "species",
+      "origin": "native",
+      "geography": "rio-state",
+      "presentation": "profile",
+      "reviewStatus": "draft",
+      "description": "Árvore de folhas simples e alternas, frequentemente largas e com margem crenada a serrilhada. Há glândulas na região basal da lâmina, e pelos podem ser vistos sobretudo nas nervuras da face inferior. Produz inflorescências de flores pequenas e frutos em cápsulas lobadas.",
+      "identification": "Compare a folha inteira, as glândulas da base e o pecíolo geralmente cilíndrico. A chave botânica consultada diferencia Alchornea triplinervia pelo pecíolo sulcado e pelo menor número de pares de nervuras secundárias. A presença de três nervuras basais ou de glândulas, isoladamente, não separa todas as Alchornea.",
+      "ecology": "Está registrada em florestas ombrófilas, estacionais e ambientes ciliares. A ficha permanece no nível de espécie: características de uma subespécie ou de uma população externa ao Rio não são atribuídas a todas as plantas locais. Folhas, inflorescências e cápsulas ajudam a comparar fases diferentes.",
+      "lifeForms": [
+        "Arbusto",
+        "Árvore"
+      ],
+      "substrates": [],
+      "habitats": [
+        "Cerrado (lato sensu)",
+        "Floresta Ciliar ou Galeria",
+        "Floresta Ombrófila (= Floresta Pluvial)",
+        "Restinga"
+      ],
+      "floraId": 17456,
+      "regionalSpecies": [],
+      "photos": [
+        {
+          "id": "inat-417832537",
+          "fileName": "inat-417832537.jpg",
+          "photoId": 417832537,
+          "observationId": 234984915,
+          "taxonId": 340558,
+          "taxonName": "Alchornea glandulosa",
+          "creator": "Whaldener Endo",
+          "license": "CC0-1.0",
+          "licenseCode": "cc0",
+          "sourceUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/417832537/large.jpg",
+          "observationUrl": "https://www.inaturalist.org/observations/234984915",
+          "downloadedAt": "2026-11-12T00:16:37Z",
+          "sha256": "39b6b200da80d9536545e5075cca65964f57195b3cb27f3bedebcb021e560479",
+          "markers": [
+            "flower",
+            "leaf"
+          ],
+          "caption": "Inflorescências alongadas de Alchornea glandulosa junto às folhas largas, com numerosas estruturas florais pequenas.",
+          "reviewStatus": "draft"
+        },
+        {
+          "id": "inat-553211584",
+          "fileName": "inat-553211584.jpg",
+          "photoId": 553211584,
+          "observationId": 306750484,
+          "taxonId": 340558,
+          "taxonName": "Alchornea glandulosa",
+          "creator": "Lucas Rodrigues",
+          "license": "CC0-1.0",
+          "licenseCode": "cc0",
+          "sourceUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/553211584/large.jpg",
+          "observationUrl": "https://www.inaturalist.org/observations/306750484",
+          "downloadedAt": "2026-11-12T00:16:37Z",
+          "sha256": "5863889d0adc210507ad046768c3fcafa317438d2c575f66355d50cf99f0009e",
+          "markers": [
+            "fruit",
+            "leaf"
+          ],
+          "caption": "Conjunto de cápsulas verdes e lobadas de Alchornea glandulosa, ainda presas aos eixos da infrutescência.",
+          "reviewStatus": "draft"
+        },
+        {
+          "id": "inat-553211643",
+          "fileName": "inat-553211643.jpg",
+          "photoId": 553211643,
+          "observationId": 306750484,
+          "taxonId": 340558,
+          "taxonName": "Alchornea glandulosa",
+          "creator": "Lucas Rodrigues",
+          "license": "CC0-1.0",
+          "licenseCode": "cc0",
+          "sourceUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/553211643/large.jpg",
+          "observationUrl": "https://www.inaturalist.org/observations/306750484",
+          "downloadedAt": "2026-11-12T00:16:37Z",
+          "sha256": "bccbcafe96d03089122affb227e08bb424656a9091e04110d13f8671b57db9e9",
+          "markers": [
+            "leaf"
+          ],
+          "caption": "Folha larga de Alchornea glandulosa apoiada na mão, mostrando a base, as nervuras principais e os dentes da margem.",
+          "reviewStatus": "draft"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Flora e Funga do Brasil — Alchornea glandulosa",
+          "url": "https://servicos.jbrj.gov.br/v2/flora/taxon/Alchornea_glandulosa",
+          "retrievedAt": "2026-11-11"
+        },
+        {
+          "title": "Tratamento botânico específico — Alchornea glandulosa",
+          "url": "https://sweetgum.nybg.org/science/world-flora/monographs-details/?irn=19128",
+          "retrievedAt": "2026-11-11"
+        },
+        {
+          "title": "Documentação complementar — Alchornea glandulosa",
+          "url": "https://www.scielo.br/j/hoehnea/a/qW5rdQG7FWp8Hf6ZYRZLjcC/?lang=pt",
+          "retrievedAt": "2026-11-11"
+        }
+      ],
+      "curationNotes": "Seleção de 11/11/2026: ficha específica e fotografias anotadas após inspeção individual. Direitos de cada foto CC0 ou CC BY 4.0 arquivados. Textos e novas legendas/marcações permanecem em rascunho. Abrangência estadual; fotos externas ao Rio ilustram caracteres, sem servir de prova municipal. Nomes e classificação seguem o registro da Flora e Funga consultado; datas e divergências são explicitadas."
+    },
+    {
+      "id": "croton-floribundus",
+      "scientificName": "Croton floribundus",
+      "authorship": "Spreng.",
+      "commonName": "Capixingui",
+      "alternateNames": [
+        "Capixingui-branco"
+      ],
+      "family": "Euphorbiaceae",
+      "genus": "Croton",
+      "rank": "species",
+      "origin": "native",
+      "geography": "rio-state",
+      "presentation": "profile",
+      "reviewStatus": "draft",
+      "description": "Árvore de folhas simples e alternas, alongadas a elípticas, com revestimento de pelos que deixa a face inferior mais clara. Os ramos jovens também são pilosos. As inflorescências terminais reúnem flores pequenas; os frutos são cápsulas de superfície marcada, que se abrem na maturação.",
+      "identification": "Compare as duas faces da folha e examine os pelos com ampliação: há tricomas estrelados e formas relacionadas. Observe também as folhas jovens e as estípulas próximas à ponta do ramo. Muitas espécies de Croton possuem folhagem clara por baixo; o indumento deve ser avaliado junto às flores e aos frutos.",
+      "ecology": "É uma árvore nativa de ambientes florestais e participa de formações secundárias e trechos com entrada de luz. Pode ser encontrada em paisagens em regeneração. A galeria combina o detalhe da cápsula com um ramo folhoso, mostrando caracteres que uma vista distante da copa não revela.",
+      "lifeForms": [
+        "Árvore"
+      ],
+      "substrates": [
+        "Terrícola"
+      ],
+      "habitats": [
+        "Área Antrópica",
+        "Floresta Ciliar ou Galeria",
+        "Floresta Estacional Semidecidual",
+        "Floresta Ombrófila (= Floresta Pluvial)"
+      ],
+      "floraId": 17512,
+      "regionalSpecies": [],
+      "photos": [
+        {
+          "id": "inat-598658040",
+          "fileName": "inat-598658040.jpg",
+          "photoId": 598658040,
+          "observationId": 330172409,
+          "taxonId": 1062041,
+          "taxonName": "Croton floribundus",
+          "creator": "Thomaz Ricardo Favreto Sinani",
+          "license": "CC-BY-4.0",
+          "licenseCode": "cc-by",
+          "attribution": "(c) Thomaz Ricardo Favreto Sinani, some rights reserved (CC BY)",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+          "photoPageUrl": "https://www.inaturalist.org/photos/598658040",
+          "sourceUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/598658040/large.jpg",
+          "observationUrl": "https://www.inaturalist.org/observations/330172409",
+          "downloadedAt": "2026-11-12T00:16:37Z",
+          "sha256": "9cdf431534a51f4a4daf7d3529373a6607241f6a3db611ed5261cb18821a6558",
+          "markers": [
+            "fruit"
+          ],
+          "caption": "Cápsulas verdes de Croton floribundus em detalhe, com superfície saliente e estruturas persistentes no ápice.",
+          "reviewStatus": "draft"
+        },
+        {
+          "id": "inat-123438425",
+          "fileName": "inat-123438425.jpeg",
+          "photoId": 123438425,
+          "observationId": 75469262,
+          "taxonId": 1062041,
+          "taxonName": "Croton floribundus",
+          "creator": "Victor Farjalla Pontes",
+          "license": "CC-BY-4.0",
+          "licenseCode": "cc-by",
+          "attribution": "(c) Victor Farjalla Pontes, some rights reserved (CC BY)",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+          "photoPageUrl": "https://www.inaturalist.org/photos/123438425",
+          "sourceUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/123438425/large.jpeg",
+          "observationUrl": "https://www.inaturalist.org/observations/75469262",
+          "downloadedAt": "2026-11-12T00:16:37Z",
+          "sha256": "76658c5dcfb59d1f18d66a6ceb4dea4366068e53bbd1126e34f2b6380b9cece3",
+          "markers": [
+            "leaf"
+          ],
+          "caption": "Ramo de Croton floribundus com folhas alongadas; a vista permite comparar a face superior com partes mais claras da face inferior.",
+          "reviewStatus": "draft"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Flora e Funga do Brasil — Croton floribundus",
+          "url": "https://servicos.jbrj.gov.br/v2/flora/taxon/Croton_floribundus",
+          "retrievedAt": "2026-11-11"
+        },
+        {
+          "title": "Tratamento botânico específico — Croton floribundus",
+          "url": "https://www.worldfloraonline.org/taxon/wfo-0000927983",
+          "retrievedAt": "2026-11-11"
+        }
+      ],
+      "curationNotes": "Seleção de 11/11/2026: ficha específica e fotografias anotadas após inspeção individual. Direitos de cada foto CC0 ou CC BY 4.0 arquivados. Textos e novas legendas/marcações permanecem em rascunho. Abrangência estadual; fotos externas ao Rio ilustram caracteres, sem servir de prova municipal. Nomes e classificação seguem o registro da Flora e Funga consultado; datas e divergências são explicitadas."
+    },
+    {
+      "id": "allophylus-edulis",
+      "scientificName": "Allophylus edulis",
+      "authorship": "(A.St.-Hil. et al.) Hieron. ex Niederl.",
+      "commonName": "Chal-chal",
+      "alternateNames": [
+        "Vacum",
+        "Fruta-de-pombo"
+      ],
+      "family": "Sapindaceae",
+      "genus": "Allophylus",
+      "rank": "species",
+      "origin": "native",
+      "geography": "rio-state",
+      "presentation": "profile",
+      "reviewStatus": "draft",
+      "description": "Arbusto ou árvore de folhas compostas por três folíolos. As flores pequenas e claras se agrupam em inflorescências alongadas. Os frutos arredondados passam por tons verdes, alaranjados e vermelhos, formando pontos coloridos entre a folhagem.",
+      "identification": "Siga o pecíolo até a reunião dos três folíolos e confira os pequenos dentes de suas margens. Uma folha trifoliolada não é um ramo com três folhas simples. Outras espécies de Allophylus têm organização semelhante; compare pilosidade, forma dos folíolos e estruturas reprodutivas, sem usar somente a cor dos frutos.",
+      "ecology": "É nativo de diferentes formações florestais e ambientes ciliares. Os frutos estão associados à dispersão por animais, mas uma fotografia de um fruto não permite identificar quais espécies o consomem naquele local. O porte pode variar bastante entre indivíduos jovens, plantas de borda e árvores adultas.",
+      "lifeForms": [
+        "Arbusto",
+        "Árvore"
+      ],
+      "substrates": [
+        "Terrícola"
+      ],
+      "habitats": [
+        "Caatinga (stricto sensu)",
+        "Cerrado (lato sensu)",
+        "Floresta Ciliar ou Galeria",
+        "Floresta de Terra Firme",
+        "Floresta Estacional Decidual",
+        "Floresta Estacional Semidecidual",
+        "Floresta Ombrófila (= Floresta Pluvial)",
+        "Floresta Ombrófila Mista"
+      ],
+      "floraId": 20873,
+      "regionalSpecies": [],
+      "photos": [
+        {
+          "id": "inat-163798301",
+          "fileName": "inat-163798301.jpeg",
+          "photoId": 163798301,
+          "observationId": 98389981,
+          "taxonId": 460752,
+          "taxonName": "Allophylus edulis",
+          "creator": "Carlos Henrique Russi",
+          "license": "CC0-1.0",
+          "licenseCode": "cc0",
+          "sourceUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/163798301/large.jpeg",
+          "observationUrl": "https://www.inaturalist.org/observations/98389981",
+          "downloadedAt": "2026-11-12T00:16:37Z",
+          "sha256": "ba3207d7e679aefcb1621d4b9d628e26cb241906c56953e46b2eedd786002ff7",
+          "markers": [
+            "fruit",
+            "leaf"
+          ],
+          "caption": "Frutos de Allophylus edulis passando do verde ao alaranjado e vermelho, ainda presos ao ramo entre folhas trifolioladas.",
+          "reviewStatus": "draft"
+        },
+        {
+          "id": "inat-253521779",
+          "fileName": "inat-253521779.jpeg",
+          "photoId": 253521779,
+          "observationId": 147342099,
+          "taxonId": 460752,
+          "taxonName": "Allophylus edulis",
+          "creator": "Andrea Gantzer",
+          "license": "CC-BY-4.0",
+          "licenseCode": "cc-by",
+          "attribution": "(c) Andrea Gantzer, some rights reserved (CC BY)",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+          "photoPageUrl": "https://www.inaturalist.org/photos/253521779",
+          "sourceUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/253521779/large.jpeg",
+          "observationUrl": "https://www.inaturalist.org/observations/147342099",
+          "downloadedAt": "2026-11-12T00:16:37Z",
+          "sha256": "22643127599162c1408679bf4d3f9169e9292a1ba3cb0ff8291a2fe4f30ee41e",
+          "markers": [
+            "leaf"
+          ],
+          "caption": "Folha de Allophylus edulis formada por três folíolos de margem serrilhada, vista contra o fundo escuro da vegetação.",
+          "reviewStatus": "draft"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Flora e Funga do Brasil — Allophylus edulis",
+          "url": "https://servicos.jbrj.gov.br/v2/flora/taxon/Allophylus_edulis",
+          "retrievedAt": "2026-11-11"
+        },
+        {
+          "title": "Tratamento botânico específico — Allophylus edulis",
+          "url": "https://www.alice.cnptia.embrapa.br/alice/bitstream/doc/1140774/1/Especies-Arboreas-Brasileiras-vol-2-Vacum.pdf",
+          "retrievedAt": "2026-11-11"
+        }
+      ],
+      "curationNotes": "Seleção de 11/11/2026: ficha específica e fotografias anotadas após inspeção individual. Direitos de cada foto CC0 ou CC BY 4.0 arquivados. Textos e novas legendas/marcações permanecem em rascunho. Abrangência estadual; fotos externas ao Rio ilustram caracteres, sem servir de prova municipal. Nomes e classificação seguem o registro da Flora e Funga consultado; datas e divergências são explicitadas."
+    },
+    {
+      "id": "sapindus-saponaria",
+      "scientificName": "Sapindus saponaria",
+      "authorship": "L.",
+      "commonName": "Saboneteira",
+      "alternateNames": [
+        "Saboeiro",
+        "Sabão-de-soldado",
+        "Pau-de-sabão"
+      ],
+      "family": "Sapindaceae",
+      "genus": "Sapindus",
+      "rank": "species",
+      "origin": "native",
+      "geography": "rio-state",
+      "presentation": "profile",
+      "reviewStatus": "draft",
+      "description": "Árvore de folhas compostas pinadas e folíolos alongados. As inflorescências ramificadas reúnem muitas flores pequenas e claras. Os frutos maduros podem ficar amarelados a castanhos, com envoltório que contrasta com a semente arredondada, escura e brilhante.",
+      "identification": "Observe o eixo de cada folha e a ligação dos folíolos, para não confundi-los com folhas simples de um ramo. Compare os frutos fechados e o aspecto da semente quando o envoltório já está aberto. Os nomes saboeiro e saboneteira também aparecem em outros contextos; folhas, flores e frutos devem acompanhar a identificação.",
+      "ecology": "É nativa no contexto brasileiro e ocorre em diferentes formações florestais, além de ser plantada em áreas urbanas. O aspecto dos frutos muda bastante depois que secam. Fotografias estrangeiras ilustram a espécie, sem estabelecer ocorrência silvestre fluminense ou a identidade de uma população local.",
+      "lifeForms": [
+        "Árvore"
+      ],
+      "substrates": [
+        "Terrícola"
+      ],
+      "habitats": [
+        "Área Antrópica",
+        "Floresta Ciliar ou Galeria",
+        "Floresta de Terra Firme",
+        "Floresta Estacional Semidecidual",
+        "Floresta Ombrófila (= Floresta Pluvial)"
+      ],
+      "floraId": 20934,
+      "regionalSpecies": [],
+      "photos": [
+        {
+          "id": "inat-559098452",
+          "fileName": "inat-559098452.jpg",
+          "photoId": 559098452,
+          "observationId": 309810249,
+          "taxonId": 952228,
+          "taxonName": "Sapindus saponaria",
+          "creator": "Yolanda M. Leon",
+          "license": "CC0-1.0",
+          "licenseCode": "cc0",
+          "sourceUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/559098452/large.jpg",
+          "observationUrl": "https://www.inaturalist.org/observations/309810249",
+          "downloadedAt": "2026-11-12T00:16:37Z",
+          "sha256": "dca6008c37a3a217c9b075ab5747d232f68c4ea32e18af18f6fe91d26be37527",
+          "markers": [
+            "fruit",
+            "seed"
+          ],
+          "caption": "Frutos secos de Sapindus saponaria na mão; um deles aberto deixa ver a semente escura, arredondada e brilhante.",
+          "reviewStatus": "draft"
+        },
+        {
+          "id": "inat-559098502",
+          "fileName": "inat-559098502.jpg",
+          "photoId": 559098502,
+          "observationId": 309810249,
+          "taxonId": 952228,
+          "taxonName": "Sapindus saponaria",
+          "creator": "Yolanda M. Leon",
+          "license": "CC0-1.0",
+          "licenseCode": "cc0",
+          "sourceUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/559098502/large.jpg",
+          "observationUrl": "https://www.inaturalist.org/observations/309810249",
+          "downloadedAt": "2026-11-12T00:16:37Z",
+          "sha256": "1090b7e3dd0f49df43fc7e8dd3af6ccf127a3a4b93ba6c1b727cf73b5e300f9c",
+          "markers": [
+            "leaf"
+          ],
+          "caption": "Folhas compostas de Sapindus saponaria distribuídas ao longo do ramo, com folíolos alongados de margem inteira.",
+          "reviewStatus": "draft"
+        },
+        {
+          "id": "inat-558039863",
+          "fileName": "inat-558039863.jpg",
+          "photoId": 558039863,
+          "observationId": 309258742,
+          "taxonId": 952228,
+          "taxonName": "Sapindus saponaria",
+          "creator": "Neptalí Ramírez Marcial",
+          "license": "CC-BY-4.0",
+          "licenseCode": "cc-by",
+          "attribution": "(c) Neptalí Ramírez Marcial, some rights reserved (CC BY)",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+          "photoPageUrl": "https://www.inaturalist.org/photos/558039863",
+          "sourceUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/558039863/large.jpg",
+          "observationUrl": "https://www.inaturalist.org/observations/309258742",
+          "downloadedAt": "2026-11-12T00:16:37Z",
+          "sha256": "9a4887245b439ddeeff1bd35ba35ffa3e77d71863804f78d555e7e33f03cf8fb",
+          "markers": [
+            "flower",
+            "leaf"
+          ],
+          "caption": "Inflorescências ramificadas de Sapindus saponaria com muitas flores pequenas e claras, acima das folhas compostas.",
+          "reviewStatus": "draft"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Flora e Funga do Brasil — Sapindus saponaria",
+          "url": "https://servicos.jbrj.gov.br/v2/flora/taxon/Sapindus_saponaria",
+          "retrievedAt": "2026-11-11"
+        },
+        {
+          "title": "Tratamento botânico específico — Sapindus saponaria",
+          "url": "https://www.esalq.usp.br/trilhas/medicina/am08.php",
+          "retrievedAt": "2026-11-11"
+        }
+      ],
+      "curationNotes": "Seleção de 11/11/2026: ficha específica e fotografias anotadas após inspeção individual. Direitos de cada foto CC0 ou CC BY 4.0 arquivados. Textos e novas legendas/marcações permanecem em rascunho. Abrangência estadual; fotos externas ao Rio ilustram caracteres, sem servir de prova municipal. Nomes e classificação seguem o registro da Flora e Funga consultado; datas e divergências são explicitadas."
+    },
+    {
+      "id": "zanthoxylum-rhoifolium",
+      "scientificName": "Zanthoxylum rhoifolium",
+      "authorship": "Lam.",
+      "commonName": "Mamica-de-porca",
+      "alternateNames": [
+        "Mamica-de-cadela",
+        "Tamanqueira"
+      ],
+      "family": "Rutaceae",
+      "genus": "Zanthoxylum",
+      "rank": "species",
+      "origin": "native",
+      "geography": "rio-state",
+      "presentation": "profile",
+      "reviewStatus": "draft",
+      "description": "Árvore de folhas compostas pinadas, com folíolos de margem crenada a serrilhada. Pode apresentar acúleos nos ramos e no tronco, alguns com base larga e forma cônica. Os frutos pequenos se abrem e expõem sementes escuras e brilhantes.",
+      "identification": "Combine os acúleos com os folíolos e suas pontuações translúcidas, observáveis contra a luz. A forma e a quantidade de acúleos variam com o indivíduo e a idade do ramo. Troncos espinhosos também ocorrem em outras plantas; para reconhecer Zanthoxylum, examine folhas, pilosidade e frutos em conjunto.",
+      "ecology": "Ocorre em diferentes ambientes florestais e em vegetação secundária, incluindo formações da Mata Atlântica. A ficha não limita a espécie a um único tipo de terreno. Um detalhe da casca mostra bem os acúleos, mas precisa ser acompanhado por uma folha completa para orientar a identificação.",
+      "lifeForms": [
+        "Árvore"
+      ],
+      "substrates": [
+        "Terrícola"
+      ],
+      "habitats": [
+        "Área Antrópica",
+        "Cerrado (lato sensu)",
+        "Floresta Ciliar ou Galeria",
+        "Floresta de Terra Firme",
+        "Floresta Estacional Perenifólia",
+        "Floresta Estacional Semidecidual",
+        "Floresta Ombrófila (= Floresta Pluvial)",
+        "Restinga"
+      ],
+      "floraId": 1162,
+      "regionalSpecies": [],
+      "photos": [
+        {
+          "id": "inat-265484420",
+          "fileName": "inat-265484420.jpeg",
+          "photoId": 265484420,
+          "observationId": 153694757,
+          "taxonId": 281420,
+          "taxonName": "Zanthoxylum rhoifolium",
+          "creator": "demianlescano",
+          "license": "CC0-1.0",
+          "licenseCode": "cc0",
+          "sourceUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/265484420/large.jpeg",
+          "observationUrl": "https://www.inaturalist.org/observations/153694757",
+          "downloadedAt": "2026-11-12T00:16:37Z",
+          "sha256": "8c71edf3bfed91a53006984e2da6b847ed2b295f90474a4442385d8145d82616",
+          "markers": [
+            "bark"
+          ],
+          "caption": "Tronco de Zanthoxylum rhoifolium visto de baixo, com acúleos grandes e cônicos projetados da superfície da casca.",
+          "reviewStatus": "draft"
+        },
+        {
+          "id": "inat-465776059",
+          "fileName": "inat-465776059.jpeg",
+          "photoId": 465776059,
+          "observationId": 259467149,
+          "taxonId": 281420,
+          "taxonName": "Zanthoxylum rhoifolium",
+          "creator": "Carol Fontes",
+          "license": "CC0-1.0",
+          "licenseCode": "cc0",
+          "sourceUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/465776059/large.jpeg",
+          "observationUrl": "https://www.inaturalist.org/observations/259467149",
+          "downloadedAt": "2026-11-12T00:16:37Z",
+          "sha256": "60f6b17bce965ab5983df7a103cb433d9cb90de751829ecef6b1f085054b3614",
+          "markers": [
+            "leaf"
+          ],
+          "caption": "Folha composta de Zanthoxylum rhoifolium, mostrando os folíolos ao longo do eixo e o contorno de suas margens.",
+          "reviewStatus": "draft"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Flora e Funga do Brasil — Zanthoxylum rhoifolium",
+          "url": "https://servicos.jbrj.gov.br/v2/flora/taxon/Zanthoxylum_rhoifolium",
+          "retrievedAt": "2026-11-11"
+        },
+        {
+          "title": "Tratamento botânico específico — Zanthoxylum rhoifolium",
+          "url": "https://www.scielo.br/j/rod/a/DbpvqpgQL4PSx5pMr5vGSLv/?lang=pt",
+          "retrievedAt": "2026-11-11"
+        }
+      ],
+      "curationNotes": "Seleção de 11/11/2026: ficha específica e fotografias anotadas após inspeção individual. Direitos de cada foto CC0 ou CC BY 4.0 arquivados. Textos e novas legendas/marcações permanecem em rascunho. Abrangência estadual; fotos externas ao Rio ilustram caracteres, sem servir de prova municipal. Nomes e classificação seguem o registro da Flora e Funga consultado; datas e divergências são explicitadas."
+    },
+    {
+      "id": "cattleya-forbesii",
+      "scientificName": "Cattleya forbesii",
+      "authorship": "Lindl.",
+      "commonName": "Cattleya forbesii",
+      "alternateNames": [],
+      "family": "Orchidaceae",
+      "genus": "Cattleya",
+      "rank": "species",
+      "origin": "native",
+      "geography": "rio-state",
+      "presentation": "profile",
+      "reviewStatus": "draft",
+      "description": "Orquídea epífita com pseudobulbos alongados e, em geral, duas folhas espessas na extremidade. As flores apresentam sépalas e pétalas esverdeadas, creme a ocres. O labelo é mais claro, com região interna amarelada e marcas rosadas a purpúreas, formando um contraste discreto com o restante da flor.",
+      "identification": "Observe a ligação das folhas ao pseudobulbo e examine a flor de frente e de lado. Os lobos laterais do labelo envolvem a coluna; não são duas pétalas adicionais. Outras Cattleya bifoliadas e híbridos cultivados podem se parecer, por isso compare também o formato do labelo, as proporções florais e a procedência.",
+      "ecology": "É nativa de florestas e restingas do Sudeste e Sul brasileiros, com documentação fluminense. Cresce usando árvores como suporte. A posição no tronco ajuda a compreender o hábito epífito, mas não permite deduzir que a orquídea retire seiva da árvore.",
+      "lifeForms": [
+        "Erva"
+      ],
+      "substrates": [
+        "Epífita"
+      ],
+      "habitats": [
+        "Floresta Ciliar ou Galeria",
+        "Floresta Ombrófila (= Floresta Pluvial)",
+        "Restinga"
+      ],
+      "floraId": 11334,
+      "regionalSpecies": [],
+      "photos": [
+        {
+          "id": "inat-456717516",
+          "fileName": "inat-456717516.jpg",
+          "photoId": 456717516,
+          "observationId": 254919324,
+          "taxonId": 710116,
+          "taxonName": "Cattleya forbesii",
+          "creator": "filipeprates",
+          "license": "CC0-1.0",
+          "licenseCode": "cc0",
+          "sourceUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/456717516/large.jpg",
+          "observationUrl": "https://www.inaturalist.org/observations/254919324",
+          "downloadedAt": "2026-11-12T00:16:37Z",
+          "sha256": "deec898d49dd42c66011e9c872198a0deae44a7f097806076d308688c962a79a",
+          "markers": [
+            "wholePlant",
+            "flower",
+            "leaf"
+          ],
+          "caption": "Cattleya forbesii crescendo sobre o tronco de uma árvore, com folhas espessas e flores claras acima do conjunto de caules.",
+          "reviewStatus": "draft"
+        },
+        {
+          "id": "inat-60925909",
+          "fileName": "inat-60925909.jpeg",
+          "photoId": 60925909,
+          "observationId": 38343872,
+          "taxonId": 710116,
+          "taxonName": "Cattleya forbesii",
+          "creator": "Carlos Otávio Gussoni",
+          "license": "CC-BY-4.0",
+          "licenseCode": "cc-by",
+          "attribution": "(c) Carlos Otávio Gussoni, some rights reserved (CC BY)",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+          "photoPageUrl": "https://www.inaturalist.org/photos/60925909",
+          "sourceUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/60925909/large.jpeg",
+          "observationUrl": "https://www.inaturalist.org/observations/38343872",
+          "downloadedAt": "2026-11-12T00:16:37Z",
+          "sha256": "69c9429edf3284866ff008fb095a3b028f062c203ffedd2f25d45d3e886ff789",
+          "markers": [
+            "flower"
+          ],
+          "caption": "Flor de Cattleya forbesii com sépalas e pétalas acastanhadas e labelo claro a rosado, vista de frente sobre o tronco.",
+          "reviewStatus": "draft"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Flora e Funga do Brasil — Cattleya forbesii",
+          "url": "https://servicos.jbrj.gov.br/v2/flora/taxon/Cattleya_forbesii",
+          "retrievedAt": "2026-11-11"
+        },
+        {
+          "title": "Tratamento botânico específico — Cattleya forbesii",
+          "url": "https://new.scielo.br/j/abb/a/fXLmMtP6pNNmYDX8fh7RhcR/?ilang=pt_BR&lang=pt",
+          "retrievedAt": "2026-11-11"
+        }
+      ],
+      "curationNotes": "Seleção de 11/11/2026: ficha específica e fotografias anotadas após inspeção individual. Direitos de cada foto CC0 ou CC BY 4.0 arquivados. Textos e novas legendas/marcações permanecem em rascunho. Abrangência estadual; fotos externas ao Rio ilustram caracteres, sem servir de prova municipal. Nomes e classificação seguem o registro da Flora e Funga consultado; datas e divergências são explicitadas."
+    },
+    {
+      "id": "brassavola-tuberculata",
+      "scientificName": "Brassavola tuberculata",
+      "authorship": "Hook.",
+      "commonName": "Brassavola tuberculata",
+      "alternateNames": [],
+      "family": "Orchidaceae",
+      "genus": "Brassavola",
+      "rank": "species",
+      "origin": "native",
+      "geography": "rio-state",
+      "presentation": "profile",
+      "reviewStatus": "draft",
+      "description": "Orquídea de folhas estreitas, carnosas e aproximadamente cilíndricas, que pode formar conjuntos sobre árvores ou rochas. As flores têm sépalas e pétalas estreitas, claras a esverdeadas, e um labelo branco mais largo. Essa diferença de largura entre as peças dá à flor um aspecto estrelado.",
+      "identification": "Compare as folhas com as partes estreitas da flor: ambas podem lembrar agulhas em uma fotografia distante. Procure o labelo branco e examine sua base junto à coluna. A forma da flor deve ser considerada com o hábito e as folhas, pois existem outras Brassavola e numerosos híbridos em cultivo.",
+      "ecology": "É epífita ou rupícola e ocorre em diferentes ambientes brasileiros, incluindo restingas e afloramentos fluminenses. A literatura registra perfume noturno; uma fotografia diurna não documenta esse caráter. O conjunto sobre o suporte e o detalhe da flor fornecem informações complementares.",
+      "lifeForms": [
+        "Erva"
+      ],
+      "substrates": [
+        "Epífita",
+        "Rupícola"
+      ],
+      "habitats": [
+        "Cerrado (lato sensu)",
+        "Floresta Ciliar ou Galeria",
+        "Floresta Estacional Semidecidual",
+        "Floresta Ombrófila (= Floresta Pluvial)",
+        "Restinga",
+        "Vegetação Sobre Afloramentos Rochosos"
+      ],
+      "floraId": 11230,
+      "regionalSpecies": [],
+      "photos": [
+        {
+          "id": "inat-173618826",
+          "fileName": "inat-173618826.jpg",
+          "photoId": 173618826,
+          "observationId": 103699631,
+          "taxonId": 560108,
+          "taxonName": "Brassavola tuberculata",
+          "creator": "Hugo Hulsberg",
+          "license": "CC0-1.0",
+          "licenseCode": "cc0",
+          "sourceUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/173618826/large.jpg",
+          "observationUrl": "https://www.inaturalist.org/observations/103699631",
+          "downloadedAt": "2026-11-12T00:16:37Z",
+          "sha256": "777da314570b2ca1708814fe2d4e80132b7e081deebcc8244a7366d6d52f1af8",
+          "markers": [
+            "flower"
+          ],
+          "caption": "Flor de Brassavola tuberculata com peças estreitas e alongadas e um labelo branco mais largo.",
+          "reviewStatus": "draft"
+        },
+        {
+          "id": "inat-173618974",
+          "fileName": "inat-173618974.jpg",
+          "photoId": 173618974,
+          "observationId": 103699631,
+          "taxonId": 560108,
+          "taxonName": "Brassavola tuberculata",
+          "creator": "Hugo Hulsberg",
+          "license": "CC0-1.0",
+          "licenseCode": "cc0",
+          "sourceUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/173618974/large.jpg",
+          "observationUrl": "https://www.inaturalist.org/observations/103699631",
+          "downloadedAt": "2026-11-12T00:16:37Z",
+          "sha256": "8b63070e53867c2776ffd40e4e7c9675eca59a3ece9c563ddcb524a758de97f0",
+          "markers": [
+            "wholePlant",
+            "flower",
+            "leaf"
+          ],
+          "caption": "Touceira de Brassavola tuberculata sobre o tronco, mostrando as folhas estreitas e as flores claras projetadas para fora.",
+          "reviewStatus": "draft"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Flora e Funga do Brasil — Brassavola tuberculata",
+          "url": "https://servicos.jbrj.gov.br/v2/flora/taxon/Brassavola_tuberculata",
+          "retrievedAt": "2026-11-11"
+        },
+        {
+          "title": "Tratamento botânico específico — Brassavola tuberculata",
+          "url": "https://collections.si.edu/search/detail/edanmdm:ofeo-sg_1982-2977A",
+          "retrievedAt": "2026-11-11"
+        }
+      ],
+      "curationNotes": "Seleção de 11/11/2026: ficha específica e fotografias anotadas após inspeção individual. Direitos de cada foto CC0 ou CC BY 4.0 arquivados. Textos e novas legendas/marcações permanecem em rascunho. Abrangência estadual; fotos externas ao Rio ilustram caracteres, sem servir de prova municipal. Nomes e classificação seguem o registro da Flora e Funga consultado; datas e divergências são explicitadas."
+    },
+    {
+      "id": "encyclia-patens",
+      "scientificName": "Encyclia patens",
+      "authorship": "Hook.",
+      "commonName": "Encyclia patens",
+      "alternateNames": [],
+      "family": "Orchidaceae",
+      "genus": "Encyclia",
+      "rank": "species",
+      "origin": "native",
+      "geography": "rio-state",
+      "presentation": "profile",
+      "reviewStatus": "draft",
+      "description": "Orquídea epífita de pseudobulbos evidentes e folhas alongadas. Produz inflorescências ramificadas com flores de sépalas e pétalas esverdeadas a acastanhadas. O labelo é claro e dividido em lobos, com marcas mais escuras variáveis; os lobos laterais ficam próximos à coluna.",
+      "identification": "Observe a distribuição das flores na haste e compare o labelo com as outras peças florais. As pétalas são mais largas perto da ponta, lembrando pequenas espátulas. A cor varia e não é suficiente para separar Encyclia semelhantes; os lobos do labelo, sua margem e os detalhes da coluna ajudam na determinação.",
+      "ecology": "Está registrada em formações florestais e restingas, crescendo sobre árvores. Pode formar conjuntos de pseudobulbos e folhas no suporte, com flores elevadas acima deles. A galeria mostra detalhes florais e a distribuição das flores, sem usar o local da foto como prova de ocorrência municipal.",
+      "lifeForms": [
+        "Erva"
+      ],
+      "substrates": [
+        "Epífita"
+      ],
+      "habitats": [
+        "Campo rupestre",
+        "Cerrado (lato sensu)",
+        "Floresta Ciliar ou Galeria",
+        "Floresta Estacional Semidecidual",
+        "Floresta Ombrófila (= Floresta Pluvial)",
+        "Restinga"
+      ],
+      "floraId": 11513,
+      "regionalSpecies": [],
+      "photos": [
+        {
+          "id": "inat-497130658",
+          "fileName": "inat-497130658.jpg",
+          "photoId": 497130658,
+          "observationId": 276857478,
+          "taxonId": 860665,
+          "taxonName": "Encyclia patens",
+          "creator": "Diogo Luiz",
+          "license": "CC-BY-4.0",
+          "licenseCode": "cc-by",
+          "attribution": "(c) Diogo Luiz, some rights reserved (CC BY)",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+          "photoPageUrl": "https://www.inaturalist.org/photos/497130658",
+          "sourceUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/497130658/large.jpg",
+          "observationUrl": "https://www.inaturalist.org/observations/276857478",
+          "downloadedAt": "2026-11-12T00:16:37Z",
+          "sha256": "e30e44ad51ff2ebff7dd03149b7087a04ec1375de4c8ee5f17d491bd28bd719c",
+          "markers": [
+            "flower"
+          ],
+          "caption": "Flores de Encyclia patens com sépalas e pétalas esverdeadas a acastanhadas e labelo claro, organizadas ao longo da haste.",
+          "reviewStatus": "draft"
+        },
+        {
+          "id": "inat-497130650",
+          "fileName": "inat-497130650.jpg",
+          "photoId": 497130650,
+          "observationId": 276857478,
+          "taxonId": 860665,
+          "taxonName": "Encyclia patens",
+          "creator": "Diogo Luiz",
+          "license": "CC-BY-4.0",
+          "licenseCode": "cc-by",
+          "attribution": "(c) Diogo Luiz, some rights reserved (CC BY)",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+          "photoPageUrl": "https://www.inaturalist.org/photos/497130650",
+          "sourceUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/497130650/large.jpg",
+          "observationUrl": "https://www.inaturalist.org/observations/276857478",
+          "downloadedAt": "2026-11-12T00:16:37Z",
+          "sha256": "6b255ebab8d30f41299b6d1339c5ab265f80d96bdc98414889877af25091dde4",
+          "markers": [
+            "flower",
+            "leaf"
+          ],
+          "caption": "Conjunto florido de Encyclia patens junto às folhas alongadas, mostrando a ramificação e a distribuição das flores.",
+          "reviewStatus": "draft"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Flora e Funga do Brasil — Encyclia patens",
+          "url": "https://servicos.jbrj.gov.br/v2/flora/taxon/Encyclia_patens",
+          "retrievedAt": "2026-11-11"
+        },
+        {
+          "title": "Tratamento botânico específico — Encyclia patens",
+          "url": "https://monografiasfloradobrasil.jbrj.gov.br/encyclia.pdf",
+          "retrievedAt": "2026-11-11"
+        }
+      ],
+      "curationNotes": "Seleção de 11/11/2026: ficha específica e fotografias anotadas após inspeção individual. Direitos de cada foto CC0 ou CC BY 4.0 arquivados. Textos e novas legendas/marcações permanecem em rascunho. Abrangência estadual; fotos externas ao Rio ilustram caracteres, sem servir de prova municipal. Nomes e classificação seguem o registro da Flora e Funga consultado; datas e divergências são explicitadas."
+    },
+    {
+      "id": "miltonia-spectabilis",
+      "scientificName": "Miltonia spectabilis",
+      "authorship": "Lindl.",
+      "commonName": "Miltonia spectabilis",
+      "alternateNames": [],
+      "family": "Orchidaceae",
+      "genus": "Miltonia",
+      "rank": "species",
+      "origin": "native",
+      "geography": "rio-state",
+      "presentation": "profile",
+      "reviewStatus": "draft",
+      "description": "Orquídea epífita de pseudobulbos achatados, normalmente com duas folhas. As flores têm sépalas e pétalas claras e um labelo amplo, branco a rosado, marcado de rosa mais escuro ou púrpura. O labelo quase plano ocupa grande parte da vista frontal da flor.",
+      "identification": "Observe o labelo largo e a haste com brácteas conspícuas e sobrepostas. Compare a forma, a distribuição das cores e a região basal do labelo, junto às folhas e pseudobulbos. Miltonia moreliana foi tratada historicamente como variedade de M. spectabilis; plantas inteiramente escuras não foram incluídas automaticamente nesta seleção.",
+      "ecology": "É nativa de formações florestais brasileiras, incluindo o Rio de Janeiro, onde cresce sobre árvores. As fotografias selecionadas são de Tinguá. Uma flor ampliada facilita a comparação do labelo, enquanto a vista com folhas ajuda a interpretar sua posição na planta.",
+      "lifeForms": [
+        "Erva"
+      ],
+      "substrates": [
+        "Epífita"
+      ],
+      "habitats": [
+        "Floresta Ciliar ou Galeria",
+        "Floresta Estacional Semidecidual",
+        "Floresta Ombrófila (= Floresta Pluvial)"
+      ],
+      "floraId": 11859,
+      "regionalSpecies": [],
+      "photos": [
+        {
+          "id": "inat-498321742",
+          "fileName": "inat-498321742.jpg",
+          "photoId": 498321742,
+          "observationId": 277535325,
+          "taxonId": 429704,
+          "taxonName": "Miltonia spectabilis",
+          "creator": "Diogo Luiz",
+          "license": "CC-BY-4.0",
+          "licenseCode": "cc-by",
+          "attribution": "(c) Diogo Luiz, some rights reserved (CC BY)",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+          "photoPageUrl": "https://www.inaturalist.org/photos/498321742",
+          "sourceUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/498321742/large.jpg",
+          "observationUrl": "https://www.inaturalist.org/observations/277535325",
+          "downloadedAt": "2026-11-12T00:16:37Z",
+          "sha256": "e511c5f91743d84660be8b3a60d494079e48398a747b5ca1724a3a409bb4bbc4",
+          "markers": [
+            "flower",
+            "leaf"
+          ],
+          "caption": "Flores de Miltonia spectabilis com sépalas e pétalas claras e labelo amplo, rosado e marcado de púrpura, entre folhas alongadas.",
+          "reviewStatus": "draft"
+        },
+        {
+          "id": "inat-498321784",
+          "fileName": "inat-498321784.jpg",
+          "photoId": 498321784,
+          "observationId": 277535331,
+          "taxonId": 429704,
+          "taxonName": "Miltonia spectabilis",
+          "creator": "Diogo Luiz",
+          "license": "CC-BY-4.0",
+          "licenseCode": "cc-by",
+          "attribution": "(c) Diogo Luiz, some rights reserved (CC BY)",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+          "photoPageUrl": "https://www.inaturalist.org/photos/498321784",
+          "sourceUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/498321784/large.jpg",
+          "observationUrl": "https://www.inaturalist.org/observations/277535331",
+          "downloadedAt": "2026-11-12T00:16:37Z",
+          "sha256": "f7c51ef900814061aecc87100176b57f8c6f1feb0c533172beb767bc0b05e754",
+          "markers": [
+            "flower",
+            "leaf"
+          ],
+          "caption": "Flor de Miltonia spectabilis vista de frente, com destaque para o labelo largo e para as folhas estreitas ao redor.",
+          "reviewStatus": "draft"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Flora e Funga do Brasil — Miltonia spectabilis",
+          "url": "https://servicos.jbrj.gov.br/v2/flora/taxon/Miltonia_spectabilis",
+          "retrievedAt": "2026-11-11"
+        },
+        {
+          "title": "Tratamento botânico específico — Miltonia spectabilis",
+          "url": "https://www.worldfloraonline.org/taxon/wfo-0000244431",
+          "retrievedAt": "2026-11-11"
+        }
+      ],
+      "curationNotes": "Seleção de 11/11/2026: ficha específica e fotografias anotadas após inspeção individual. Direitos de cada foto CC0 ou CC BY 4.0 arquivados. Textos e novas legendas/marcações permanecem em rascunho. Abrangência estadual; fotos externas ao Rio ilustram caracteres, sem servir de prova municipal. Nomes e classificação seguem o registro da Flora e Funga consultado; datas e divergências são explicitadas."
+    },
+    {
+      "id": "gomesa-flexuosa",
+      "scientificName": "Gomesa flexuosa",
+      "authorship": "(Lodd.) M.W.Chase & N.H.Williams",
+      "commonName": "Bailarininha",
+      "alternateNames": [
+        "Oncidium flexuosum"
+      ],
+      "family": "Orchidaceae",
+      "genus": "Gomesa",
+      "rank": "species",
+      "origin": "native",
+      "geography": "rio-state",
+      "presentation": "profile",
+      "reviewStatus": "draft",
+      "description": "Orquídea epífita de pseudobulbos lateralmente comprimidos e folhas alongadas. As inflorescências são ramificadas e carregam muitas flores amarelas. O labelo tem uma parte mediana larga, que lembra uma pequena saia, e manchas castanhas aparecem nas outras peças florais e na região central.",
+      "identification": "Observe a ramificação da haste e a proporção do labelo em relação às sépalas e pétalas. Bailarininha e chuva-de-ouro são nomes usados para várias orquídeas amarelas; para separar espécies, examine também o calo do labelo e a coluna. O nome Oncidium flexuosum aparece em literatura anterior e está disponível na busca.",
+      "ecology": "Cresce sobre árvores em ambientes florestais, incluindo a Mata Atlântica. A ficha combina uma flor em detalhe, uma inflorescência com muitas flores e uma vista da planta. Cada escala mostra caracteres diferentes e evita que a identificação dependa somente da cor amarela.",
+      "lifeForms": [
+        "Erva"
+      ],
+      "substrates": [
+        "Epífita"
+      ],
+      "habitats": [
+        "Floresta Estacional Perenifólia",
+        "Floresta Ombrófila (= Floresta Pluvial)",
+        "Floresta Ombrófila Mista"
+      ],
+      "floraId": 122053,
+      "regionalSpecies": [],
+      "photos": [
+        {
+          "id": "inat-64499780",
+          "fileName": "inat-64499780.jpeg",
+          "photoId": 64499780,
+          "observationId": 40688013,
+          "taxonId": 425920,
+          "taxonName": "Gomesa flexuosa",
+          "creator": "Tsssss",
+          "license": "CC0-1.0",
+          "licenseCode": "cc0",
+          "sourceUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/64499780/large.jpeg",
+          "observationUrl": "https://www.inaturalist.org/observations/40688013",
+          "downloadedAt": "2026-11-12T00:16:37Z",
+          "sha256": "b7c564bd03870fbd18272b998c19e7197b67796a0addaa8db7e259777f7cf744",
+          "markers": [
+            "flower"
+          ],
+          "caption": "Flor de Gomesa flexuosa em detalhe, com labelo amarelo amplo e manchas castanhas nas outras partes florais.",
+          "reviewStatus": "draft"
+        },
+        {
+          "id": "inat-228230772",
+          "fileName": "inat-228230772.jpeg",
+          "photoId": 228230772,
+          "observationId": 133945570,
+          "taxonId": 425920,
+          "taxonName": "Gomesa flexuosa",
+          "creator": "Paula Romano",
+          "license": "CC0-1.0",
+          "licenseCode": "cc0",
+          "sourceUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/228230772/large.jpeg",
+          "observationUrl": "https://www.inaturalist.org/observations/133945570",
+          "downloadedAt": "2026-11-12T00:16:37Z",
+          "sha256": "77c972026bec3e0fb90a5637d62e8edd71743021b688b2aa4ef188ccdbb011ed",
+          "markers": [
+            "flower"
+          ],
+          "caption": "Inflorescência de Gomesa flexuosa com numerosas flores amarelas, mostrando a repetição dos labelos largos ao longo dos ramos.",
+          "reviewStatus": "draft"
+        },
+        {
+          "id": "inat-323017967",
+          "fileName": "inat-323017967.jpg",
+          "photoId": 323017967,
+          "observationId": 184998232,
+          "taxonId": 425920,
+          "taxonName": "Gomesa flexuosa",
+          "creator": "Jaqueline Hertel Corrêa",
+          "license": "CC-BY-4.0",
+          "licenseCode": "cc-by",
+          "attribution": "(c) Jaqueline Hertel Corrêa, some rights reserved (CC BY)",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+          "photoPageUrl": "https://www.inaturalist.org/photos/323017967",
+          "sourceUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/323017967/large.jpg",
+          "observationUrl": "https://www.inaturalist.org/observations/184998232",
+          "downloadedAt": "2026-11-12T00:16:37Z",
+          "sha256": "f0c7f38a48e1b6d22066a21d8a0177efb07b41babfb43455ae9e7c43cb37e0e8",
+          "markers": [
+            "wholePlant",
+            "flower",
+            "leaf"
+          ],
+          "caption": "Gomesa flexuosa com folhas na base e inflorescências ramificadas de flores amarelas acima da folhagem.",
+          "reviewStatus": "draft"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Flora e Funga do Brasil — Gomesa flexuosa",
+          "url": "https://servicos.jbrj.gov.br/v2/flora/taxon/Gomesa_flexuosa",
+          "retrievedAt": "2026-11-11"
+        },
+        {
+          "title": "Tratamento botânico específico — Gomesa flexuosa",
+          "url": "https://www.worldfloraonline.org/taxon/wfo-0000912763",
+          "retrievedAt": "2026-11-11"
+        }
+      ],
+      "curationNotes": "Seleção de 11/11/2026: ficha específica e fotografias anotadas após inspeção individual. Direitos de cada foto CC0 ou CC BY 4.0 arquivados. Textos e novas legendas/marcações permanecem em rascunho. Abrangência estadual; fotos externas ao Rio ilustram caracteres, sem servir de prova municipal. Nomes e classificação seguem o registro da Flora e Funga consultado; datas e divergências são explicitadas."
+    },
+    {
+      "id": "sacoila-lanceolata",
+      "scientificName": "Sacoila lanceolata",
+      "authorship": "(Aubl.) Garay",
+      "commonName": "Sacoila lanceolata",
+      "alternateNames": [],
+      "family": "Orchidaceae",
+      "genus": "Sacoila",
+      "rank": "species",
+      "origin": "native",
+      "geography": "rio-state",
+      "presentation": "profile",
+      "reviewStatus": "draft",
+      "description": "Orquídea terrestre de haste floral ereta, com flores de aspecto tubular e cores variáveis, frequentemente vermelhas a salmão. A haste e as partes florais podem apresentar pelos. As folhas basais são alongadas e muitas vezes já não estão presentes durante a floração.",
+      "identification": "Observe a inserção da planta no solo, a organização das flores ao longo da haste e a pilosidade. Uma haste florida sem folhas não é necessariamente uma planta danificada. A espécie é variável em cor e revestimento; compare o formato das flores e as estruturas da base floral, sem usar somente o tom avermelhado.",
+      "ecology": "Ocorre em diferentes ambientes abertos e modificados, além de formações de restinga e outros ambientes registrados pela Flora e Funga. Fotografias estrangeiras ilustram variações da espécie, não registros locais. As gramíneas ao redor de uma haste não devem ser confundidas com folhas da própria orquídea.",
+      "lifeForms": [
+        "Erva"
+      ],
+      "substrates": [
+        "Terrícola"
+      ],
+      "habitats": [
+        "Área Antrópica",
+        "Caatinga (stricto sensu)",
+        "Campo Limpo",
+        "Campo rupestre",
+        "Cerrado (lato sensu)",
+        "Floresta Ciliar ou Galeria",
+        "Floresta Estacional Decidual",
+        "Floresta Estacional Semidecidual",
+        "Palmeiral",
+        "Restinga",
+        "Vegetação Sobre Afloramentos Rochosos"
+      ],
+      "floraId": 12182,
+      "regionalSpecies": [],
+      "photos": [
+        {
+          "id": "inat-655026647",
+          "fileName": "inat-655026647.jpg",
+          "photoId": 655026647,
+          "observationId": 359035051,
+          "taxonId": 128757,
+          "taxonName": "Sacoila lanceolata",
+          "creator": "Daniel Estabrooks",
+          "license": "CC0-1.0",
+          "licenseCode": "cc0",
+          "sourceUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/655026647/large.jpg",
+          "observationUrl": "https://www.inaturalist.org/observations/359035051",
+          "downloadedAt": "2026-11-12T00:16:37Z",
+          "sha256": "e8f93e466483cd90d470ac39e7b5362bbd51873901a41fa8b4a930d0ba15ada1",
+          "markers": [
+            "flower"
+          ],
+          "caption": "Inflorescência ereta de Sacoila lanceolata com flores tubulares avermelhadas agrupadas no alto da haste.",
+          "reviewStatus": "draft"
+        },
+        {
+          "id": "inat-574601601",
+          "fileName": "inat-574601601.jpg",
+          "photoId": 574601601,
+          "observationId": 317957675,
+          "taxonId": 128757,
+          "taxonName": "Sacoila lanceolata",
+          "creator": "Analía Belaus",
+          "license": "CC0-1.0",
+          "licenseCode": "cc0",
+          "sourceUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/574601601/large.jpg",
+          "observationUrl": "https://www.inaturalist.org/observations/317957675",
+          "downloadedAt": "2026-11-12T00:16:37Z",
+          "sha256": "c4c03a8d13e7d17f2d2df5d34f5a2caada7a97b00901c5ea44de1828350aa2db",
+          "markers": [
+            "flower"
+          ],
+          "caption": "Flores de Sacoila lanceolata em detalhe, com coloração salmão e pelos visíveis na haste, nos botões e nas peças florais.",
+          "reviewStatus": "draft"
+        },
+        {
+          "id": "inat-7946699",
+          "fileName": "inat-7946699.jpeg",
+          "photoId": 7946699,
+          "observationId": 6311377,
+          "taxonId": 128757,
+          "taxonName": "Sacoila lanceolata",
+          "creator": "Valerie Anderson",
+          "license": "CC-BY-4.0",
+          "licenseCode": "cc-by",
+          "attribution": "(c) Valerie Anderson, some rights reserved (CC BY)",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+          "photoPageUrl": "https://www.inaturalist.org/photos/7946699",
+          "sourceUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/7946699/large.jpeg",
+          "observationUrl": "https://www.inaturalist.org/observations/6311377",
+          "downloadedAt": "2026-11-12T00:16:37Z",
+          "sha256": "07db78e7ce06f0b51b4ee4bee988e35e53973fff8e3853d559bd3a8c7ba5973c",
+          "markers": [
+            "wholePlant",
+            "flower"
+          ],
+          "caption": "Sacoila lanceolata crescendo no solo entre gramíneas, com uma haste floral ereta e sem folhas basais evidentes nesta fase.",
+          "reviewStatus": "draft"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Flora e Funga do Brasil — Sacoila lanceolata",
+          "url": "https://servicos.jbrj.gov.br/v2/flora/taxon/Sacoila_lanceolata",
+          "retrievedAt": "2026-11-11"
+        },
+        {
+          "title": "Tratamento botânico específico — Sacoila lanceolata",
+          "url": "https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:225153-2/general-information",
+          "retrievedAt": "2026-11-11"
+        }
+      ],
+      "curationNotes": "Seleção de 11/11/2026: ficha específica e fotografias anotadas após inspeção individual. Direitos de cada foto CC0 ou CC BY 4.0 arquivados. Textos e novas legendas/marcações permanecem em rascunho. Abrangência estadual; fotos externas ao Rio ilustram caracteres, sem servir de prova municipal. Nomes e classificação seguem o registro da Flora e Funga consultado; datas e divergências são explicitadas."
+    },
+    {
+      "id": "vanilla-chamissonis",
+      "scientificName": "Vanilla chamissonis",
+      "authorship": "Klotzsch",
+      "commonName": "Baunilha-nativa",
+      "alternateNames": [
+        "Vanilla chamissonis"
+      ],
+      "family": "Orchidaceae",
+      "genus": "Vanilla",
+      "rank": "species",
+      "origin": "native",
+      "geography": "rio-state",
+      "presentation": "profile",
+      "reviewStatus": "draft",
+      "description": "Orquídea de ramos longos e escandentes, folhas espessas e raízes que ajudam a fixar a planta ao suporte. As flores têm peças verde-amareladas e labelo claro, com a abertura mostrando uma região interna amarela. Seu crescimento em trepadeira difere das touceiras de muitas outras orquídeas.",
+      "identification": "Acompanhe a ligação das folhas e raízes aos nós do caule e examine uma flor aberta. Folhas carnosas e ramos trepadores são compartilhados por outras Vanilla; os caracteres do labelo e de outras partes florais são importantes para separar espécies. O nome baunilha, sozinho, não determina a espécie nem a identifica como Vanilla planifolia.",
+      "ecology": "A Flora e Funga a registra como hemiepífita, com ocorrência em restingas e outros ambientes brasileiros, incluindo o Rio de Janeiro. Uma revisão de 2025 discute a delimitação do grupo. Nesta ficha, as fotos mostram flor e hábito, sem atribuir frutos ou estruturas não visíveis às imagens selecionadas.",
+      "lifeForms": [
+        "Liana/volúvel/trepadeira"
+      ],
+      "substrates": [
+        "Hemiepífita"
+      ],
+      "habitats": [
+        "Floresta Ciliar ou Galeria",
+        "Floresta Estacional Decidual",
+        "Floresta Estacional Semidecidual",
+        "Palmeiral",
+        "Restinga",
+        "Vegetação Sobre Afloramentos Rochosos"
+      ],
+      "floraId": 12351,
+      "regionalSpecies": [],
+      "photos": [
+        {
+          "id": "inat-172301867",
+          "fileName": "inat-172301867.jpeg",
+          "photoId": 172301867,
+          "observationId": 103003903,
+          "taxonId": 555513,
+          "taxonName": "Vanilla chamissonis",
+          "creator": "Victor Farjalla Pontes",
+          "license": "CC-BY-4.0",
+          "licenseCode": "cc-by",
+          "attribution": "(c) Victor Farjalla Pontes, some rights reserved (CC BY)",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+          "photoPageUrl": "https://www.inaturalist.org/photos/172301867",
+          "sourceUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/172301867/large.jpeg",
+          "observationUrl": "https://www.inaturalist.org/observations/103003903",
+          "downloadedAt": "2026-11-12T00:16:37Z",
+          "sha256": "3b962b02eb585c133ed3f66a4510526b007f116d6cd3ff767cbc85b83571ed6e",
+          "markers": [
+            "flower"
+          ],
+          "caption": "Flor de Vanilla chamissonis com sépalas e pétalas verde-amareladas e labelo claro, cuja abertura deixa ver a região interna amarela.",
+          "reviewStatus": "draft"
+        },
+        {
+          "id": "inat-172301876",
+          "fileName": "inat-172301876.jpeg",
+          "photoId": 172301876,
+          "observationId": 103003903,
+          "taxonId": 555513,
+          "taxonName": "Vanilla chamissonis",
+          "creator": "Victor Farjalla Pontes",
+          "license": "CC-BY-4.0",
+          "licenseCode": "cc-by",
+          "attribution": "(c) Victor Farjalla Pontes, some rights reserved (CC BY)",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+          "photoPageUrl": "https://www.inaturalist.org/photos/172301876",
+          "sourceUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/172301876/large.jpeg",
+          "observationUrl": "https://www.inaturalist.org/observations/103003903",
+          "downloadedAt": "2026-11-12T00:16:37Z",
+          "sha256": "e364d10cbbf0bf55d63a69838d86f1be348873b03db90b047afbded5904d3810",
+          "markers": [
+            "flower",
+            "leaf"
+          ],
+          "caption": "Ramos de Vanilla chamissonis apoiados na vegetação, com folhas espessas e flores em diferentes fases de abertura.",
+          "reviewStatus": "draft"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Flora e Funga do Brasil — Vanilla chamissonis",
+          "url": "https://servicos.jbrj.gov.br/v2/flora/taxon/Vanilla_chamissonis",
+          "retrievedAt": "2026-11-11"
+        },
+        {
+          "title": "Tratamento botânico específico — Vanilla chamissonis",
+          "url": "https://doi.org/10.5091/plecevo.154789",
+          "retrievedAt": "2026-11-11"
+        }
+      ],
+      "curationNotes": "Seleção de 11/11/2026: ficha específica e fotografias anotadas após inspeção individual. Direitos de cada foto CC0 ou CC BY 4.0 arquivados. Textos e novas legendas/marcações permanecem em rascunho. Abrangência estadual; fotos externas ao Rio ilustram caracteres, sem servir de prova municipal. Nomes e classificação seguem o registro da Flora e Funga consultado; datas e divergências são explicitadas."
+    },
+    {
+      "id": "maxillaria-picta",
+      "scientificName": "Maxillaria picta",
+      "authorship": "Hook.",
+      "commonName": "Maxillaria picta",
+      "alternateNames": [
+        "Brasiliorchis picta",
+        "Pintora-brasileira"
+      ],
+      "family": "Orchidaceae",
+      "genus": "Maxillaria",
+      "rank": "species",
+      "origin": "native",
+      "geography": "rio-state",
+      "presentation": "profile",
+      "reviewStatus": "draft",
+      "description": "Orquídea epífita de pseudobulbos ovoides e sulcados, geralmente com duas folhas alongadas. As hastes florais surgem perto da base dos pseudobulbos e carregam flores amareladas a claras, marcadas de castanho ou púrpura. Uma planta desenvolvida pode apresentar muitas flores entre a folhagem.",
+      "identification": "Procure a ligação das hastes à base dos pseudobulbos e observe as manchas da flor, o labelo e a disposição das folhas. Flores pintadas ocorrem em várias orquídeas; a cor das manchas não basta. A ficha segue Maxillaria picta, nome aceito na Flora e Funga consultada, e mantém Brasiliorchis picta como alternativa de busca.",
+      "ecology": "É nativa de ambientes florestais do Sudeste e Sul, com registro no Rio de Janeiro. As imagens selecionadas foram feitas em Teresópolis e mostram a touceira florida e uma flor aproximada. Crescer sobre um tronco é uma forma de obter suporte; não significa parasitar a árvore.",
+      "lifeForms": [
+        "Erva"
+      ],
+      "substrates": [
+        "Epífita"
+      ],
+      "habitats": [
+        "Floresta Ciliar ou Galeria",
+        "Floresta Estacional Semidecidual",
+        "Floresta Ombrófila (= Floresta Pluvial)"
+      ],
+      "floraId": 37812,
+      "regionalSpecies": [],
+      "photos": [
+        {
+          "id": "inat-123290342",
+          "fileName": "inat-123290342.jpeg",
+          "photoId": 123290342,
+          "observationId": 75370496,
+          "taxonId": 883948,
+          "taxonName": "Maxillaria picta",
+          "creator": "Victor Farjalla Pontes",
+          "license": "CC-BY-4.0",
+          "licenseCode": "cc-by",
+          "attribution": "(c) Victor Farjalla Pontes, some rights reserved (CC BY)",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+          "photoPageUrl": "https://www.inaturalist.org/photos/123290342",
+          "sourceUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/123290342/large.jpeg",
+          "observationUrl": "https://www.inaturalist.org/observations/75370496",
+          "downloadedAt": "2026-11-12T00:16:37Z",
+          "sha256": "a4378b4883703c1dd283ce3fcd2a3d0534fe1eeafa39768f2d3aeccea3c80696",
+          "markers": [
+            "wholePlant",
+            "flower",
+            "leaf"
+          ],
+          "caption": "Maxillaria picta em touceira, com folhas alongadas e numerosas flores pequenas e manchadas próximas à base das folhas.",
+          "reviewStatus": "draft"
+        },
+        {
+          "id": "inat-123290387",
+          "fileName": "inat-123290387.jpeg",
+          "photoId": 123290387,
+          "observationId": 75370496,
+          "taxonId": 883948,
+          "taxonName": "Maxillaria picta",
+          "creator": "Victor Farjalla Pontes",
+          "license": "CC-BY-4.0",
+          "licenseCode": "cc-by",
+          "attribution": "(c) Victor Farjalla Pontes, some rights reserved (CC BY)",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+          "photoPageUrl": "https://www.inaturalist.org/photos/123290387",
+          "sourceUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/123290387/large.jpeg",
+          "observationUrl": "https://www.inaturalist.org/observations/75370496",
+          "downloadedAt": "2026-11-12T00:16:37Z",
+          "sha256": "a4fb136a9f49deab0aefec132c07f55031151a01ae20e2579e32d5a452284adc",
+          "markers": [
+            "flower"
+          ],
+          "caption": "Flor de Maxillaria picta em detalhe, com peças amareladas a castanhas e manchas avermelhadas sobre partes claras.",
+          "reviewStatus": "draft"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Flora e Funga do Brasil — Maxillaria picta",
+          "url": "https://servicos.jbrj.gov.br/v2/flora/taxon/Maxillaria_picta",
+          "retrievedAt": "2026-11-11"
+        },
+        {
+          "title": "Tratamento botânico específico — Maxillaria picta",
+          "url": "https://tede.unicentro.br/jspui/bitstream/jspui/1262/2/Disserta%C3%A7%C3%A3o%20-%20Alan%20Cezar%20Costa.pdf",
+          "retrievedAt": "2026-11-11"
+        },
+        {
+          "title": "Documentação complementar — Maxillaria picta",
+          "url": "https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:30156984-2",
           "retrievedAt": "2026-11-11"
         }
       ],

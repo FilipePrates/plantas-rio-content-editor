@@ -7,6 +7,15 @@ import {
   Save,
   Search,
   Upload,
+  UsersRound,
+  RefreshCw,
+  ArrowLeft,
+  LogOut,
+  Replace,
+  Star,
+  ArrowRight,
+  Trash2,
+  SlidersHorizontal,
   X,
 } from "lucide-react";
 import {
@@ -24,14 +33,19 @@ import type { Catalog, Plant, PlantPhoto, PhotoMarker } from "./catalog.mjs";
 import { loadCatalog, storeCatalog } from "./storage";
 import { VocabularySelect } from "./VocabularySelect";
 import { ObservationImporter } from "./ObservationImporter";
+import {cloudMode,loadSharedCatalog,saveSharedPlant,membership} from './cloud';
+import {CloudPhoto} from './CloudPhoto';
+import {EditorialPanel,MembersPanel} from './EditorialPanel';
 
 const clone = <T,>(value: T): T => structuredClone(value);
-export default function App() {
+export default function App({onSignOut}:{onSignOut?:()=>void}={}) {
+  const [membersScreen,setMembersScreen]=useState(false);
   const [catalog, setCatalog] = useState<Catalog | null>(null);
   const [draft, setDraft] = useState<Plant | null>(null);
   const [query, setQuery] = useState("");
   const [photoSearchLicense, setPhotoSearchLicense] = useState("cc0,cc-by");
   const [family, setFamily] = useState("");
+  const [showFamilyFilter,setShowFamilyFilter]=useState(false);
   const [origin, setOrigin] = useState("");
   const [status, setStatus] = useState("");
   const [notice, setNotice] = useState("");
@@ -54,7 +68,7 @@ export default function App() {
   useEffect(() => {
     let cancelled = false;
     (async () => {
-      const local = await loadCatalog();
+      const local = cloudMode ? await loadSharedCatalog() : await loadCatalog();
       const response = local ? null : await fetch("/catalog.json");
       if (response && !response.ok)
         throw new Error("Não foi possível carregar o catálogo inicial.");
@@ -63,7 +77,7 @@ export default function App() {
         setCatalog(value);
         select(value.plants[0]);
         setNotice(
-          local
+          cloudMode ? 'Catálogo compartilhado carregado. Salvar ficha registra uma nova revisão.' : local
             ? "Rascunho local recuperado. Exporte JSON regularmente como cópia de segurança."
             : "Catálogo inicial carregado. As alterações ficam neste navegador.",
         );
@@ -120,12 +134,13 @@ export default function App() {
     if (draft) setDraft({ ...draft, [key]: value });
   }
   async function persist(next: Catalog, message: string) {
+    if(cloudMode)throw Error('A importação completa é feita pelo administrador durante a configuração.');
     const valid = parseCatalog(next);
     await storeCatalog(valid); // Publish UI state only after durable IndexedDB commit.
     setCatalog(valid);
     setNotice(message);
   }
-  async function save() {
+  async function save(editorialState='draft') {
     if (!catalog || !draft) return;
     setBusy(true);
     setError("");
@@ -155,8 +170,15 @@ export default function App() {
           ? catalog.plants.map((p) => (p.id === plant.id ? plant : p))
           : [...catalog.plants, plant],
       };
-      await persist(next, `${plant.commonName}: salvo neste navegador.`);
-      select(plant);
+      if(cloudMode){
+        parseCatalog(next);
+        const shared=await saveSharedPlant(plant,editorialState);
+        setCatalog({...next,plants:next.plants.map(item=>item.id===shared.id?shared:item)});
+        select(shared);setNotice(`${shared.commonName}: salvo no catálogo compartilhado.`);
+      }else{
+        await persist(next, `${plant.commonName}: salvo neste navegador.`);
+        select(plant);
+      }
     } catch (err) {
       setError(String(err));
     } finally {
@@ -190,14 +212,20 @@ export default function App() {
       curationNotes: "",
     });
   }
-  function exportCatalog() {
+  async function exportCatalog() {
     if (!catalog) return;
     if (dirty) {
       setError("Salve a ficha ou descarte as alterações antes de exportar.");
       return;
     }
+    let exportValue=catalog;
+    if(cloudMode){
+      try{setBusy(true);exportValue=await loadSharedCatalog();setCatalog(exportValue);select(exportValue.plants.find(p=>p.id===draft?.id)||exportValue.plants[0]);}
+      catch(error){setError(String(error));return;}
+      finally{setBusy(false);}
+    }
     const url = URL.createObjectURL(
-      new Blob([JSON.stringify(parseCatalog(catalog), null, 2) + "\n"], {
+      new Blob([JSON.stringify(parseCatalog(exportValue), null, 2) + "\n"], {
         type: "application/json",
       }),
     );
@@ -248,7 +276,7 @@ export default function App() {
     (p) =>
       matchesPlant(p, query) &&
       (!family || p.family === family) &&
-      (!origin || p.origin === origin) &&
+      (!origin || (origin === 'native' ? p.origin === 'native' : p.origin !== 'native')) &&
       (!status || p.reviewStatus === status),
   );
   const families = [...new Set(catalog.plants.map((p) => p.family))].sort();
@@ -307,13 +335,16 @@ export default function App() {
           <Leaf size={32} />
           <div>
             <strong>Plantas do Rio de Janeiro</strong>
-            <span>Editor de conteúdo · rascunho local</span>
+            <span>Editor de conteúdo · {cloudMode?'catálogo compartilhado':'rascunho local'}</span>
           </div>
         </div>
         <div className="actions">
+          {cloudMode&&<button disabled={busy||mediaBusy} onClick={async()=>{if(!canLeave())return;setBusy(true);try{const fresh=await loadSharedCatalog();setCatalog(fresh);select(fresh.plants.find(p=>p.id===draft.id)||fresh.plants[0]);setNotice('Catálogo atualizado.')}catch(e){setError(String(e))}finally{setBusy(false)}}}><RefreshCw size={17}/>Atualizar catálogo</button>}
+          {cloudMode&&membership?.role==='admin'&&<button disabled={busy||mediaBusy} onClick={()=>setMembersScreen(!membersScreen)}>{membersScreen?<ArrowLeft size={17}/>:<UsersRound size={17}/>} {membersScreen?'Voltar ao editor':'Colaboradores'}</button>}
+          {!membersScreen&&<>
           <button
             disabled={busy || mediaBusy}
-            onClick={() => importInput.current?.click()}
+            onClick={() => {if(!cloudMode)importInput.current?.click();else setError('A importação completa exige a rotina de administração.');}}
           >
             <Upload size={17} />
             Importar JSON
@@ -325,7 +356,7 @@ export default function App() {
           <button
             className="primary"
             disabled={busy || mediaBusy}
-            onClick={save}
+            onClick={()=>void save()}
           >
             <Save size={17} />
             {busy ? "Salvando…" : "Salvar ficha"}
@@ -341,9 +372,12 @@ export default function App() {
               e.target.value = "";
             }}
           />
+          </>}
+          {onSignOut&&<button disabled={busy||mediaBusy} onClick={()=>{if(!dirty||window.confirm('Sair e descartar as alterações ainda não salvas?'))onSignOut()}}><LogOut size={17}/>Sair</button>}
         </div>
       </header>
-      <div className="workspace">
+      {membersScreen&&cloudMode&&membership?.role==='admin'&&<MembersPanel/>}
+      <div className="workspace" hidden={membersScreen}>
         <aside>
           <div className="sidebarIntro">
             <h2>Catálogo</h2>
@@ -360,6 +394,7 @@ export default function App() {
             {catalog.plants.length} fichas · {representedSpeciesCount(catalog)}{" "}
             / 1.500 espécies
           </p>
+          <div className="sidebarSearchRow">
           <div className="search">
             <Search size={17} />
             <input
@@ -369,41 +404,31 @@ export default function App() {
               onChange={(e) => setQuery(e.target.value)}
             />
           </div>
-          <select
+          <button className="familyFilterToggle" aria-label="Filtrar por família" title={family||'Filtrar por família'} aria-expanded={showFamilyFilter} aria-pressed={Boolean(family)} disabled={busy||mediaBusy} onClick={()=>setShowFamilyFilter(!showFamilyFilter)}><SlidersHorizontal size={16}/></button>
+          </div>
+          {showFamilyFilter&&<select
             disabled={busy || mediaBusy}
             aria-label="Filtrar família"
             value={family}
-            onChange={(e) => setFamily(e.target.value)}
+            onChange={(e) => {setFamily(e.target.value);setShowFamilyFilter(false)}}
           >
             <option value="">Todas as famílias</option>
             {families.map((f) => (
               <option key={f}>{f}</option>
             ))}
-          </select>
-          <div className="filterPair">
-            <select
-              disabled={busy || mediaBusy}
-              aria-label="Filtrar origem"
-              value={origin}
-              onChange={(e) => setOrigin(e.target.value)}
-            >
-              <option value="">Todas</option>
-              <option value="native">Nativas</option>
-              <option value="introduced">Exóticas</option>
-              <option value="invasive">Invasoras</option>
-            </select>
-            <select
-              disabled={busy || mediaBusy}
-              aria-label="Filtrar revisão"
-              value={status}
-              onChange={(e) => setStatus(e.target.value)}
-            >
-              <option value="">Todos os status</option>
-              <option value="draft">Rascunhos</option>
-              <option value="reviewed">Revisadas</option>
-            </select>
+          </select>}
+          {family&&!showFamilyFilter&&<button className="activeFamilyFilter" aria-label="Limpar filtro de família" onClick={()=>setFamily('')}><span>{family}</span><X size={13}/></button>}
+          <div className="sidebarFilters">
+            <div className="sidebarFilterGroup originFilters" role="group" aria-label="Filtrar origem">
+              <button disabled={busy||mediaBusy} aria-pressed={origin==='native'} onClick={()=>setOrigin(origin==='native'?'':'native')}>Nativas</button>
+              <button disabled={busy||mediaBusy} aria-pressed={origin==='exotic'} onClick={()=>setOrigin(origin==='exotic'?'':'exotic')}>Exóticas / invasoras</button>
+            </div>
+            <div className="sidebarFilterGroup" role="group" aria-label="Filtrar revisão">
+              <button disabled={busy||mediaBusy} aria-pressed={status==='draft'} onClick={()=>setStatus(status==='draft'?'':'draft')}>Rascunhos</button>
+              <button disabled={busy||mediaBusy} aria-pressed={status==='reviewed'} onClick={()=>setStatus(status==='reviewed'?'':'reviewed')}>Revisadas</button>
+            </div>
           </div>
-          <p className="subtle">{visible.length} resultados</p>
+          <p className="subtle sidebarResults" role="status">{visible.length} resultados</p>
           <nav className="plantList">
             {visible.map((p) => (
               <button
@@ -416,9 +441,10 @@ export default function App() {
               >
                 <span className="listPreview">
                   {p.photos[0] ? (
-                    <img
+                    <CloudPhoto
                       key={p.photos[0].fileName}
-                      src={`/photos/${p.photos[0].fileName}`}
+                      fileName={p.photos[0].fileName}
+                      thumbnail
                       alt=""
                       loading="lazy"
                       onError={(e) => {
@@ -494,9 +520,9 @@ export default function App() {
               A classificação é salva na ficha e aparece no guia.
             </span>
           </div>
-          <section>
+          <section className="identitySection">
             <h2>Identidade</h2>
-            <div className="formGrid">
+            <div className="formGrid identityGrid">
               {field("commonName", "Nome principal")}
               {field("scientificName", "Nome científico (sem autoria)")}
               {field("authorship", "Autoria botânica")}
@@ -547,8 +573,9 @@ export default function App() {
               <label>
                 Revisão editorial
                 <select
-                  disabled={busy || mediaBusy}
+                  disabled={busy || mediaBusy || (cloudMode&&membership?.role==='contributor')}
                   value={draft.reviewStatus}
+                  aria-readonly={cloudMode&&membership?.role==='contributor'}
                   onChange={(e) =>
                     edit(
                       "reviewStatus",
@@ -567,12 +594,14 @@ export default function App() {
               espécies regionais nas fontes abaixo.
             </p>
           </section>
-          <section>
+          <section className="profileTextSection">
             <h2>Texto do perfil</h2>
+            <div className="profileTextGrid">
             {field("description", "Descrição", true)}
             {field("identification", "Como reconhecer", true)}
             {field("ecology", "Ambiente e ecologia", true)}
-            <div className="formGrid">
+            </div>
+            <div className="formGrid vocabularyGrid">
               {([
                 ["lifeForms", "Formas de vida"],
                 ["substrates", "Substratos"],
@@ -714,9 +743,10 @@ export default function App() {
               {draft.photos.map((photo, index) => (
                 <article className="photoCard" key={photo.id}>
                   <div className="editorPhotoImage">
-                    <img
+                    <span className="photoOrder">Foto {index+1}{index===0?' · Principal':''}</span>
+                    <CloudPhoto
                       loading="lazy"
-                      src={`/photos/${photo.fileName}`}
+                      fileName={photo.fileName}
                       alt={photo.caption || `${photo.taxonName} · iNaturalist`}
                       onError={(e) => {
                         e.currentTarget.style.opacity = "0.2";
@@ -750,25 +780,23 @@ export default function App() {
                     </div>
                   </div>
                   <fieldset disabled={mediaBusy} className="photoFields">
+                    <div className="photoMetadata">
                     <strong>{photoLicenseLabel(photo)} · {photo.creator}</strong>
                     {photo.attribution && <small>{photo.attribution}</small>}
+                    <div className="photoSourceLinks">
                     <a href={photoLicenseUrl(photo)} target="_blank" rel="noreferrer">Licença ↗</a>
                     {photo.photoPageUrl && <a href={photo.photoPageUrl} target="_blank" rel="noreferrer">Página da foto ↗</a>}
+                    <a href={photo.observationUrl} target="_blank" rel="noreferrer">Observação #{photo.observationId} ↗</a>
+                    </div>
                     {photo.licenseCode === "cc-by" && <small>Miniaturas redimensionadas e recortadas; créditos e licença acompanham o export.</small>}
                     <small>{photo.taxonName}</small>
+                    </div>
                     {!photoMatchesPlant(draft, photo.taxonName) && (
                       <div className="warning" role="status">
                         O nome no iNaturalist difere do nome da ficha. Pode ser
                         sinonímia ou uma diferença taxonômica.
                       </div>
                     )}
-                    <a
-                      href={photo.observationUrl}
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      Observação #{photo.observationId} ↗
-                    </a>
                     <label>
                       Legenda
                       <input
@@ -845,6 +873,7 @@ export default function App() {
                       <input
                         type="checkbox"
                         checked={photo.reviewStatus === "reviewed"}
+                        disabled={cloudMode&&membership?.role==='contributor'}
                         onChange={(e) =>
                           edit(
                             "photos",
@@ -863,7 +892,7 @@ export default function App() {
                       />
                       Foto e identificação revisadas
                     </label>
-                    <div className="actions">
+                    <div className="actions photoActions">
                       <button
                         type="button"
                         disabled={busy || mediaBusy}
@@ -875,7 +904,7 @@ export default function App() {
                           })
                         }
                       >
-                        Substituir
+                        <Replace size={15}/> Substituir
                       </button>
                       <button
                         type="button"
@@ -887,7 +916,7 @@ export default function App() {
                           ])
                         }
                       >
-                        Usar como primeira
+                        <Star size={15}/> Usar como primeira
                       </button>
                       <button
                         disabled={index === 0 || mediaBusy}
@@ -900,7 +929,7 @@ export default function App() {
                           edit("photos", photos);
                         }}
                       >
-                        ← Antes
+                        <ArrowLeft size={15}/> Antes
                       </button>
                       <button
                         disabled={
@@ -915,11 +944,12 @@ export default function App() {
                           edit("photos", photos);
                         }}
                       >
-                        Depois →
+                        Depois <ArrowRight size={15}/>
                       </button>
                       <button
                         disabled={mediaBusy}
                         aria-label={`Remover foto ${index + 1}`}
+                        className="removePhoto"
                         onClick={() =>
                           edit(
                             "photos",
@@ -927,7 +957,7 @@ export default function App() {
                           )
                         }
                       >
-                        <X size={16} />
+                        <Trash2 size={15} /> Remover
                       </button>
                     </div>
                   </fieldset>
@@ -971,6 +1001,7 @@ export default function App() {
               }}
             />
           </section>
+          {cloudMode&&<EditorialPanel key={draft.id} plant={draft} busy={busy||mediaBusy} onRestore={plant=>{if(canLeave()){select(plant);setInitialDraft('');setNotice('Versão anterior carregada como rascunho. Clique em Salvar ficha para confirmar.')}}} onSubmit={()=>void save('submitted')} onApprove={()=>void save('approved')}/>}
         </main>
       </div>
     </div>

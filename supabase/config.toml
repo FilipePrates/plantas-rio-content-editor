@@ -1,0 +1,7 @@
+project_id = "plantas-rio-content-editor"
+
+[auth]
+site_url = "https://admin.plantas.avesdobrasil.app"
+additional_redirect_urls = ["https://admin.plantas.avesdobrasil.app", "http://127.0.0.1:8787"]
+enable_signup = false
+minimum_password_length = 10

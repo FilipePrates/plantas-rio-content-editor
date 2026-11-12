@@ -10,6 +10,13 @@
   background: #f5f1e7;
   font-synthesis: none;
 }
+.loginPanel { max-width: 440px; margin: 10vh auto; padding: 28px; background: #fffdf7; border: 1px solid #d3d5c6; border-radius: 12px; }
+.loginPanel form, .inviteForm { display: grid; gap: 14px; }
+.membersScreen { width:100%; max-width:1000px; margin:0 auto; padding:28px; }
+.membersScreen h1 { margin:0 0 24px; font-size:26px; }
+.workspace[hidden] { display:none; }
+.historyRow { display:flex; justify-content:space-between; align-items:center; gap:12px; padding:10px 0; border-bottom:1px solid #d3d5c6; flex-wrap:wrap; }
+@media (max-width:600px) { .loginPanel { margin:24px 12px; } .membersScreen { padding:20px 16px; } }
 * {
   box-sizing: border-box;
 }
@@ -192,6 +199,23 @@ aside {
   font-size: 12px;
   padding: 9px 6px;
 }
+.workspace aside { gap: 8px; padding-top: 16px; padding-bottom: 16px; }
+.sidebarSearchRow { display: flex; align-items: center; gap: 6px; }
+.sidebarSearchRow .search { flex: 1; min-width: 0; }
+.sidebarSearchRow .search input { min-height: 38px; padding-top: 9px; padding-bottom: 9px; }
+.sidebarSearchRow .search svg { top: 11px; }
+.familyFilterToggle { flex: 0 0 34px; min-height: 38px; padding: 7px; border-radius: 6px; }
+.familyFilterToggle[aria-pressed="true"], .familyFilterToggle[aria-expanded="true"] { background: #d9dfc3; border-color: #a7b188; }
+.sidebarFilters { display: grid; gap: 5px; }
+.sidebarFilterGroup { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 4px; }
+.sidebarFilterGroup.originFilters { grid-template-columns: minmax(0,0.7fr) minmax(0,1.6fr); }
+.sidebarFilterGroup button { min-height: 28px; padding: 5px 7px; font-size: 11px; line-height: 16px; border-radius: 5px; white-space: nowrap; color: #58644e; background: transparent; border-color: #d4dac7; }
+.sidebarFilterGroup button:hover { background: #e4e9d8; }
+.sidebarFilterGroup button[aria-pressed="true"] { background: #70815f; border-color: #70815f; color: white; }
+.activeFamilyFilter { align-self: flex-start; max-width: 100%; min-height: 26px; padding: 4px 7px; font-size: 11px; border-radius: 5px; background: #d9dfc3; }
+.activeFamilyFilter span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.sidebarResults { margin: 0; font-size: 11px; }
+.workspace aside .plantList { flex: 1; min-height: 0; }
 .plantList {
   overflow: auto;
   margin: 0 -7px;
@@ -644,3 +668,83 @@ fieldset.photoFields {
 .vocabularyChoices { max-height: 220px; overflow-y: auto; margin-top: 8px; }
 .vocabularyChoices label { flex-direction: row; align-items: center; padding: 6px 0; font-weight: 400; }
 .vocabularyChoices input { width: auto; flex-shrink: 0; }
+
+/* Editorial forms: compact groups, readable input surfaces and bounded media. */
+.workspace > main { max-width: 1400px; padding: 24px clamp(20px, 2.8vw, 44px) 60px; min-width: 0; }
+.workspace > main > section { padding: 24px; }
+.workspace > main h2 { font-size: 17px; letter-spacing: -0.2px; margin-bottom: 20px; }
+.workspace > main label { color: #46513f; font-size: 12px; gap: 7px; }
+.workspace > main input:not([type="checkbox"]),
+.workspace > main select,
+.workspace > main textarea { background: #fff; border-color: #d7dace; border-radius: 6px; font-size: 14px; font-weight: 400; padding: 10px 12px; min-height: 42px; box-shadow: 0 1px 2px rgba(36,49,39,0.025); }
+.workspace > main input:not([type="checkbox"]):hover,
+.workspace > main select:hover,
+.workspace > main textarea:hover { border-color: #a7b188; }
+.workspace > main input:disabled,
+.workspace > main select:disabled,
+.workspace > main textarea:disabled { background: #f5f5ef; color: #6d7569; }
+.workspace > main small { font-size: 11px; line-height: 1.5; }
+.identityGrid { grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 20px 18px; }
+.identityGrid > label { grid-column: span 2; min-width: 0; }
+.identityGrid > label:nth-child(-n+2) { grid-column: span 3; }
+.identityGrid > label:last-child { grid-column: span 4; }
+.identitySection > .subtle { padding-top: 16px; margin: 18px 0 0; border-top: 1px solid #e5e7df; font-size: 11px; }
+.profileTextGrid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px 18px; margin-bottom: 24px; }
+.profileTextGrid > label:first-child { grid-column: 1 / -1; }
+.profileTextGrid textarea { min-height: 132px; }
+.vocabularyGrid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; padding-top: 18px; border-top: 1px solid #e5e7df; align-items: start; }
+.vocabulary { padding: 12px; background: #fafbf6; border-color: #e0e3d7; border-radius: 8px; }
+.vocabulary legend { max-width: 100%; padding: 0 5px; color: #46513f; line-height: 1.5; font-size: 12px; }
+.vocabularyInput { align-items: center; gap: 6px; }
+.workspace > main .vocabularyInput input { font-size: 12px; padding: 9px; min-height: 38px; }
+.vocabularyInput button { font-size: 11px; padding: 8px; min-height: 38px; }
+.vocabularyChoices { display: flex; flex-wrap: wrap; gap: 6px; max-height: 172px; padding: 3px 2px; margin-top: 12px; }
+.workspace > main .vocabularyChoices label { padding: 7px 9px; border: 1px solid #e0e3d7; border-radius: 5px; background: #fff; font-size: 11px; gap: 6px; cursor: pointer; }
+.vocabularyChoices label:has(input:checked) { background: #e8eddf; border-color: #b3c09e; color: #34442b; }
+.vocabularyChoices input { accent-color: #70815f; margin: 0; }
+.photoGrid { grid-template-columns: minmax(0, 1fr); gap: 14px; }
+.photoCard { display: grid; grid-template-columns: minmax(0, 1fr) 176px; grid-template-areas: "fields photo"; align-items: start; background: #fff; border-color: #dce0d3; border-radius: 9px; overflow: hidden; }
+.editorPhotoImage { grid-area: photo; height: 176px; margin: 16px 16px 16px 0; border-radius: 6px; overflow: hidden; background: #eef0e6; }
+.editorPhotoImage > img { height: 100%; width: 100%; aspect-ratio: auto; object-fit: contain; }
+.photoOrder { position: absolute; z-index: 1; top: 6px; left: 6px; max-width: calc(100% - 12px); background: rgba(255,253,247,0.94); color: #34442b; padding: 4px 7px; border-radius: 4px; font-size: 10px; font-weight: 600; }
+.editorPhotoMarkers { left: 6px; bottom: 6px; }
+.editorPhotoMarkers > span { height: 23px; width: 23px; border-radius: 4px; }
+fieldset.photoFields { grid-area: fields; padding: 16px 18px; gap: 12px; }
+.photoMetadata { display: flex; flex-direction: column; gap: 4px; min-width: 0; overflow-wrap: anywhere; }
+.photoMetadata strong { font-size: 12px; line-height: 1.5; }
+.photoSourceLinks { display: flex; align-items: center; gap: 6px 14px; flex-wrap: wrap; }
+.photoSourceLinks a { font-size: 11px; text-underline-offset: 3px; }
+.photoFields .markers { gap: 6px; }
+.photoFields .markers label { padding: 7px 9px; min-height: 34px; border: 1px solid #e0e3d7; border-radius: 5px; background: #fafbf6; font-size: 11px; cursor: pointer; }
+.photoFields .markers label:has(input:checked) { color: #34442b; background: #e8eddf; border-color: #b3c09e; }
+.photoFields .markers input { margin: 0; }
+.photoFields > .checkbox { padding: 8px 0; border-bottom: 1px solid #edf0e7; }
+.photoActions { gap: 6px; align-items: center; }
+.photoFields .photoActions button { min-height: 36px; font-size: 11px; border-radius: 5px; padding: 8px 10px; gap: 6px; }
+.photoActions button:disabled { background: #f5f5f0; opacity: 0.5; }
+.photoActions .removePhoto { margin-left: auto; color: #a04a3c; border-color: #e6d8d2; background: #fff; }
+.photoActions .removePhoto:hover { background: #fbefeb; }
+.observationInventory { padding: 14px 0; }
+.observationInventoryRow { padding: 8px 0; gap: 10px; border-top: 1px solid #edf0e7; }
+@media (max-width: 1200px) {
+  .vocabularyGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .vocabularyGrid > :last-child { grid-column: 1 / -1; }
+  .photoCard { grid-template-columns: minmax(0, 1fr) 148px; }
+  .editorPhotoImage { height: 148px; margin-right: 12px; }
+}
+@media (max-width: 900px) {
+  .identityGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .identityGrid > label, .identityGrid > label:nth-child(-n+2), .identityGrid > label:last-child { grid-column: auto; }
+  .profileTextGrid, .vocabularyGrid { grid-template-columns: 1fr; }
+  .photoCard { grid-template-columns: minmax(0, 1fr); grid-template-areas: "photo" "fields"; }
+  .editorPhotoImage { height: 160px; margin: 12px 12px 0; }
+}
+@media (max-width: 680px) {
+  .workspace > main { padding: 16px 12px 40px; }
+  .workspace > main > section { padding: 18px 14px; }
+  .identityGrid { grid-template-columns: 1fr; gap: 16px; }
+  .workspace > main input:not([type="checkbox"]), .workspace > main select, .workspace > main textarea { font-size: 16px; }
+  fieldset.photoFields { padding: 14px 12px; }
+  .photoActions .removePhoto { margin-left: 0; }
+  .photoFields .photoActions button { min-height: 40px; }
+}
