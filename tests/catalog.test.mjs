@@ -11,6 +11,14 @@ test("editor seed round-trips through the shared app contract", () => {
   assert.deepEqual(parseCatalog(JSON.parse(JSON.stringify(catalog))), catalog);
   assert.ok(representedSpeciesCount(catalog) <= 1500);
 });
+
+test("empty common names and legacy scientific placeholders survive save/export validation", () => {
+  const input = read();
+  input.plants[0].commonName = input.plants[0].scientificName;
+  const catalog = parseCatalog(input);
+  assert.equal(catalog.plants[0].commonName, "");
+  assert.equal(parseCatalog(JSON.parse(JSON.stringify(catalog))).plants[0].commonName, "");
+});
 test("imports reject unsupported photos and repeated entries", () => {
   const catalog = read();
   const photo = catalog.plants.flatMap((p) => p.photos)[0];

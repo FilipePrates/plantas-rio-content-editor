@@ -103,6 +103,8 @@ export function parseCatalog(value) {
       if (!Array.isArray(p?.photos)) return p;
       return {
         ...p,
+        commonName: typeof p.commonName === "string" && typeof p.scientificName === "string"
+          && normalize(p.commonName) === normalize(p.scientificName) ? "" : p.commonName,
         photos: p.photos.map((photo) =>
           !Array.isArray(photo?.markers) || !photo.markers.includes("habit")
             ? photo
@@ -132,13 +134,13 @@ export function parseCatalog(value) {
     ids.add(p.id);
     for (const field of [
       "scientificName",
-      "commonName",
       "family",
       "genus",
       "description",
     ])
       requireValue(text(p[field]), `${label}: campo ${field} obrigatório.`);
     for (const field of [
+      "commonName",
       "authorship",
       "identification",
       "ecology",

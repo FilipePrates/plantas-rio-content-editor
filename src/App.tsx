@@ -161,6 +161,7 @@ export default function App({onSignOut}:{onSignOut?:()=>void}={}) {
           };
       const plant: Plant = {
         ...draft,
+        commonName: draft.commonName.trim().toLocaleLowerCase("pt-BR") === draft.scientificName.trim().toLocaleLowerCase("pt-BR") ? "" : draft.commonName.trim(),
         sources: extra.sources,
         regionalSpecies: extra.regionalSpecies,
         regionalEvidence: extra.regionalEvidence ?? draft.regionalEvidence,
@@ -179,9 +180,9 @@ export default function App({onSignOut}:{onSignOut?:()=>void}={}) {
         parseCatalog(next);
         const shared=await saveSharedPlant(plant,editorialState);
         setCatalog({...next,plants:next.plants.map(item=>item.id===shared.id?shared:item)});
-        select(shared);setNotice(`${shared.commonName}: salvo no catálogo compartilhado.`);
+        select(shared);setNotice(`${shared.commonName || shared.scientificName}: salvo no catálogo compartilhado.`);
       }else{
-        await persist(next, `${plant.commonName}: salvo neste navegador.`);
+        await persist(next, `${plant.commonName || plant.scientificName}: salvo neste navegador.`);
         select(plant);
       }
     } catch (err) {
@@ -460,7 +461,7 @@ export default function App({onSignOut}:{onSignOut?:()=>void}={}) {
                   )}
                 </span>
                 <span>
-                  <strong>{p.commonName}</strong>
+                  {p.commonName && <strong>{p.commonName}</strong>}
                   <em>{p.scientificName}</em>
                   <small>
                     {p.family} ·{" "}
@@ -487,10 +488,10 @@ export default function App({onSignOut}:{onSignOut?:()=>void}={}) {
           <div className="pageHeading">
             <div>
               <span className="eyebrow">{draft.family || "NOVA FICHA"}</span>
-              <h1>{draft.commonName || "Nova planta"}</h1>
-              <p>
+              <h1>{draft.commonName || <i className="scientificName">{draft.scientificName || "Nova planta"}</i>}</h1>
+              {draft.commonName && <p>
                 <i>{draft.scientificName}</i>
-              </p>
+              </p>}
             </div>
             <span
               className={`badge ${draft.origin === "invasive" ? "amber" : ""}`}
@@ -522,7 +523,7 @@ export default function App({onSignOut}:{onSignOut?:()=>void}={}) {
           <section className="identitySection">
             <h2>Identidade</h2>
             <div className="formGrid identityGrid">
-              {field("commonName", "Nome principal")}
+              {field("commonName", "Nome comum principal (opcional)")}
               {field("scientificName", "Nome científico (sem autoria)")}
               {field("authorship", "Autoria botânica")}
               {field("family", "Família")}

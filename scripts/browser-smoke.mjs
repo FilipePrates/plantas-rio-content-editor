@@ -19,21 +19,21 @@ try {
   const errors = [];
   page.on("pageerror", (error) => errors.push(String(error)));
   await page.goto(process.env.EDITOR_URL || "http://127.0.0.1:5174/");
-  await page.getByLabel("Nome principal", { exact: true }).waitFor();
+  await page.getByLabel("Nome comum principal (opcional)", { exact: true }).waitFor();
   const oldName = await page
-    .getByLabel("Nome principal", { exact: true })
+    .getByLabel("Nome comum principal (opcional)", { exact: true })
     .inputValue();
   const newName = oldName + " — revisão de teste";
-  await page.getByLabel("Nome principal", { exact: true }).fill(newName);
+  await page.getByLabel("Nome comum principal (opcional)", { exact: true }).fill(newName);
   await page.getByRole("button", { name: /Salvar ficha/ }).click();
   await page
     .getByRole("status")
     .filter({ hasText: "salvo neste navegador" })
     .waitFor();
   await page.reload();
-  await page.getByLabel("Nome principal", { exact: true }).waitFor();
+  await page.getByLabel("Nome comum principal (opcional)", { exact: true }).waitFor();
   assert.equal(
-    await page.getByLabel("Nome principal", { exact: true }).inputValue(),
+    await page.getByLabel("Nome comum principal (opcional)", { exact: true }).inputValue(),
     newName,
   );
   const flower = page.getByLabel("Flor", { exact: true }).first();
@@ -54,11 +54,11 @@ try {
   assert.ok(changed);
   assert.ok(changed.photos[0].markers.includes("flower"));
   assert.equal(changed.photos[0].licenseCode, "cc0");
-  await page.getByLabel("Nome principal", { exact: true }).fill("Não salvo");
+  await page.getByLabel("Nome comum principal (opcional)", { exact: true }).fill("Não salvo");
   page.once("dialog", (dialog) => dialog.dismiss());
   await page.locator(".plantList button").nth(1).click();
   assert.equal(
-    await page.getByLabel("Nome principal", { exact: true }).inputValue(),
+    await page.getByLabel("Nome comum principal (opcional)", { exact: true }).inputValue(),
     "Não salvo",
   );
   await page.getByRole("button", { name: "Exportar JSON" }).click();

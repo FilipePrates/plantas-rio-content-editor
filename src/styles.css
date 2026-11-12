@@ -769,3 +769,5 @@ fieldset.photoFields { grid-area: fields; padding: 16px 18px; gap: 12px; }
   .loginPanel { width: calc(100% - 24px); margin: 24px 12px; padding: 24px; }
   .loginBrand { margin: -24px -24px 24px; padding: 22px 24px; }
 }
+
+.scientificName { font-weight: 400; }

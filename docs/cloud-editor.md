@@ -92,3 +92,24 @@ use `wrangler r2 bulk put`; do not overwrite acquired rights evidence later.
 Run cloud integration checks with `node --env-file=.env.cloud
 scripts/cloud-smoke.mjs`. They create and remove temporary users and a temporary
 plant fixture, exercising the hosted access controls and invitation flow.
+
+## November 12, 2026 common-name update
+
+Published editor version `d4696c0c-ff17-4c82-9827-2ac422893fdb`. The identity
+field is now “Nome comum principal (opcional)”. Empty common names are accepted,
+and saving a repeated scientific name clears that placeholder. Scientific-name
+fallback headings use regular-weight italics without a repeated subtitle.
+
+Migration `004_common_names.sql` cleared 220 repeated names in the shared plant
+database. A private backup and verification confirmed all unrelated records,
+drafts, review states and existing history were preserved. Each correction has a
+new history revision; no common-name placeholders remain. The migration was
+tested for idempotence before application.
+
+TypeScript and all 14 tests passed. Isolated local desktop/mobile checks verified
+save/reload, empty-name JSON export and unsaved-change cancellation. Cloud
+preview and live checks verified login, branding, exact asset hashes and the
+exclusion of the seed catalog, private photos and service key. Unauthenticated
+catalog and media requests still return 401. Authenticated live editing was not
+used for verification. Artifacts and the private backup are under
+`.local/deploy-finish-20261112/`.
